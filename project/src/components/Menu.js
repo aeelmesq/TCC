@@ -1,6 +1,6 @@
 function MenuItem({ link, output }) {
   return (
-    <li ClassName="MenuItem">
+    <li className="MenuItem">
       <a href={link}>{output}</a>
     </li>
   );

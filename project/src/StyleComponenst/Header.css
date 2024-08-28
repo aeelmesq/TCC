@@ -24,3 +24,18 @@ header {
     margin: 0 10px;
     list-style: none;
 }
+#right ul li a{
+    text-decoration: none;
+    padding: 7px;
+    border-radius: 10px;
+}
+.menu li a{
+    color: black;
+}
+.menu li a:hover{
+    color: #acacac;
+}
+.on {
+    background-color: #f5f5f5;
+    transition: 0.7s;
+}

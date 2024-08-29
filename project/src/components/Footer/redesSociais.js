@@ -1,6 +1,5 @@
-function getIconeUrl({ name }) {
-  return './src/images/logo/' + name + '.png';
-}
+import { getIconeUrl } from '../utilits';
+
 function GetIcone({ name, size = [70] }) {
   return <img src={getIconeUrl(name)} alt={name} width={size} height={size} />;
 }

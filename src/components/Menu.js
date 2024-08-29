@@ -1,7 +1,9 @@
-function MenuItem({ link, output }) {
+function MenuItem({ link, output, index }) {
   return (
     <li className="MenuItem">
-      <a href={link}>{output}</a>
+      <a href={link} key={index}>
+        {output}
+      </a>
     </li>
   );
 }

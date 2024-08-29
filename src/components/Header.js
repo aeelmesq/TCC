@@ -29,21 +29,22 @@ const urlParamName = "?menu=",
       menu: "Brasil",
     },
   ];
+function menuSelect() {
+  let url = new URL(window.location.href),
+    select = url.searchParams.get("menu"),
+    menuItens = document.querySelectorAll(".MenuItem a");
+
+  console.log(select);
+
+  for (let i = 0; i < pages.length; i++) {
+    if (select === pages[i].menu || !select) {
+      menuItens[i].classList.add("on");
+      i = pages.length - 1;
+    }
+  }
+}
 
 function Header() {
-  const menuSelect = () => {
-    let url = new URL(window.location.href),
-      select = url.searchParams.get("menu"),
-      menuItens = document.querySelectorAll(".MenuItem a");
-
-    for (let i = 0; i < pages.length; i++) {
-      if (select === pages[i].menu || !select) {
-        menuItens[i].classList.add("on");
-        i = pages.length - 1;
-      }
-    }
-  };
-
   return (
     <header onLoad={menuSelect}>
       <div id="left">
@@ -52,12 +53,15 @@ function Header() {
       </div>
       <div id="right">
         <ul className="menu">
-          <MenuItem link={"?menu=Home"} output={"Home"} />
-          <MenuItem link={"?menu=ParaVoce"} output={"Para você"} />
-          <MenuItem link={"?menu=Preferencias"} output={"Preferências"} />
-          <MenuItem link={"?menu=Penapolis"} output={"Penápolis"} />
-          <MenuItem link={"?menu=Regiao"} output={"Região"} />
-          <MenuItem link={"?menu=Brasil"} output={"Brasil"} />
+          {pages.map((itens, index) => {
+            return (
+              <MenuItem
+                link={urlParamName + itens.menu}
+                output={itens.name}
+                index={index}
+              />
+            );
+          })}
         </ul>
         <DbButton
           link1={"?menu=SingIn"}

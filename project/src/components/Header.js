@@ -2,24 +2,42 @@ import "../StyleComponenst/Header.css";
 import DbButton from "./DbButton.js";
 import MenuItem from "./Menu.js";
 
+const urlParamName = "?menu=",
+  pages = [
+    {
+      name: "Home",
+      menu: "Home",
+    },
+    {
+      name: "Para você",
+      menu: "ParaVoce",
+    },
+    {
+      name: "Preferências",
+      menu: "Preferencias",
+    },
+    {
+      name: "Penápolis",
+      menu: "Penapolis",
+    },
+    {
+      name: "Região",
+      menu: "Regiao",
+    },
+    {
+      name: "Brasil",
+      menu: "Brasil",
+    },
+  ];
+
 function Header() {
   const menuSelect = () => {
     let url = new URL(window.location.href),
-      menu = url.searchParams.get("menu"),
-      menuItens = document.querySelectorAll(".MenuItem a"),
-      pages = [
-        "Home",
-        "ParaVoce",
-        "Preferencias",
-        "Penapolis",
-        "Regiao",
-        "Brasil",
-      ];
-
-    console.log(menu);
+      select = url.searchParams.get("menu"),
+      menuItens = document.querySelectorAll(".MenuItem a");
 
     for (let i = 0; i < pages.length; i++) {
-      if (menu === pages[i] || !menu) {
+      if (select === pages[i].menu || !select) {
         menuItens[i].classList.add("on");
         i = pages.length - 1;
       }

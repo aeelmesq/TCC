@@ -12,7 +12,7 @@ function SearchBar() {
       <form onSubmit={Search} id="searchBar">
         <input type="text" placeholder="Digite sua pesquisa" id="searchInput" />
         <button type="submit" id="searchBtn">
-          <img src="./pesquisa.png" alt="pesq" width="20px" />
+          <img src="./img/pesquisa.png" alt="pesq" width="20px" />
         </button>
       </form>
     </section>

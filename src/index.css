@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font: normal 12pt Arial;
+}
+.DbBtn .btn1 a{
+  background-color: #e4e4e4;
+  border: 1px solid #acacac;
+  color: black;
+}
+.DbBtn .btn2 a{
+  background-color: black;
+  color: white;
+}
+.DbBtn li a:hover {
+  opacity: 0.87;
+  transition: 0.7s;
+}

@@ -1,44 +1,44 @@
-import "../StyleComponenst/Header.css";
-import DbButton from "./DbButton.js";
-import MenuItem from "./Menu.js";
+import '../../StyleComponenst/Header.css';
+import DbButton from './DbButton.js';
+import MenuItem from './Menu.js';
 
-const urlParamName = "?menu=",
+const urlParamName = '?menu=',
   pages = [
     {
-      name: "Home",
-      menu: "Home",
+      name: 'Home',
+      menu: 'Home',
     },
     {
-      name: "Para você",
-      menu: "ParaVoce",
+      name: 'Para você',
+      menu: 'ParaVoce',
     },
     {
-      name: "Preferências",
-      menu: "Preferencias",
+      name: 'Preferências',
+      menu: 'Preferencias',
     },
     {
-      name: "Penápolis",
-      menu: "Penapolis",
+      name: 'Penápolis',
+      menu: 'Penapolis',
     },
     {
-      name: "Região",
-      menu: "Regiao",
+      name: 'Região',
+      menu: 'Regiao',
     },
     {
-      name: "Brasil",
-      menu: "Brasil",
+      name: 'Brasil',
+      menu: 'Brasil',
     },
   ];
 function menuSelect() {
   let url = new URL(window.location.href),
-    select = url.searchParams.get("menu"),
-    menuItens = document.querySelectorAll(".MenuItem a");
+    select = url.searchParams.get('menu'),
+    menuItens = document.querySelectorAll('.MenuItem a');
 
   console.log(select);
 
   for (let i = 0; i < pages.length; i++) {
     if (select === pages[i].menu || !select) {
-      menuItens[i].classList.add("on");
+      menuItens[i].classList.add('on');
       i = pages.length - 1;
     }
   }
@@ -64,10 +64,10 @@ function Header() {
           })}
         </ul>
         <DbButton
-          link1={"?menu=SingIn"}
-          output1={"Sing In"}
-          link2={"?menu=Register"}
-          output2={"Reister"}
+          link1={'?menu=SingIn'}
+          output1={'Sing In'}
+          link2={'?menu=Register'}
+          output2={'Reister'}
         />
       </div>
     </header>

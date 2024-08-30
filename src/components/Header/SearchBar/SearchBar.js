@@ -1,7 +1,7 @@
-import "../../StyleComponenst/SearchBar.css";
+import '../../../StyleComponenst/SearchBar.css';
 
 function Search() {
-  let search = document.getElementById("searchInput").value;
+  let search = document.getElementById('searchInput').value;
 
   console.log(search);
 }

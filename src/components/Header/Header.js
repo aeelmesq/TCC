@@ -1,15 +1,13 @@
-
-import '../../StyleComponenst/Header.css';
-import DbButton from './DbButton.js';
-import MenuItem from './Menu.js';
+import "../../StyleComponenst/Header.css";
+import DbButton from "./DbButton.js";
+import MenuItem from "./Menu.js";
 import pages from "../../consts/Pages.js";
-
 
 function Header() {
   return (
     <header>
       <div id="left">
-        <img src="./img/logo512.png" alt="Logo" width="60px" />
+        <img src="../../../public/img/logo512.png" alt="Logo" width="60px" />
         <h1>ALT</h1>
       </div>
       <div id="right">

@@ -34,7 +34,7 @@ header {
 }
 .menu li a:hover{
     background-color: #f6f6f6;
-    ;
+    transition: 0.9s;
 }
 .on {
     background-color: #f6f6f6;

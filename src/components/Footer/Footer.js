@@ -9,8 +9,6 @@ export default function Footer() {
       </div>
       <section>
         <Bloco />
-        <Bloco />
-        <Bloco />
       </section>
     </div>
   );

@@ -2,7 +2,11 @@ import { GetIcone } from '../utilits';
 
 function SocialMediaItem({ name }) {
   let link = 'https://' + name.toLowerCase() + '.com';
-  return <a href={link}>{GetIcone({ name })}</a>;
+  return (
+    <li key={name}>
+      <a href={link}>{GetIcone({ name })}</a>
+    </li>
+  );
 }
 
 export default function RedesSociaisList() {
@@ -12,10 +16,12 @@ export default function RedesSociaisList() {
         <img src="./logo512.png" alt="" width={90} />
       </div>
       <div>
-        <SocialMediaItem name="X" />
-        <SocialMediaItem name="Instagram" />
-        <SocialMediaItem name="Youtube" />
-        <SocialMediaItem name="LinkedIn" />
+        <ul>
+          <SocialMediaItem name="X" />
+          <SocialMediaItem name="Instagram" />
+          <SocialMediaItem name="Youtube" />
+          <SocialMediaItem name="LinkedIn" />
+        </ul>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import "../StyleComponenst/Header.css";
 import DbButton from "./DbButton.js";
 import MenuItem from "./Menu.js";
-import pages from "../consts/Pages.js";
+import pages from "../../consts/Pages.js";
 
 function Header() {
   return (

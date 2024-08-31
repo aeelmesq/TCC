@@ -1,7 +1,6 @@
 import "../../StyleComponenst/Header.css";
 import DbButton from "./DbButton.js";
-import MenuItem from "./Menu.js";
-import pages from "../../consts/Pages.js";
+import Menu from "./Menu.js";
 
 function Header() {
   return (
@@ -11,13 +10,7 @@ function Header() {
         <h1>ALT</h1>
       </div>
       <div id="right">
-        <ul className="menu">
-          {pages.map((itens, index) => {
-            return (
-              <MenuItem link={itens.menu} output={itens.name} index={index} />
-            );
-          })}
-        </ul>
+        <Menu />
         <DbButton
           link1={"?menu=SingIn"}
           output1={"Sing In"}

@@ -1,7 +1,7 @@
-import { GetIcone } from '../utilits';
+import { GetIcone } from "../utilits";
 
 function SocialMediaItem({ name }) {
-  let link = 'https://' + name.toLowerCase() + '.com';
+  let link = "https://" + name.toLowerCase() + ".com";
   return <a href={link}>{GetIcone({ name })}</a>;
 }
 
@@ -9,7 +9,7 @@ export default function RedesSociaisList() {
   return (
     <div>
       <div>
-        <img src="./logo512.png" alt="" width={90} />
+        <img src="./img/logo512.png" alt="" width={90} />
       </div>
       <div>
         <SocialMediaItem name="X" />

@@ -1,26 +1,26 @@
 const pages = [
   {
-    name: "Home",
+    title: "Home",
     menu: "Home",
   },
   {
-    name: "Para você",
+    title: "Para você",
     menu: "ParaVoce",
   },
   {
-    name: "Preferências",
+    title: "Preferências",
     menu: "Preferencias",
   },
   {
-    name: "Penápolis",
+    title: "Penápolis",
     menu: "Penapolis",
   },
   {
-    name: "Região",
+    title: "Região",
     menu: "Regiao",
   },
   {
-    name: "Brasil",
+    title: "Brasil",
     menu: "Brasil",
   },
 ];

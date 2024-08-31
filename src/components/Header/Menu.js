@@ -18,7 +18,7 @@ function MenuItem({ link, output, index }) {
 }
 function Menu() {
   let menuItens = pages.map((page, index) => {
-    return <MenuItem link={page.menu} output={page.name} index={index} />;
+    return <MenuItem link={page.menu} output={page.title} index={index} />;
   });
   return <ul className="menu">{menuItens}</ul>;
 }

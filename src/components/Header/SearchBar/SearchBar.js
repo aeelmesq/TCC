@@ -1,8 +1,7 @@
-
-import '../../../StyleComponenst/SearchBar.css';
+import "../../../StyleComponenst/SearchBar.css";
 
 function Search() {
-  let search = document.getElementById('searchInput').value;
+  let search = document.getElementById("searchInput").value;
 
   console.log(search);
 }
@@ -13,7 +12,7 @@ function SearchBar() {
       <form onSubmit={Search} id="searchBar">
         <input type="text" placeholder="Digite sua pesquisa" id="searchInput" />
         <button type="submit" id="searchBtn">
-          <img src="./img/pesquisa.png" alt="pesq" width="20px" />
+          <i class="bi bi-search"></i>
         </button>
       </form>
     </section>

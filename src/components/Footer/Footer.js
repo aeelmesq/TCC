@@ -1,10 +1,10 @@
-import Bloco from './bloco';
-import RedesSociaisList from './redesSociais';
+import Bloco from "./bloco";
+import RedesSociaisList from "./redesSociais";
 
 export default function Footer() {
   return (
-    <div>
-      <div>
+    <footer>
+      <div id="socialMediaList">
         <RedesSociaisList />
       </div>
       <section>
@@ -12,6 +12,6 @@ export default function Footer() {
         <Bloco />
         <Bloco />
       </section>
-    </div>
+    </footer>
   );
 }

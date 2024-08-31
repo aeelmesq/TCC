@@ -4,12 +4,12 @@ import Menu from "./Menu.js";
 
 function Header() {
   return (
-    <header>
-      <div id="left">
+    <header id="webHeader">
+      <section id="left">
         <img src="../../../public/img/logo512.png" alt="Logo" width="60px" />
         <h1>ALT</h1>
-      </div>
-      <div id="right">
+      </section>
+      <section id="right">
         <Menu />
         <DbButton
           link1={"?menu=SingIn"}
@@ -17,7 +17,7 @@ function Header() {
           link2={"?menu=Register"}
           output2={"Reister"}
         />
-      </div>
+      </section>
     </header>
   );
 }

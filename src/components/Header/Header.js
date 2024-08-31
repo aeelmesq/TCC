@@ -1,12 +1,13 @@
-import "../../StyleComponenst/Header.css";
+import "../../StyleComponents/Header.css";
 import DbButton from "./DbButton.js";
 import Menu from "./Menu.js";
+import logo from "../../img/logo512.png";
 
 function Header() {
   return (
     <header id="webHeader">
       <section id="left">
-        <img src="../../../public/img/logo512.png" alt="Logo" width="60px" />
+        <img src={logo} alt="Logo" width="60px" />
         <h1>ALT</h1>
       </section>
       <section id="right">

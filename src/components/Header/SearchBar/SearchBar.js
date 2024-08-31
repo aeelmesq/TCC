@@ -1,4 +1,4 @@
-import "../../../StyleComponenst/SearchBar.css";
+import "../../../StyleComponents/SearchBar.css";
 
 function Search() {
   let search = document.getElementById("searchInput").value;

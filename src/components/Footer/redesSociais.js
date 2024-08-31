@@ -1,4 +1,5 @@
 //import { GetIcone } from "../utilits";
+import logo from "../../img/logo512.png";
 
 function SocialMediaItem({ name }) {
   let link = "https://" + name.toLowerCase() + ".com";
@@ -13,7 +14,7 @@ export default function RedesSociaisList() {
   return (
     <div>
       <div>
-        <img src="./img/logo512.png" alt="" width={90} />
+        <img src={logo} alt="" width={90} />
       </div>
       <div>
         <SocialMediaItem name="Twitter-X" />

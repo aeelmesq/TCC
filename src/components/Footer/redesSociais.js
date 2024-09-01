@@ -14,7 +14,7 @@ export default function RedesSociaisList() {
   return (
     <div>
       <div>
-        <img src={logo} alt="" width={90} />
+        <img src={logo} alt="Logo" width={90} id="logo" />
       </div>
       <div>
         <SocialMediaItem name="Twitter-X" />

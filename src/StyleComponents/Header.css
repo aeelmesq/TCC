@@ -4,6 +4,7 @@
     display: flex;
     border-bottom: 1px solid #d9d9d9;
     align-items: center;
+    transition: 0.9s;
 }
 #left {
     width: 40%;
@@ -37,10 +38,10 @@
 }
 .menu li a{
     color: black;
+    transition: 0.9s;
 }
 .menu li a:hover{
     background-color: #f6f6f6;
-    transition: 0.9s;
 }
 .on {
     background-color: #f6f6f6;

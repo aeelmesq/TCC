@@ -1,7 +1,11 @@
 function BlockType1() {
   return (
     <>
-      <div className="block">Teste</div>
+      <section className="block">
+        <div className="bigContainer"></div>
+        <div className="smallContainer"></div>
+        <div className="smallContainer"></div>
+      </section>
       <hr />
     </>
   );

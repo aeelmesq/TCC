@@ -33,9 +33,10 @@ header {
     color: black;
 }
 .menu li a:hover{
-    color: #acacac;
+    background-color: #f6f6f6;
+    ;
 }
 .on {
-    background-color: #ededed;
+    background-color: #f6f6f6;
     transition: 0.7s;
 }

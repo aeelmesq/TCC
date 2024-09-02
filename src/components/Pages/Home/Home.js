@@ -1,5 +1,5 @@
 import BlockType1 from "../BlockType1";
-import BlockTypeRoler from "../BlockTypeRoler";
+import BlockTypeSlider from "../BlockTypeSlider";
 
 function Home() {
   return (
@@ -7,7 +7,7 @@ function Home() {
       <h1>HOME</h1>
       <section id="Home">
         <BlockType1 />
-        <BlockTypeRoler />
+        <BlockTypeSlider />
       </section>
     </>
   );

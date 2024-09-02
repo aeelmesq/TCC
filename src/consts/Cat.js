@@ -11,5 +11,8 @@ const categorias = [
   {
     title: "Política",
   },
+  {
+    title: "Jogos",
+  },
 ];
 export default categorias;

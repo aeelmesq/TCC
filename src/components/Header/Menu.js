@@ -1,5 +1,5 @@
 import pages from "../../consts/Pages.js";
-import getUlrParam from "../../Functions/getUrlParam.js";
+import { getUlrParam } from "../utilits.js";
 
 const select = getUlrParam("menu") ? getUlrParam("menu") : "Home";
 

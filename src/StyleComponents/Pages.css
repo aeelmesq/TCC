@@ -9,13 +9,24 @@
     margin: 15px 0;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
-.bigContainer {
-    width: 40%;
+.mainCont {
     display: flex;
-    background-color: white;
-    height: 95%;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 800px;
+    overflow: hidden;
 }
-.smallContainer {
-    width: 10%;
+.card {
+    width: 33%;
+    height: 755px;
     background-color: white;
+    margin: 15px;
+    border-radius: 10px;
+}
+.card header {
+    padding: 15px;
+    height: 30px;
+    border-radius: 10px 10px 0 0;
+    background-color: red;
 }

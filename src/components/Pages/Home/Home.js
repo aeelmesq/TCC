@@ -1,12 +1,15 @@
 import BlockType1 from "../BlockType1";
+import BlockTypeRoler from "../BlockTypeRoler";
 
 function Home() {
   return (
-    <section>
-      <BlockType1 />
-      <BlockType1 />
-      <BlockType1 />
-    </section>
+    <>
+      <h1>HOME</h1>
+      <section id="Home">
+        <BlockType1 />
+        <BlockTypeRoler />
+      </section>
+    </>
   );
 }
 

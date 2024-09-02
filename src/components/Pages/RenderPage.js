@@ -1,4 +1,4 @@
-import getUlrParam from "../../Functions/getUrlParam";
+import { getUlrParam } from "../utilits.js";
 import pages from "../../consts/Pages";
 import Home from "./Home/Home";
 import "../../StyleComponents/Pages.css";
@@ -35,7 +35,6 @@ function RenderPage() {
 
   return (
     <main className="container">
-      <h1 id="title">{pageSelect.title.toUpperCase()}</h1>
       <Render />
     </main>
   );

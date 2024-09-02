@@ -2,9 +2,13 @@ function BlockType1() {
   return (
     <>
       <section className="block">
-        <div className="bigContainer"></div>
-        <div className="smallContainer"></div>
-        <div className="smallContainer"></div>
+        <div className="left">
+          <div></div>
+        </div>
+        <div className="right">
+          <div></div>
+          <div></div>
+        </div>
       </section>
       <hr />
     </>

@@ -1,33 +1,23 @@
 const categorias = [
   {
     title: "Foteboll",
+    color: "#32c905",
   },
   {
     title: "Saúde",
+    color: "#ee0000",
   },
   {
     title: "Tecnologia",
+    color: "#003fee",
   },
   {
     title: "Política",
+    color: "#3a4e86",
   },
   {
     title: "Jogos",
-  },
-  {
-    title: "Foteboll",
-  },
-  {
-    title: "Saúde",
-  },
-  {
-    title: "Tecnologia",
-  },
-  {
-    title: "Política",
-  },
-  {
-    title: "Jogos",
+    color: "#ee7f00",
   },
 ];
 export default categorias;

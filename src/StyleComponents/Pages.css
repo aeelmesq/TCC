@@ -24,10 +24,10 @@
     display: none;
 }
 .card {
-    width: 31%;
+    width: calc(33.33% - 10px);
     height: 755px;
     background-color: white;
-    margin: 10px;
+    margin: 5px;
     border-radius: 10px;
     flex: none;
 }
@@ -35,7 +35,6 @@
     padding: 10px;
     height: 20px;
     border-radius: 10px 10px 0 0;
-    background-color: red;
 }
 .btnLeft, .btnRight {
     width: 70px;
@@ -45,7 +44,7 @@
     background-color: rgba(238, 238, 238, 0.8);
     border: none;
     z-index: 0;
-    transition: 0.7s;
+    transition: 0.5s;
     cursor: pointer;
     border-radius: 100%;
     display: flex;
@@ -53,14 +52,15 @@
     align-items: center;
 }
 .btnLeft, .btnRight:hover {
-    opacity: 0.8;
+    opacity: 0.7;
 }
 .btnLeft {
-    right: 86vw;
+    right: 85vw;
 }
 .btnRight {
-    left: 86vw;
+    left: 85vw;
 }
 .btnOf{
+    opacity: 0;
     visibility: hidden;
 }

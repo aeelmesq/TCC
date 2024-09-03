@@ -1,32 +1,39 @@
-import getUlrParam from "../../Functions/getUrlParam";
+<<<<<<< HEAD
+import { getUlrParam } from '../utilits';
+import pages from '../../consts/Pages';
+import Home from './Home/Home';
+import '../../StyleComponents/Pages.css';
+=======
+import { getUlrParam } from "../utilits.js";
 import pages from "../../consts/Pages";
 import Home from "./Home/Home";
 import "../../StyleComponents/Pages.css";
+>>>>>>> cd0bb7258a918271ebfd83cf8a2cbf0d0bb38ce6
 
 function getPageSelect(str) {
-  let pageSelect = pages.filter((page) => page.menu === (str ? str : "Home"));
+  let pageSelect = pages.filter((page) => page.menu === (str ? str : 'Home'));
 
   return pageSelect[0];
 }
 
 function RenderPage() {
-  let menuSelect = getUlrParam("menu"),
+  let menuSelect = getUlrParam('menu'),
     pageSelect = getPageSelect(menuSelect);
 
   function Render() {
     //Chamada da página com base na Url
     switch (pageSelect.title) {
-      case "Home":
+      case 'Home':
         return <Home />;
-      case "Para você":
+      case 'Para você':
         return <p>Trabalhando nisso</p>;
-      case "Preferências":
+      case 'Preferências':
         return <p>Trabalhando nisso</p>;
-      case "Penápolis":
+      case 'Penápolis':
         return <p>Trabalhando nisso</p>;
-      case "Região":
+      case 'Região':
         return <p>Trabalhando nisso</p>;
-      case "Brasil":
+      case 'Brasil':
         return <p>Trabalhando nisso</p>;
       default:
         return <p>404 Not found</p>;
@@ -35,7 +42,6 @@ function RenderPage() {
 
   return (
     <main className="container">
-      <h1 id="title">{pageSelect.title.toUpperCase()}</h1>
       <Render />
     </main>
   );

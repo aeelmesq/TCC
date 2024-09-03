@@ -9,13 +9,58 @@
     margin: 15px 0;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
-.bigContainer {
-    width: 40%;
+.mainCont {
     display: flex;
-    background-color: white;
-    height: 95%;
+    justify-content: left;
+    align-items: center;
+    width: 95%;
+    height: 800px;
+    overflow: hidden;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    overflow: scroll;
 }
-.smallContainer {
-    width: 10%;
+.mainCont::-webkit-scrollbar {
+    display: none;
+}
+.card {
+    width: 31%;
+    height: 755px;
     background-color: white;
+    margin: 10px;
+    border-radius: 10px;
+    flex: none;
+}
+.card header {
+    padding: 10px;
+    height: 30px;
+    border-radius: 10px 10px 0 0;
+    background-color: red;
+}
+.btnLeft, .btnRight {
+    width: 70px;
+    position: absolute;
+    height: 70px;
+    font-size: 15pt;
+    background-color: rgba(238, 238, 238, 0.8);
+    border: none;
+    z-index: 0;
+    transition: 0.7s;
+    cursor: pointer;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnLeft, .btnRight:hover {
+    opacity: 0.8;
+}
+.btnLeft {
+    right: 86vw;
+}
+.btnRight {
+    left: 86vw;
+}
+.btnOf{
+    visibility: hidden;
 }

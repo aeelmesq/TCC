@@ -1,15 +1,15 @@
 const linkBloco1 = [
-  { name: "UI Design" },
-  { name: "UX Design" },
-  { name: "Wireframe" },
-  { name: "Diagramming" },
+  { name: 'UI Design' },
+  { name: 'UX Design' },
+  { name: 'Wireframe' },
+  { name: 'Diagramming' },
 ];
 const linkBloco2 = [
-  { name: "Design" },
-  { name: "Prototyping" },
-  { name: "Dev" },
+  { name: 'Design' },
+  { name: 'Prototyping' },
+  { name: 'Dev' },
 ];
-const linkBloco3 = [{ name: "Blog" }, { name: "Colors" }];
+const linkBloco3 = [{ name: 'Blog' }, { name: 'Colors' }];
 
 function List() {
   const listItems = linkBloco1.map((link) => (

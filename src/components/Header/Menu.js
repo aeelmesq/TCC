@@ -1,15 +1,20 @@
+<<<<<<< HEAD
+import pages from '../../consts/Pages.js';
+import { getUlrParam } from '../utilits.js';
+=======
 import pages from "../../consts/Pages.js";
-import getUlrParam from "../../Functions/getUrlParam.js";
+import { getUlrParam } from "../utilits.js";
+>>>>>>> cd0bb7258a918271ebfd83cf8a2cbf0d0bb38ce6
 
-const select = getUlrParam("menu") ? getUlrParam("menu") : "Home";
+const select = getUlrParam('menu') ? getUlrParam('menu') : 'Home';
 
 function MenuItem({ link, output, index }) {
   return (
     <li className="MenuItem">
       <a
-        href={"?menu=" + link}
+        href={'?menu=' + link}
         key={index}
-        className={link === select ? "on" : "of"}
+        className={link === select ? 'on' : 'of'}
       >
         {output}
       </a>

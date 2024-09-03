@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import pages from '../../consts/Pages.js';
 import { getUlrParam } from '../utilits.js';
-=======
-import pages from "../../consts/Pages.js";
-import { getUlrParam } from "../utilits.js";
->>>>>>> cd0bb7258a918271ebfd83cf8a2cbf0d0bb38ce6
 
 const select = getUlrParam('menu') ? getUlrParam('menu') : 'Home';
 

@@ -1,0 +1,27 @@
+.principalCard {
+  width: 100%;
+  display: flex;
+  padding: 60px;
+}
+
+.left {
+  float: left;
+  background-color: white;
+  margin: 10px;
+  padding: 20px;
+}
+.left > a {
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  float: right;
+  width: 100%;
+}
+.right > ul > li {
+  list-style: none;
+  background-color: white;
+  margin: 10px;
+  padding: 20px;
+}

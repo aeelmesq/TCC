@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 import { getUlrParam } from '../utilits';
 import pages from '../../consts/Pages';
 import Home from './Home/Home';
 import '../../StyleComponents/Pages.css';
-=======
-import { getUlrParam } from "../utilits.js";
-import pages from "../../consts/Pages";
-import Home from "./Home/Home";
-import "../../StyleComponents/Pages.css";
->>>>>>> cd0bb7258a918271ebfd83cf8a2cbf0d0bb38ce6
 
 function getPageSelect(str) {
   let pageSelect = pages.filter((page) => page.menu === (str ? str : 'Home'));

@@ -6,6 +6,8 @@ export default function BlockTypeSlider() {
 
   const [sliderPosition, setSliderPosition] = useState(0);
 
+  var maxScrollLeft = 4000;
+
   function Card({ title }) {
     return (
       <>
@@ -21,11 +23,16 @@ export default function BlockTypeSlider() {
     e.preventDefault();
     slider.current.scrollLeft -= slider.current.offsetWidth;
     setSliderPosition(slider.current.scrollLeft - slider.current.offsetWidth);
+    console.log(maxScrollLeft);
+    console.log(sliderPosition);
   };
   const moveToRight = (e) => {
     e.preventDefault();
     slider.current.scrollLeft += slider.current.offsetWidth;
+    maxScrollLeft = slider.current.scrollWidth;
     setSliderPosition(slider.current.scrollLeft + slider.current.offsetWidth);
+    console.log(maxScrollLeft);
+    console.log(sliderPosition);
   };
 
   return (
@@ -33,7 +40,7 @@ export default function BlockTypeSlider() {
       <section className="block">
         {sliderPosition > 0 && (
           <button className="btnLeft" onClick={moveToLeft}>
-            <i class="bi bi-caret-left-fill"></i>
+            <i className="bi bi-caret-left-fill"></i>
           </button>
         )}
         <div className="mainCont" ref={slider}>
@@ -41,9 +48,11 @@ export default function BlockTypeSlider() {
             return <Card title={item.title} />;
           })}
         </div>
-        <button className="btnRight" onClick={moveToRight}>
-          <i class="bi bi-caret-right-fill"></i>
-        </button>
+        {sliderPosition < 0 && (
+          <button className="btnRight" onClick={moveToRight}>
+            <i className="bi bi-caret-right-fill"></i>
+          </button>
+        )}
       </section>
       <hr />
     </>

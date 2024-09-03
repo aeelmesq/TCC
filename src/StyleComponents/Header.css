@@ -1,28 +1,35 @@
-header {
+#webHeader {
     width: 100%;
     height: 70px;
     display: flex;
     border-bottom: 1px solid #d9d9d9;
     align-items: center;
+    transition: 0.9s;
 }
 #left {
     width: 40%;
     display: flex;
     float: left;
+    height: 100%;
     align-items: center;
 }
 #right {
     width: 60%;
     display: flex;
     float: right;
+    align-items: center;
+    height: 100%;
     justify-content: right;
 }
 #right ul{
     display: flex;
+    align-items: center;
 }
 #right ul li {
     margin: 0 10px;
     list-style: none;
+    display: flex;
+    align-items: center;
 }
 #right ul li a{
     text-decoration: none;
@@ -31,10 +38,10 @@ header {
 }
 .menu li a{
     color: black;
+    transition: 0.9s;
 }
 .menu li a:hover{
     background-color: #f6f6f6;
-    ;
 }
 .on {
     background-color: #f6f6f6;

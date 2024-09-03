@@ -1,21 +1,23 @@
-
-import '../../../StyleComponenst/SearchBar.css';
-
-function Search() {
-  let search = document.getElementById('searchInput').value;
-
-  console.log(search);
-}
+import "../../../StyleComponents/SearchBar.css";
+import { useState } from "react";
 
 function SearchBar() {
+  const [search, setSearch] = useState("");
+
   return (
     <section id="searchArea">
-      <form onSubmit={Search} id="searchBar">
-        <input type="text" placeholder="Digite sua pesquisa" id="searchInput" />
+      <form id="searchBar">
+        <input
+          type="text"
+          placeholder="Digite sua pesquisa"
+          id="searchInput"
+          onChange={(e) => setSearch(e.target.value)}
+        />
         <button type="submit" id="searchBtn">
-          <img src="./img/pesquisa.png" alt="pesq" width="20px" />
+          <i className="bi bi-search"></i>
         </button>
       </form>
+      {search && <div className="">{search}</div>}
     </section>
   );
 }

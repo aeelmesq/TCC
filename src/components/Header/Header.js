@@ -1,32 +1,24 @@
-
-import '../../StyleComponenst/Header.css';
-import DbButton from './DbButton.js';
-import MenuItem from './Menu.js';
-import pages from "../../consts/Pages.js";
-
+import "../../StyleComponents/Header.css";
+import DbButton from "./DbButton.js";
+import Menu from "./Menu.js";
+import logo from "../../img/logo512.png";
 
 function Header() {
   return (
-    <header>
-      <div id="left">
-        <img src="./img/logo512.png" alt="Logo" width="60px" />
+    <header id="webHeader">
+      <section id="left">
+        <img src={logo} alt="Logo" width="60px" />
         <h1>ALT</h1>
-      </div>
-      <div id="right">
-        <ul className="menu">
-          {pages.map((itens, index) => {
-            return (
-              <MenuItem link={itens.menu} output={itens.name} index={index} />
-            );
-          })}
-        </ul>
+      </section>
+      <section id="right">
+        <Menu />
         <DbButton
           link1={"?menu=SingIn"}
           output1={"Sing In"}
           link2={"?menu=Register"}
           output2={"Reister"}
         />
-      </div>
+      </section>
     </header>
   );
 }

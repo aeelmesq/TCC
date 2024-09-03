@@ -1,0 +1,15 @@
+@keyframes rot {
+    0%{
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+footer {
+    border-top: 1px solid #d9d9d9;
+}
+#logo {
+    cursor: pointer;
+    animation: rot 5s linear infinite;
+}

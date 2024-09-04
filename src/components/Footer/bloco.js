@@ -11,22 +11,31 @@ const linkBloco2 = [
 ];
 const linkBloco3 = [{ name: 'Blog' }, { name: 'Colors' }];
 
-function List() {
-  const listItems = linkBloco1.map((link) => (
+function ListItens({ block }) {
+  return block.map((link) => (
     <li key={link.name}>
-      <a href="#">{link.name}</a>
+      <a href={link.name}>{link.name}</a>
     </li>
   ));
-  return <ul>{listItems}</ul>;
+}
+
+function List({ title, nameBlock }) {
+  return (
+    <div>
+      <h1>{title}</h1>
+      <ul>
+        <ListItens block={nameBlock} />
+      </ul>
+    </div>
+  );
 }
 
 export default function Bloco() {
   return (
     <div>
-      <h1>Título</h1>
-      <div>
-        <List />
-      </div>
+      <List title="Nos contate" nameBlock={linkBlock1} />
+      <List title="teste" nameBlock={linkBlock2} />
+      <List title="teste" nameBlock={linkBlock3} />
     </div>
   );
 }

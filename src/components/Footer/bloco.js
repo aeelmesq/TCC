@@ -1,15 +1,15 @@
-const linkBloco1 = [
-  { name: 'UI Design' },
-  { name: 'UX Design' },
-  { name: 'Wireframe' },
-  { name: 'Diagramming' },
+const linkBlock1 = [
+  { name: "UI Design" },
+  { name: "UX Design" },
+  { name: "Wireframe" },
+  { name: "Diagramming" },
 ];
-const linkBloco2 = [
-  { name: 'Design' },
-  { name: 'Prototyping' },
-  { name: 'Dev' },
+const linkBlock2 = [
+  { name: "Design" },
+  { name: "Prototyping" },
+  { name: "Dev" },
 ];
-const linkBloco3 = [{ name: 'Blog' }, { name: 'Colors' }];
+const linkBlock3 = [{ name: "Blog" }, { name: "Colors" }];
 
 function ListItens({ block }) {
   return block.map((link) => (

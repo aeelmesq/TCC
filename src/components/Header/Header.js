@@ -13,9 +13,9 @@ function Header() {
       <section id="right">
         <Menu />
         <DbButton
-          link1={"?menu=SingIn"}
+          link1={"?menu=SingIn&page=2"}
           output1={"Sing In"}
-          link2={"?menu=Register"}
+          link2={"?menu=Register&page=2"}
           output2={"Reister"}
         />
       </section>

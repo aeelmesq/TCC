@@ -14,7 +14,7 @@ function SearchBar() {
           onChange={(e) => setSearch(e.target.value)}
         />
         <button type="submit" id="searchBtn">
-          <i class="bi bi-search"></i>
+          <i className="bi bi-search"></i>
         </button>
       </form>
       {search && <div className="">{search}</div>}

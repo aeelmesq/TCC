@@ -1,7 +1,8 @@
-import { getUlrParam } from '../utilits';
-import pages from '../../consts/Pages';
-import Home from './Home/Home';
-import '../../StyleComponents/Pages.css';
+import { getUlrParam } from "../utilits.js";
+import pages from "../../consts/Pages";
+import Home from "./Home/Home";
+import "../../StyleComponents/Pages.css";
+import ForYou from "./ForYou/ForYou.js";
 
 function getPageSelect(str) {
   let pageSelect = pages.filter((page) => page.menu === (str ? str : 'Home'));
@@ -18,9 +19,9 @@ function RenderPage() {
     switch (pageSelect.title) {
       case 'Home':
         return <Home />;
-      case 'Para você':
-        return <p>Trabalhando nisso</p>;
-      case 'Preferências':
+      case "Para você":
+        return <ForYou />;
+      case "Preferências":
         return <p>Trabalhando nisso</p>;
       case 'Penápolis':
         return <p>Trabalhando nisso</p>;

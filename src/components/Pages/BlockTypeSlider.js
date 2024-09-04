@@ -6,11 +6,13 @@ export default function BlockTypeSlider() {
 
   const [sliderPosition, setSliderPosition] = useState(0);
 
-  function Card({ title }) {
+  const [maxScrollLeft, setMaxScrollLeft] = useState(4000);
+
+  function Card({ title, color }) {
     return (
       <>
         <div className="card">
-          <header>
+          <header style={{ backgroundColor: color }}>
             <h3>{title}</h3>
           </header>
         </div>
@@ -18,31 +20,42 @@ export default function BlockTypeSlider() {
     );
   }
   const moveToLeft = (e) => {
-    e.preventDefault();
-    slider.current.scrollLeft -= slider.current.offsetWidth;
-    setSliderPosition(slider.current.scrollLeft - slider.current.offsetWidth);
+    e.preventDefault();erPosition(slider.current.scrollLeft + slider.current.offsetWidth);
+    slider.current.scrollLeft -= slider.current.offsetWidth / 3;
+    setSliderPosition(
+      slider.current.scrollLeft - slider.current.offsetWidth / 3
+    );
   };
   const moveToRight = (e) => {
     e.preventDefault();
-    slider.current.scrollLeft += slider.current.offsetWidth;
-    setSliderPosition(slider.current.scrollLeft + slider.current.offsetWidth);
+    setMaxScrollLeft(slider.current.scrollWidth - slider.current.clientWidth);
+    slider.current.scrollLeft += slider.current.offsetWidth / 3;
+    setSliderPosition(
+      slider.current.scrollLeft + slider.current.offsetWidth / 3
+    );
   };
 
   return (
     <>
       <section className="block">
-        {sliderPosition > 0 && (
-          <button className="btnLeft" onClick={moveToLeft}>
-            <i class="bi bi-caret-left-fill"></i>
-          </button>
-        )}
+        <button
+          className={sliderPosition > 0 ? "btnLeft" : "btnLeft btnOf"}
+          onClick={moveToLeft}
+        >
+          <i className="bi bi-caret-left-fill"></i>
+        </button>
         <div className="mainCont" ref={slider}>
           {categorias.map((item, index) => {
-            return <Card title={item.title} />;
+            return <Card title={item.title} color={item.color} />;
           })}
         </div>
-        <button className="btnRight" onClick={moveToRight}>
-          <i class="bi bi-caret-right-fill"></i>
+        <button
+          className={
+            sliderPosition <= maxScrollLeft ? "btnRight" : "btnRight btnOf"
+          }
+          onClick={moveToRight}
+        >
+          <i className="bi bi-caret-right-fill"></i>
         </button>
       </section>
       <hr />

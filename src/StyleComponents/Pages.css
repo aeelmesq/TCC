@@ -1,66 +1,69 @@
-.block{
-    background-color: #d9d9d9;
-    width: 100%;
-    min-height: 800px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    margin: 15px 0;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+.block {
+  background-color: #d9d9d9;
+  width: 100%;
+  min-height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: 15px 0;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 .mainCont {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 99%;
-    height: 800px;
-    overflow: hidden;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    overflow: scroll;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 95%;
+  height: 800px;
+  overflow: hidden;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  overflow: scroll;
 }
 .mainCont::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 .card {
-    width: calc(33.33% - 10px);
-    height: 755px;
-    background-color: white;
-    margin: 5px;
-    border-radius: 10px;
-    flex: none;
+  width: 31%;
+  height: 755px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 10px;
+  flex: none;
 }
 .card header {
-    padding: 10px;
-    height: 20px;
-    border-radius: 10px 10px 0 0;
+  padding: 10px;
+  height: 30px;
+  border-radius: 10px 10px 0 0;
+  background-color: red;
 }
-.btnLeft, .btnRight {
-    width: 70px;
-    position: absolute;
-    height: 70px;
-    font-size: 15pt;
-    background-color: rgba(238, 238, 238, 0.8);
-    border: none;
-    z-index: 0;
-    transition: 0.5s;
-    cursor: pointer;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.btnLeft,
+.btnRight {
+  width: 70px;
+  position: absolute;
+  height: 70px;
+  font-size: 15pt;
+  background-color: rgba(238, 238, 238, 0.8);
+  border: none;
+  z-index: 0;
+  transition: 0.7s;
+  cursor: pointer;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.btnLeft, .btnRight:hover {
-    opacity: 0.7;
+.btnLeft,
+.btnRight:hover {
+  opacity: 0.8;
 }
 .btnLeft {
-    right: 85vw;
+  right: 86vw;
 }
 .btnRight {
-    left: 85vw;
+  left: 86vw;
 }
-.btnOf{
-    opacity: 0;
-    visibility: hidden;
+.btnOf {
+  visibility: hidden;
 }

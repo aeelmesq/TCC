@@ -1,15 +1,12 @@
-import BlockType1 from "../BlockType1";
-import BlockTypeSlider from "../BlockTypeSlider";
+import BlocoPrincipal from './BlocoHome/blocoPrincipal';
 
 function Home() {
   return (
-    <>
-      <h1>HOME</h1>
-      <section id="Home">
-        <BlockType1 />
-        <BlockTypeSlider />
-      </section>
-    </>
+    <section className="block">
+      <BlocoPrincipal />
+      <BlocoPrincipal />
+      <BlocoPrincipal />
+    </section>
   );
 }
 

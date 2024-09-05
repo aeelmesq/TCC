@@ -22,6 +22,8 @@ function RenderPage() {
         return <p>Trabalhando nisso</p>;
       case "Brasil":
         return <p>Trabalhando nisso</p>;
+      case null:
+        return <Home />;
       default:
         return <p>404 Not found</p>;
     }

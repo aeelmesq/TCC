@@ -46,7 +46,6 @@
   font-size: 15pt;
   background-color: rgba(238, 238, 238, 0.8);
   border: none;
-  z-index: 0;
   transition: 0.7s;
   cursor: pointer;
   border-radius: 100%;

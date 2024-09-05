@@ -1,3 +1,11 @@
+@keyframes slideDow {
+    0%{
+        top: -50px;
+    }
+    100%{
+        top: 0;
+    }
+}
 #webHeader {
     width: 100%;
     height: 70px;
@@ -5,6 +13,8 @@
     border-bottom: 1px solid #d9d9d9;
     align-items: center;
     transition: 0.9s;
+    background-color: white;
+    transition: 0.7s;
 }
 #left {
     width: 40%;
@@ -46,4 +56,8 @@
 .on {
     background-color: #f6f6f6;
     transition: 0.7s;
+}
+.FixedHeader {
+    position: fixed;
+    animation: slideDow 0.3s linear;
 }

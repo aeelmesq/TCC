@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 body {
   font: normal 12pt Arial;
@@ -30,4 +31,8 @@ body {
   color: black;
   background: none;
   border: 1px solid black;
+}
+.hidden {
+  opacity: 0.1;
+  visibility: hidden;
 }

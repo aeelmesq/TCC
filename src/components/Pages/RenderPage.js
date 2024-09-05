@@ -1,33 +1,26 @@
 import { getUlrParam } from "../utilits.js";
-import pages from "../../consts/Pages";
 import Home from "./Home/Home";
 import "../../StyleComponents/Pages.css";
 import ForYou from "./ForYou/ForYou.js";
-
-function getPageSelect(str) {
-  let pageSelect = pages.filter((page) => page.menu === (str ? str : 'Home'));
-
-  return pageSelect[0];
-}
+import BtnScrollUp from "../BtnScrollUp/BtnScrollUp.js";
 
 function RenderPage() {
-  let menuSelect = getUlrParam('menu'),
-    pageSelect = getPageSelect(menuSelect);
+  let menuSelect = getUlrParam("menu");
 
   function Render() {
     //Chamada da página com base na Url
-    switch (pageSelect.title) {
-      case 'Home':
+    switch (menuSelect) {
+      case "Home":
         return <Home />;
-      case "Para você":
+      case "ParaVoce":
         return <ForYou />;
-      case "Preferências":
+      case "Preferencias":
         return <p>Trabalhando nisso</p>;
-      case 'Penápolis':
+      case "Penapolis":
         return <p>Trabalhando nisso</p>;
-      case 'Região':
+      case "Regiao":
         return <p>Trabalhando nisso</p>;
-      case 'Brasil':
+      case "Brasil":
         return <p>Trabalhando nisso</p>;
       default:
         return <p>404 Not found</p>;
@@ -35,9 +28,12 @@ function RenderPage() {
   }
 
   return (
-    <main className="container">
-      <Render />
-    </main>
+    <>
+      <main className="container">
+        <Render />
+      </main>
+      <BtnScrollUp />
+    </>
   );
 }
 

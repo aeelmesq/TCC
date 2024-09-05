@@ -5,19 +5,45 @@ import Footer from "./components/Footer/Footer.js";
 import RenderPage from "./components/Pages/RenderPage.js";
 import { getUlrParam } from "./components/utilits.js";
 
-function fullPage() {
+function FullPage() {
   const page = getUlrParam("page");
+
+  switch (page) {
+    case "1":
+      return (
+        <>
+          <Header />
+          <SearchBar />
+          <RenderPage />
+          <div>
+            <Footer />
+          </div>
+        </>
+      );
+    case "2":
+      return (
+        <>
+          <RenderPage />
+        </>
+      );
+    default:
+      return (
+        <>
+          <Header />
+          <SearchBar />
+          <RenderPage />
+          <div>
+            <Footer />
+          </div>
+        </>
+      );
+  }
 }
 
 function App() {
   return (
     <>
-      <Header />
-      <SearchBar />
-      <RenderPage />
-      <div>
-        <Footer />
-      </div>
+      <FullPage />
     </>
   );
 }

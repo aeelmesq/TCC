@@ -26,7 +26,7 @@ export default function Login(renderScreen) {
         </div>
       </header>
       <section id="mainSection">
-        <div>
+        <div id="mainBlock">
           <RenderForm />
         </div>
       </section>

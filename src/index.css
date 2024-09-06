@@ -12,11 +12,22 @@ body {
   width: 76%;
   margin: 0 12%;
 }
+.DbBtn {
+  display: flex;
+}
 .DbBtn .btn1 a{
   background-color: #e4e4e4;
   border: 1px solid #acacac;
   transition: 0.7s;
   color: black;
+}
+.btn1, .btn2 {
+  list-style: none;
+}
+.btn1 a, .btn2 a{
+  padding: 7px;
+  border-radius: 10px;
+  text-decoration: none;
 }
 .DbBtn .btn2 a{
   background-color: black;

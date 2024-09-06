@@ -7,14 +7,23 @@ import { useState } from "react";
 function Header() {
   const [windonwScrollY, setWindonwScrollY] = useState(0);
 
+  const [windonwScrollYTpr, setWindonwScrollYTpr] = useState(0);
+
   window.addEventListener("scroll", () => {
+    setWindonwScrollYTpr(windonwScrollY);
     setWindonwScrollY(window.scrollY);
   });
 
   return (
     <header
       id="webHeader"
-      className={windonwScrollY > 100 ? "FixedHeader" : "none"}
+      className={
+        windonwScrollY > 0
+          ? windonwScrollY < windonwScrollYTpr
+            ? "FixedHeader"
+            : "upSideHeader"
+          : "none"
+      }
     >
       <section id="left">
         <img src={logo} alt="Logo" width="60px" />

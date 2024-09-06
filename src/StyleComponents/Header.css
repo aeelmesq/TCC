@@ -1,9 +1,21 @@
 @keyframes slideDow {
     0%{
-        top: -50px;
+        top: -100px;
+        transition: 0.7s;
     }
     100%{
         top: 0;
+        transition: 0.7s;
+    }
+}
+@keyframes slideUp {
+    0%{
+        top: 0;
+        transition: 0.7s;
+    }
+    100%{
+        top: -100px;
+        transition: 0.7s;
     }
 }
 #webHeader {
@@ -15,6 +27,7 @@
     transition: 0.9s;
     background-color: white;
     transition: 0.7s;
+    z-index: 0;
 }
 #left {
     width: 40%;
@@ -59,5 +72,10 @@
 }
 .FixedHeader {
     position: fixed;
-    animation: slideDow 0.3s linear;
+    animation: slideDow 0.18s linear;
+}
+.upSideHeader {
+    position: fixed;
+    top: -70px;
+    animation: slideUp 0.2s linear;
 }

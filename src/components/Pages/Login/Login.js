@@ -1,12 +1,12 @@
 import logo from "../../../img/logo512.png";
 import "../../../StyleComponents/LoginPage.css";
-//import SingIn from "./SingIn/SingIn";
+import SingIn from "./SingIn/SingIn";
 
 export default function Login(renderScreen) {
   function RenderForm() {
     return (
       <>
-        <p>teste</p>
+        <SingIn />
       </>
     );
   }

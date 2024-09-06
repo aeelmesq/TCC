@@ -1,4 +1,5 @@
-export default function FormCreate(formType) {
+import { formType } from "./Forms";
+export default function FormCreate({ formOfType }) {
   function CreateInput(title, ofType) {
     return (
       <div>
@@ -10,7 +11,7 @@ export default function FormCreate(formType) {
 
   formType = typeof formType === typeof [{}] ? formType : [{}];
 
-  const allInputs = formType.map((item, index) => {
+  const allInputs = formType[formOfType].map((item, index) => {
     return <CreateInput title={item.title} ofType={item.ofType} />;
   });
 

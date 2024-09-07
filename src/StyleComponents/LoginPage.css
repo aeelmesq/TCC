@@ -45,8 +45,10 @@
 #FormLogin {
     text-align: center;
     margin: auto;
+    display: flex;
+    align-items: center;
     width: 100%;
-    height: 100%;
+    min-height: 350px;
 }
 #FormLogin ul {
     width: 100%;
@@ -70,13 +72,43 @@
     justify-content: left;
     flex-wrap: wrap;
     margin: 10px 0;
-    width: 60%;
+    width: 65%;
 }
-.FormDiv input {
-    border-radius: 10px;
-    padding: 7px 0;
+.contCenter {
+    justify-content: center;
     width: 100%;
+}
+.inputGroup {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: right;
+}
+.inputGroup i {
+    z-index: 0;
+    margin-right: 2px ;
+    padding: 5px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid #acacac;
+    position: absolute;
+    transition: 0.7s;
+    cursor: pointer;
+}
+.inputGroup input {
+    border-radius: 12px;
+    padding: 8px 5px;
+    width: 100%;
+    transition: 0.7s;
+    display: flex;
+    align-items: center;
     border: 1px solid #acacac;
+}
+textarea:focus, .inputGroup input:focus {
+    outline: none;
+    border: 1px solid blue;
 }
 #FormHeader {
     width: 100%;
@@ -91,12 +123,12 @@
 #GoogleBtn {
     padding: 7px;
     border-radius: 10px;
-    border: 1px solid #acacac;
+    border: 1px solid black;
     background: none;
+    font-size: 11pt;
     width: 300px;
     text-align: center;
-    margin: 15px 0;
-    transition: 0.7s;
+    transition: ease-in-out 0.5s;
     cursor: pointer;
 }
 #GoogleBtn i {
@@ -105,4 +137,21 @@
 #GoogleBtn:hover {
     background-color: black;
     color: white;
+}
+#submmitBtn {
+    padding: 6px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    font-size: 12pt;
+    transition: ease-in-out 0.5s;
+}
+#submmitBtn:hover {
+    background: none;
+    color: black;
+}
+hr {
+    width: 100%;
 }

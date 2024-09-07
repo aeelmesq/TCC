@@ -1,14 +1,31 @@
 import logo from "../../../img/logo512.png";
 import "../../../StyleComponents/LoginPage.css";
 import SingIn from "./SingIn/SingIn";
+import { getUlrParam } from "../../utilits";
 
 export default function Login(renderScreen) {
+  const menuSelect = getUlrParam("menu");
   function RenderForm() {
-    return (
-      <>
-        <SingIn />
-      </>
-    );
+    switch (menuSelect) {
+      case "SingIn":
+        return (
+          <>
+            <SingIn />
+          </>
+        );
+      case "Register":
+        return (
+          <>
+            <p>Coming Soon</p>
+          </>
+        );
+      default:
+        return (
+          <>
+            <p>404 not found</p>
+          </>
+        );
+    }
   }
 
   return (

@@ -1,20 +1,21 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 export default function FormSingIn() {
   const [inputType, setInputType] = useState("password");
-  const btnEye = useRef(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   function clickEye(e) {
     e.preventDefault();
     if (inputType === "password") {
       setInputType("text");
-      btnEye.current.classList.remove("bi-eye-slash-fill");
-      btnEye.current.classList.add("bi-eye-fill");
+      e.target.classList.remove("bi-eye-slash-fill");
+      e.target.classList.add("bi-eye-fill");
       return;
     }
     setInputType("password");
-    btnEye.current.classList.remove("bi-eye-fill");
-    btnEye.current.classList.add("bi-eye-slash-fill");
+    e.target.classList.remove("bi-eye-fill");
+    e.target.classList.add("bi-eye-slash-fill");
   }
 
   return (
@@ -22,19 +23,28 @@ export default function FormSingIn() {
       <article className="FormDiv">
         <label htmlFor="Email">Email:</label>
         <div className="inputGroup">
-          <input type="email" name="Email" id="Email" required autoFocus />
+          <input
+            type="email"
+            name="Email"
+            id="Email"
+            required
+            autoFocus
+            onChange={(e) => setEmail(e.target.value)}
+          />
           <i className="bi bi-envelope-at"></i>
         </div>
       </article>
       <article className="FormDiv">
         <label htmlFor="pass">Senha:</label>
         <div className="inputGroup">
-          <input type={inputType} name="pass" id="pass" required />
-          <i
-            ref={btnEye}
-            className="bi bi-eye-slash-fill"
-            onClick={(e) => clickEye(e)}
-          ></i>
+          <input
+            type={inputType}
+            name="pass"
+            id="pass"
+            required
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <i className="bi bi-eye-slash-fill" onClick={(e) => clickEye(e)}></i>
         </div>
       </article>
       <article className="FormDiv">

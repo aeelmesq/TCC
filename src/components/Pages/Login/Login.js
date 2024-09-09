@@ -2,6 +2,7 @@ import logo from "../../../img/logo512.png";
 import "../../../StyleComponents/LoginPage.css";
 import SingIn from "./SingIn/SingIn";
 import { getUlrParam } from "../../utilits";
+import Register from "./Register/Register";
 
 export default function Login(renderScreen) {
   const menuSelect = getUlrParam("menu");
@@ -16,7 +17,7 @@ export default function Login(renderScreen) {
       case "Register":
         return (
           <>
-            <p>Coming Soon</p>
+            <Register />
           </>
         );
       default:

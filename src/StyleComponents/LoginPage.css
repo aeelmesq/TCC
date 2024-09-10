@@ -42,12 +42,14 @@
     border: 1px solid #acacac;
     border-radius: 10px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.308);
+    overflow: hidden;
 }
 #FormLogin {
     text-align: center;
     margin: auto;
     display: flex;
     align-items: center;
+    overflow: hidden;
     width: 100%;
     min-height: 350px;
 }

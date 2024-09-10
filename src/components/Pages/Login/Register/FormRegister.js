@@ -116,6 +116,9 @@ export default function FormRegister() {
           >
             <p>A senha precisa ter 8 ou mais caracters</p>
           </article>
+          {
+            //Input de confirmação de senha
+          }
           <article className="FormDiv">
             <label htmlFor="confirmPass">Confirmar senha:</label>
             <div className="inputGroup">

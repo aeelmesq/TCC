@@ -34,7 +34,7 @@ export default function Login(renderScreen) {
       <header id="leftBar">
         <div>
           <a href="?menu=Home&page=1">
-            <i class="bi bi-caret-left-fill"></i>
+            <i className="bi bi-caret-left-fill"></i>
             Voltar
           </a>
         </div>

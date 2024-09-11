@@ -12,7 +12,43 @@ export default function FormRegister() {
     Name: "",
     Email: "",
     password: "",
+    Errors: {
+      Name: "",
+      Email: "",
+      password: "",
+    },
   });
+
+  function confirmInfos() {
+    let mailSplit = formInfos.Email.split("");
+
+    if (formInfos.Name.length > 0) {
+      if (formInfos.Email.length > 0) {
+        if (mailSplit.includes("@") && mailSplit.includes(".")) {
+          setFormInfos((prevInfos) => ({
+            ...prevInfos,
+            Errors: { Name: "", Email: "" },
+          }));
+          setRegisterStage(2);
+          return;
+        }
+        setFormInfos((prevInfos) => ({
+          ...prevInfos,
+          Errors: { Name: "", Email: "Email invalido" },
+        }));
+        return;
+      }
+      setFormInfos((prevInfos) => ({
+        ...prevInfos,
+        Errors: { Name: "", Email: "Digite o email" },
+      }));
+      return;
+    }
+    setFormInfos((prevInfos) => ({
+      ...prevInfos,
+      Errors: { Name: "Digite o nome", Email: "" },
+    }));
+  }
 
   return (
     <>
@@ -27,6 +63,7 @@ export default function FormRegister() {
               <input
                 type="text"
                 name="Nome"
+                value={formInfos.Name}
                 id="Nome"
                 required
                 autoFocus
@@ -39,6 +76,11 @@ export default function FormRegister() {
               <i className="bi bi-person-fill"></i>
             </div>
           </article>
+          {formInfos.Errors.Name && (
+            <article className="FormDiv warning">
+              <p>{formInfos.Errors.Name}</p>
+            </article>
+          )}
           {
             //campo de email
           }
@@ -48,6 +90,7 @@ export default function FormRegister() {
               <input
                 type="email"
                 name="Email"
+                value={formInfos.Email}
                 id="Email"
                 required
                 onChange={(e) =>
@@ -59,15 +102,27 @@ export default function FormRegister() {
               <i className="bi bi-envelope-at"></i>
             </div>
           </article>
+          {formInfos.Errors.Email && (
+            <article className="FormDiv warning">
+              <p>{formInfos.Errors.Email}</p>
+            </article>
+          )}
           {
-            //botão de registra a conta
-            //mudar depois para continuar
+            //botão de continuar
           }
+          <article className="FormDiv">
+            <p>
+              já possue uma <a href="?menu=SingIn&page=2">conta?</a>
+            </p>
+          </article>
+          <article className="FormDiv contCenter">
+            <hr />
+          </article>
           <article className="FormDiv contCenter">
             <button
               type="button"
               id="submmitBtn"
-              onClick={(e) => setRegisterStage(2)}
+              onClick={(e) => confirmInfos()}
             >
               Continuar
             </button>
@@ -76,8 +131,7 @@ export default function FormRegister() {
       ) : (
         <form>
           {
-            //campo de senha provisorio,
-            //vou colocar em outra seção da pagina register com um input de comfirmar senha
+            //campo de senha
           }
           <article className="FormDiv">
             <label htmlFor="pass">Senha:</label>
@@ -86,6 +140,7 @@ export default function FormRegister() {
                 type={passType}
                 name="pass"
                 id="pass"
+                value={formInfos.password}
                 required
                 min={8}
                 onChange={(e) =>
@@ -127,6 +182,7 @@ export default function FormRegister() {
                 type={confPassType}
                 name="confirmPass"
                 id="confirmPass"
+                value=""
                 required
                 min={8}
               />
@@ -139,6 +195,38 @@ export default function FormRegister() {
                 }
               ></i>
             </div>
+          </article>
+          <article className="FormDiv">
+            <p>
+              já possue uma <a href="?menu=SingIn&page=2">conta?</a>
+            </p>
+          </article>
+          <article className="FormDiv contCenter">
+            <hr />
+          </article>
+          {
+            //botão de voltar para a primeira parte do cadastro
+          }
+          <article className="FormDiv contCenter">
+            <button
+              type="button"
+              id="prevBtn"
+              onClick={(e) => setRegisterStage(1)}
+            >
+              Voltar
+            </button>
+            {
+              //botão de criação de registro
+            }
+            <button
+              type="button"
+              id="submmitBtn"
+              onClick={(e) => {
+                console.log(formInfos);
+              }}
+            >
+              Criar
+            </button>
           </article>
         </form>
       )}

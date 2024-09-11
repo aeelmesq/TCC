@@ -1,17 +1,17 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { clickEye } from "../../../utilits";
 
 export default function FormRegister() {
   const [passType, setPassType] = useState("password");
   const [confPassType, setConfPassType] = useState("password");
   const [registerStage, setRegisterStage] = useState(1);
-  const confirmPassword = useRef(null);
 
-  //State que contém as infos de registro
+  //State que contém as infos do form
   const [formInfos, setFormInfos] = useState({
     Name: "",
     Email: "",
     password: "",
+    comfimPassword: "",
     Errors: {
       Name: "",
       Email: "",
@@ -19,6 +19,29 @@ export default function FormRegister() {
     },
   });
 
+  //função que valida a senha passada pelo usúario
+  function verifiPassword() {
+    if (formInfos.password.length >= 8) {
+      if (formInfos.password === formInfos.comfimPassword) {
+        window.location = `./?menu=Home&modal=teste,${formInfos.Name},ok`;
+        return;
+      }
+      setFormInfos((prevInfos) => ({
+        ...prevInfos,
+        Errors: { ...prevInfos.Errors, password: "Confirme sua senha!" },
+      }));
+      return;
+    }
+    setFormInfos((prevInfos) => ({
+      ...prevInfos,
+      Errors: {
+        ...prevInfos.Errors,
+        password: "A senha precisa ter 8 ou mais caracters!",
+      },
+    }));
+  }
+
+  //função que valida o Nome e o Email passado pelo usúario
   function confirmInfos() {
     let mailSplit = formInfos.Email.split("");
 
@@ -27,26 +50,26 @@ export default function FormRegister() {
         if (mailSplit.includes("@") && mailSplit.includes(".")) {
           setFormInfos((prevInfos) => ({
             ...prevInfos,
-            Errors: { Name: "", Email: "" },
+            Errors: { ...prevInfos.Errors, Name: "", Email: "" },
           }));
           setRegisterStage(2);
           return;
         }
         setFormInfos((prevInfos) => ({
           ...prevInfos,
-          Errors: { Name: "", Email: "Email invalido" },
+          Errors: { ...prevInfos.Errors, Name: "", Email: "Email invalido" },
         }));
         return;
       }
       setFormInfos((prevInfos) => ({
         ...prevInfos,
-        Errors: { Name: "", Email: "Digite o email" },
+        Errors: { ...prevInfos.Errors, Name: "", Email: "Digite o email" },
       }));
       return;
     }
     setFormInfos((prevInfos) => ({
       ...prevInfos,
-      Errors: { Name: "Digite o nome", Email: "" },
+      Errors: { ...prevInfos.Errors, Name: "Digite o nome", Email: "" },
     }));
   }
 
@@ -161,28 +184,26 @@ export default function FormRegister() {
           </article>
           {
             //alerta de invalit password
-          }
-          <article
-            className={
-              formInfos.password.length < 8
-                ? "FormDiv warning"
-                : "FormDiv warning disable"
-            }
-          >
-            <p>A senha precisa ter 8 ou mais caracters</p>
-          </article>
-          {
+            formInfos.Errors.password && (
+              <article className="FormDiv warning">
+                <p>{formInfos.Errors.password}</p>
+              </article>
+            )
             //Input de confirmação de senha
           }
           <article className="FormDiv">
             <label htmlFor="confirmPass">Confirmar senha:</label>
             <div className="inputGroup">
               <input
-                ref={confirmPassword}
                 type={confPassType}
                 name="confirmPass"
                 id="confirmPass"
-                value=""
+                onChange={(e) =>
+                  setFormInfos((prevFormInfos) => {
+                    return { ...prevFormInfos, comfimPassword: e.target.value };
+                  })
+                }
+                value={formInfos.comfimPassword}
                 required
                 min={8}
               />
@@ -218,13 +239,7 @@ export default function FormRegister() {
             {
               //botão de criação de registro
             }
-            <button
-              type="button"
-              id="submmitBtn"
-              onClick={(e) => {
-                console.log(formInfos);
-              }}
-            >
+            <button type="button" id="submmitBtn" onClick={verifiPassword}>
               Criar
             </button>
           </article>

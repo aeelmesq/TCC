@@ -8,21 +8,21 @@
 #searchBar {
     display: flex;
     justify-content: center;
-    height: 30px;
+    height: 35px;
     width: 75%;
 }
 #searchInput {
-    border-radius: 12px 0 0 12px;
+    border-radius: 15px 0 0 15px;
     border: 1px solid #acacac;
-    width: 440px;
+    width: 480px;
     padding: 0 0 0 7px;
     transition: 0.9s;
 }
 #searchBtn {
-    width: 50px;
+    width: 60px;
     background: none;
     border: 1px solid #acacac;
-    border-radius: 0 12px 12px 0;
+    border-radius: 0 15px 15px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +36,8 @@
 #searchInput:hover {
     border: 1px solid blue;
 }
-#searchInput:focus-visible {
+#searchInput:focus {
+    outline: none;
     border: 1px solid blue;
     color: blue;
 }

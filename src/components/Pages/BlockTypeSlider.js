@@ -20,7 +20,7 @@ export default function BlockTypeSlider() {
     );
   }
   const moveToLeft = (e) => {
-    e.preventDefault();erPosition(slider.current.scrollLeft + slider.current.offsetWidth);
+    e.preventDefault();
     slider.current.scrollLeft -= slider.current.offsetWidth / 3;
     setSliderPosition(
       slider.current.scrollLeft - slider.current.offsetWidth / 3

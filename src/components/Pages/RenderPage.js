@@ -1,43 +1,64 @@
 import { getUlrParam } from "../utilits.js";
-import pages from "../../consts/Pages";
 import Home from "./Home/Home";
 import "../../StyleComponents/Pages.css";
 import ForYou from "./ForYou/ForYou.js";
-
-function getPageSelect(str) {
-  let pageSelect = pages.filter((page) => page.menu === (str ? str : 'Home'));
-
-  return pageSelect[0];
-}
+import BtnScrollUp from "../BtnScrollUp/BtnScrollUp.js";
+import Login from "./Login/Login.js";
 
 function RenderPage() {
-  let menuSelect = getUlrParam('menu'),
-    pageSelect = getPageSelect(menuSelect);
+  let menuSelect = getUlrParam("menu");
 
   function Render() {
     //Chamada da página com base na Url
-    switch (pageSelect.title) {
-      case 'Home':
-        return <Home />;
-      case "Para você":
-        return <ForYou />;
-      case "Preferências":
+    switch (menuSelect) {
+      case "Home":
+        return (
+          <>
+            <main className="container">
+              <Home />
+            </main>
+            <BtnScrollUp />
+          </>
+        );
+      case "ParaVoce":
+        return (
+          <>
+            <main className="container">
+              <ForYou />
+            </main>
+            <BtnScrollUp />
+          </>
+        );
+      case "Preferencias":
         return <p>Trabalhando nisso</p>;
-      case 'Penápolis':
+      case "Penapolis":
         return <p>Trabalhando nisso</p>;
-      case 'Região':
+      case "Regiao":
         return <p>Trabalhando nisso</p>;
-      case 'Brasil':
+      case "Brasil":
         return <p>Trabalhando nisso</p>;
+      case "SingIn":
+        return <Login renderScreen={"SingIn"} />;
+      case "Register":
+        return <Login renderScreen={"Register"} />;
+      case null:
+        return (
+          <>
+            <main className="container">
+              <Home />
+            </main>
+            <BtnScrollUp />
+          </>
+        );
       default:
         return <p>404 Not found</p>;
     }
   }
 
   return (
-    <main className="container">
+    <>
       <Render />
-    </main>
+    </>
   );
 }
 

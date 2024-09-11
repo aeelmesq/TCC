@@ -1,1 +1,19 @@
-
+#BtnScrollUp {
+    position: fixed;
+    height: 70px;
+    width: 70px;
+    background-color: rgba(238, 238, 238, 0.8);
+    border-radius: 100%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.9s;
+    cursor: pointer;
+    font-size: 17pt;
+    left: calc(100vw - 100px);
+    top: calc(100vh - 80px);
+}
+#BtnScrollUp {
+    opacity: 0.7;
+}

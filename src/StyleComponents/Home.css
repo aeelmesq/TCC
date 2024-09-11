@@ -1,7 +1,6 @@
 .principalCard {
   width: 100%;
   display: flex;
-  padding: 60px;
 }
 
 .left {
@@ -23,5 +22,5 @@
   list-style: none;
   background-color: white;
   margin: 10px;
-  padding: 20px;
+  padding: 30px;
 }

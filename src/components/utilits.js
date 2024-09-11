@@ -11,3 +11,17 @@ export function getUlrParam(Param) {
     Params = url.searchParams.get(Param);
   return Params;
 }
+
+//função de abilitar e desabilitar hidden password
+export function clickEye(e, { state = { value: "", setValue: () => {} } }) {
+  e.preventDefault();
+  if (state.value === "password") {
+    state.setValue("text");
+    e.target.classList.remove("bi-eye-slash-fill");
+    e.target.classList.add("bi-eye-fill");
+    return;
+  }
+  state.setValue("password");
+  e.target.classList.remove("bi-eye-fill");
+  e.target.classList.add("bi-eye-slash-fill");
+}

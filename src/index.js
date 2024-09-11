@@ -3,11 +3,18 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+//import { createBrowserRouter } from "react-router-dom";
+//mudar sistema de paginação depois da finalização das páginas principais
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const myQueryCient = new QueryClient();
+
 root.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={myQueryCient}>
+      <App />
+    </QueryClientProvider>
   </React.StrictMode>
 );
 // If you want to start measuring performance in your app, pass a function

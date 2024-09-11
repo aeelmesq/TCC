@@ -1,11 +1,15 @@
-import BlocoPrincipal from './BlocoHome/blocoPrincipal';
+import BlocoPrincipal from './components/blocoPrincipal';
+import BlocoRight from './components/blocoRight';
 
 function Home() {
   return (
-    <section className="block">
-      <BlocoPrincipal />
-      <BlocoPrincipal />
-      <BlocoPrincipal />
+    <section className="principalBlock mainContent">
+      <div className="block">
+        <BlocoPrincipal />
+      </div>
+      <aside className="asideBlock">
+        <BlocoRight />
+      </aside>
     </section>
   );
 }

@@ -109,9 +109,13 @@
     align-items: center;
     border: 1px solid #acacac;
 }
+.inputGroup input:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 255, 0.712);
+}
 textarea:focus, .inputGroup input:focus {
     outline: none;
     border: 1px solid blue;
+    box-shadow: 1px 1px 5px blue;
 }
 #FormHeader {
     width: 100%;

@@ -1,25 +1,25 @@
-import { useState } from "react";
+import { useRef } from "react";
 
-export default function Modal({ title, msg, innerBtn }) {
-  const [modalState, setModalState] = useState(true);
+export default function Modal({ title, msg }) {
+  const modalSection = useRef(null);
+
+  function exitModal() {
+    modalSection.current.classList.add("hidden");
+  }
 
   return (
     <>
-      {modalState && (
-        <section className="modalSection">
-          <div className="modalBlock">
-            <div>
-              <h2>{title}</h2>
-            </div>
-            <main className="modalBody">
-              <p>{msg}</p>
-            </main>
-            <div className="modalEnd">
-              <button onClick={setModalState(false)}>{innerBtn}</button>
-            </div>
+      <section className="modalSection" ref={modalSection}>
+        <div className="modalBlock">
+          <div className="modalHead">
+            <h2>{title}</h2>
+            <button onClick={exitModal}>X</button>
           </div>
-        </section>
-      )}
+          <main className="modalBody">
+            <p>{msg}</p>
+          </main>
+        </div>
+      </section>
     </>
   );
 }

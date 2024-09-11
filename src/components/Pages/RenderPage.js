@@ -11,9 +11,10 @@ function RenderPage() {
   let modalInfos = getUlrParam("modal");
 
   function ModalRender() {
-    console.log(modalInfos);
-    let infos = modalInfos.split(",");
-    return <Modal title={infos[0]} msg={infos[1]} innerBtn={infos[2]} />;
+    if (modalInfos) {
+      let infos = modalInfos.split(";");
+      return <Modal title={infos[0]} msg={infos[1]} />;
+    }
   }
 
   function Render() {
@@ -66,7 +67,7 @@ function RenderPage() {
   return (
     <>
       <Render />
-      <Modal title={"teste"} msg={"hello world"} innerBtn={"ok"} />
+      <ModalRender />
     </>
   );
 }

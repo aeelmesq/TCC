@@ -23,7 +23,8 @@ export default function FormRegister() {
   function verifiPassword() {
     if (formInfos.password.length >= 8) {
       if (formInfos.password === formInfos.comfimPassword) {
-        window.location = `./?menu=Home&modal=teste,${formInfos.Name},ok`;
+        let msg = `Olá ,${formInfos.Name}`;
+        window.location = `./?menu=Home&modal=Menssagem;${msg}`;
         return;
       }
       setFormInfos((prevInfos) => ({

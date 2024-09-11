@@ -1,14 +1,13 @@
 import NoticiasSecundarias from './noticiasSecundarias';
 import NoticiaPrincipal from './noticiaPrincipal';
 import '../../../../StyleComponents/Home.css';
-import { noticias } from '../data.js';
 
-export default function BlocoPrincipal({ size = 250 }) {
+export default function BlocoPrincipal({ size = 250, data }) {
   return (
     <>
       <div className="principalCard">
         <NoticiaPrincipal size={size} />
-        <NoticiasSecundarias data={noticias} />
+        <NoticiasSecundarias data={data} />
       </div>
       <hr />
     </>

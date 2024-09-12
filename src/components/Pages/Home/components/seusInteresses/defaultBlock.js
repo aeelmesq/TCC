@@ -1,9 +1,9 @@
 import BlocoInteresses from './seusInteresses';
 import { noticias } from '../../data';
 
-export default function SeusInteresses({ title }) {
+export default function SeusInteresses({ title, style }) {
   return (
-    <div>
+    <div className={style}>
       <h1>{title}</h1>
       <div className="asideBlock">
         <div className="block">

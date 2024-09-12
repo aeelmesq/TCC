@@ -1,3 +1,7 @@
+.sectionBlock {
+  margin-bottom: 20px;
+}
+
 .principalCard {
   width: 100%;
   display: grid;
@@ -28,8 +32,8 @@
   border-radius: 10px;
   list-style: none;
   background-color: white;
-  padding: 30px;
   width: auto;
+  padding: 30px;
 }
 
 .principalBlock {
@@ -38,7 +42,6 @@
   grid-template-columns: 2fr 1fr;
   column-gap: 20px;
 }
-
 .principalBlock > div {
   width: auto;
 }

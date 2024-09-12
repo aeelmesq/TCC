@@ -5,9 +5,9 @@ import SuasNoticias from './components/suasNoticias/defaultBlock';
 function Home() {
   return (
     <section>
-      <SuasNoticias title="Suas Notícias" />
-      <SeusInteresses title="Seus Interesses" />
-      <SeusAssuntos title="Seus Assuntos" />
+      <SuasNoticias title="Suas Notícias" style="sectionBlock" />
+      <SeusInteresses title="Seus Interesses" style="sectionBlock" />
+      <SeusAssuntos title="Seus Assuntos" style="sectionBlock" />
     </section>
   );
 }

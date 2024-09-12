@@ -1,11 +1,11 @@
 import BlockTypeSlider from '../../../BlockTypeSlider';
 
-export default function SeusAssuntos({ title }) {
+export default function SeusAssuntos({ title, style }) {
   return (
-    <div>
+    <div className={style}>
       <h1>{title}</h1>
       <div className="block">
-        <div>
+        <div style={{ marginRight: 'auto' }}>
           <h2>Assuntos</h2>
           <h3>Sugestão de assuntos</h3>
         </div>

@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { clickEye } from "../../../utilits";
+import CreateInput from "../CreateInput";
 
 export default function FormSingIn() {
   const [inputType, setInputType] = useState("password");
@@ -11,20 +12,15 @@ export default function FormSingIn() {
       {
         //campo de email
       }
-      <article className="FormDiv">
-        <label htmlFor="Email">Email:</label>
-        <div className="inputGroup">
-          <input
-            type="email"
-            name="Email"
-            id="Email"
-            required
-            autoFocus
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <i className="bi bi-envelope-at"></i>
-        </div>
-      </article>
+      <CreateInput
+        title={"Email"}
+        name={"userEmail"}
+        ofType={"email"}
+        setValue={setEmail}
+        initValue={email}
+        icon={"bi bi-envelope-at"}
+        firstFocus={true}
+      />
       {
         //campo de senha
       }

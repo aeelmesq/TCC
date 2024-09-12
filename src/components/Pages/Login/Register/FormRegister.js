@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { clickEye } from "../../../utilits";
+import Modal from "../../../Modal/Modal.js";
 
 export default function FormRegister() {
   const [passType, setPassType] = useState("password");
@@ -10,6 +11,7 @@ export default function FormRegister() {
   const [formInfos, setFormInfos] = useState({
     Name: "",
     Email: "",
+    terms: false,
     password: "",
     comfimPassword: "",
     Errors: {
@@ -49,11 +51,14 @@ export default function FormRegister() {
     if (formInfos.Name.length > 0) {
       if (formInfos.Email.length > 0) {
         if (mailSplit.includes("@") && mailSplit.includes(".")) {
-          setFormInfos((prevInfos) => ({
-            ...prevInfos,
-            Errors: { ...prevInfos.Errors, Name: "", Email: "" },
-          }));
-          setRegisterStage(2);
+          if (formInfos.terms) {
+            setFormInfos((prevInfos) => ({
+              ...prevInfos,
+              Errors: { ...prevInfos.Errors, Name: "", Email: "" },
+            }));
+            setRegisterStage(2);
+            return;
+          }
           return;
         }
         setFormInfos((prevInfos) => ({
@@ -131,6 +136,22 @@ export default function FormRegister() {
               <p>{formInfos.Errors.Email}</p>
             </article>
           )}
+          <article className="FormDiv">
+            <input
+              type="checkbox"
+              name="terms"
+              id="terms"
+              checked={formInfos.terms}
+              onClick={(e) =>
+                setFormInfos((prevInfos) => {
+                  return { ...prevInfos, terms: e.target.checked };
+                })
+              }
+            />
+            <label htmlFor="terms">
+              Concordo com todos os <button type="button">Termos de uso</button>
+            </label>
+          </article>
           {
             //botão de continuar
           }

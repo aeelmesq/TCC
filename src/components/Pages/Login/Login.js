@@ -30,7 +30,7 @@ export default function Login({ renderScreen }) {
   return (
     <main id="LoginPage">
       <header id="leftBar">
-        <div>
+        <div id="backBtn">
           <a href="?menu=Home&page=1">
             <i className="bi bi-caret-left-fill"></i>
             Voltar

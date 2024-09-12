@@ -77,6 +77,13 @@
     margin: 10px 0;
     width: 65%;
 }
+.FormDiv a {
+    color: blue;
+    text-decoration: none;
+}
+.FormDiv a:hover {
+    text-decoration:underline;
+}
 .contCenter {
     justify-content: center;
     width: 100%;
@@ -110,12 +117,12 @@
     border: 1px solid #acacac;
 }
 .inputGroup input:hover {
-    box-shadow: 1px 1px 5px rgba(0, 0, 255, 0.712);
+    box-shadow: 1px 1px 5px rgba(7, 106, 199, 0.72);
 }
 textarea:focus, .inputGroup input:focus {
     outline: none;
     border: 1px solid blue;
-    box-shadow: 1px 1px 5px blue;
+    box-shadow: 1px 1px 5px rgb(7, 106, 199);
 }
 #FormHeader {
     width: 100%;
@@ -175,4 +182,19 @@ hr {
 .disable {
     opacity: 0;
     display: none;
+}
+@media screen and (max-width: 1030px) {
+    #leftBar {
+        display: none;
+    }
+    #mainSection {
+        width: 100%;
+    }
+    #backBtn {
+        display: block;
+        position: fixed;
+        visibility: visible;
+        top: 0;
+        left: 0;
+    }
 }

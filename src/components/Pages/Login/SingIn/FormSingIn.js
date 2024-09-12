@@ -7,6 +7,10 @@ export default function FormSingIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  useEffect(() => {
+    console.log(email);
+  }, [email]);
+
   return (
     <form>
       {
@@ -24,26 +28,20 @@ export default function FormSingIn() {
       {
         //campo de senha
       }
-      <article className="FormDiv">
-        <label htmlFor="pass">Senha:</label>
-        <div className="inputGroup">
-          <input
-            type={inputType}
-            name="pass"
-            id="pass"
-            required
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <i
-            className="bi bi-eye-slash-fill"
-            onClick={(e) =>
-              clickEye(e, {
-                state: { value: inputType, setValue: setInputType },
-              })
-            }
-          ></i>
-        </div>
-      </article>
+      <CreateInput
+        title={"Senha"}
+        name={"userPass"}
+        ofType={inputType}
+        setValue={setPassword}
+        initValue={password}
+        icon={"bi bi-eye-slash-fill"}
+        firstFocus={false}
+        clickIcon={(e) =>
+          clickEye(e, {
+            state: { value: inputType, setValue: setInputType },
+          })
+        }
+      />
       {
         //link para página register
       }

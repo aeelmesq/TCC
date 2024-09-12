@@ -2,10 +2,11 @@ export default function CreateInput({
   title,
   Name,
   ofType,
-  setValue,
+  setValue = () => {},
   initValue,
   icon,
   firstFocus,
+  clickIcon = () => {},
 }) {
   return (
     <>
@@ -20,7 +21,7 @@ export default function CreateInput({
             autoFocus={firstFocus}
             onChange={(e) => setValue(e.target.value)}
           />
-          <i className={icon}></i>
+          <i className={icon} onClick={clickIcon}></i>
         </div>
       </article>
     </>

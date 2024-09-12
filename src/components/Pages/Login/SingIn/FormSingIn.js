@@ -20,7 +20,7 @@ export default function FormSingIn() {
         title={"Email"}
         name={"userEmail"}
         ofType={"email"}
-        setValue={setEmail}
+        setValue={(e) => setEmail(e.target.value)}
         initValue={email}
         icon={"bi bi-envelope-at"}
         firstFocus={true}
@@ -32,7 +32,7 @@ export default function FormSingIn() {
         title={"Senha"}
         name={"userPass"}
         ofType={inputType}
-        setValue={setPassword}
+        setValue={(e) => setPassword(e.target.value)}
         initValue={password}
         icon={"bi bi-eye-slash-fill"}
         firstFocus={false}

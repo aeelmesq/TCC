@@ -19,7 +19,7 @@ export default function CreateInput({
             value={initValue}
             id={Name}
             autoFocus={firstFocus}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={setValue}
           />
           <i className={icon} onClick={clickIcon}></i>
         </div>

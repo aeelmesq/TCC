@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { clickEye } from "../../../utilits";
-import Modal from "../../../Modal/Modal.js";
+import CreateInput from "../CreateInput";
 
 export default function FormRegister() {
   const [passType, setPassType] = useState("password");
@@ -86,25 +86,19 @@ export default function FormRegister() {
           {
             //campo de nome
           }
-          <article className="FormDiv">
-            <label htmlFor="Nome">Nome:</label>
-            <div className="inputGroup">
-              <input
-                type="text"
-                name="Nome"
-                value={formInfos.Name}
-                id="Nome"
-                required
-                autoFocus
-                onChange={(e) =>
-                  setFormInfos((prevFormInfos) => {
-                    return { ...prevFormInfos, Name: e.target.value };
-                  })
-                }
-              />
-              <i className="bi bi-person-fill"></i>
-            </div>
-          </article>
+          <CreateInput
+            title={"Nome"}
+            Name={"userName"}
+            ofType={"text"}
+            setValue={(e) =>
+              setFormInfos((prevFormInfos) => {
+                return { ...prevFormInfos, Name: e.target.value };
+              })
+            }
+            initValue={formInfos.Name}
+            icon={"bi bi-person-fill"}
+            firstFocus={true}
+          />
           {formInfos.Errors.Name && (
             <article className="FormDiv warning">
               <p>{formInfos.Errors.Name}</p>
@@ -113,24 +107,19 @@ export default function FormRegister() {
           {
             //campo de email
           }
-          <article className="FormDiv">
-            <label htmlFor="Email">Email:</label>
-            <div className="inputGroup">
-              <input
-                type="email"
-                name="Email"
-                value={formInfos.Email}
-                id="Email"
-                required
-                onChange={(e) =>
-                  setFormInfos((prevFormInfos) => {
-                    return { ...prevFormInfos, Email: e.target.value };
-                  })
-                }
-              />
-              <i className="bi bi-envelope-at"></i>
-            </div>
-          </article>
+          <CreateInput
+            title={"Email"}
+            Name={"userEmail"}
+            ofType={"email"}
+            setValue={(e) =>
+              setFormInfos((prevFormInfos) => {
+                return { ...prevFormInfos, Email: e.target.value };
+              })
+            }
+            initValue={formInfos.Email}
+            icon={"bi bi-envelope-at"}
+            firstFocus={false}
+          />
           {formInfos.Errors.Email && (
             <article className="FormDiv warning">
               <p>{formInfos.Errors.Email}</p>
@@ -178,32 +167,24 @@ export default function FormRegister() {
           {
             //campo de senha
           }
-          <article className="FormDiv">
-            <label htmlFor="pass">Senha:</label>
-            <div className="inputGroup">
-              <input
-                type={passType}
-                name="pass"
-                id="pass"
-                value={formInfos.password}
-                required
-                min={8}
-                onChange={(e) =>
-                  setFormInfos((prevFormInfos) => {
-                    return { ...prevFormInfos, password: e.target.value };
-                  })
-                }
-              />
-              <i
-                className="bi bi-eye-slash-fill"
-                onClick={(e) =>
-                  clickEye(e, {
-                    state: { value: passType, setValue: setPassType },
-                  })
-                }
-              ></i>
-            </div>
-          </article>
+          <CreateInput
+            title={"Senha"}
+            Name={"userPassword"}
+            ofType={passType}
+            setValue={(e) =>
+              setFormInfos((prevFormInfos) => {
+                return { ...prevFormInfos, password: e.target.value };
+              })
+            }
+            initValue={formInfos.password}
+            icon={"bi bi-eye-slash-fill"}
+            firstFocus={false}
+            clickIcon={(e) =>
+              clickEye(e, {
+                state: { value: passType, setValue: setPassType },
+              })
+            }
+          />
           {
             //alerta de invalit password
             formInfos.Errors.password && (
@@ -213,32 +194,24 @@ export default function FormRegister() {
             )
             //Input de confirmação de senha
           }
-          <article className="FormDiv">
-            <label htmlFor="confirmPass">Confirmar senha:</label>
-            <div className="inputGroup">
-              <input
-                type={confPassType}
-                name="confirmPass"
-                id="confirmPass"
-                onChange={(e) =>
-                  setFormInfos((prevFormInfos) => {
-                    return { ...prevFormInfos, comfimPassword: e.target.value };
-                  })
-                }
-                value={formInfos.comfimPassword}
-                required
-                min={8}
-              />
-              <i
-                className="bi bi-eye-slash-fill"
-                onClick={(e) =>
-                  clickEye(e, {
-                    state: { value: confPassType, setValue: setConfPassType },
-                  })
-                }
-              ></i>
-            </div>
-          </article>
+          <CreateInput
+            title={"Confirmar Senha"}
+            Name={"confirmPassword"}
+            ofType={confPassType}
+            setValue={(e) =>
+              setFormInfos((prevFormInfos) => {
+                return { ...prevFormInfos, comfimPassword: e.target.value };
+              })
+            }
+            initValue={formInfos.comfimPassword}
+            icon={"bi bi-eye-slash-fill"}
+            firstFocus={false}
+            clickIcon={(e) =>
+              clickEye(e, {
+                state: { value: confPassType, setValue: setConfPassType },
+              })
+            }
+          />
           <article className="FormDiv">
             <p>
               já possue uma <a href="?menu=SingIn&page=2">conta?</a>

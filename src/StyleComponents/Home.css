@@ -5,12 +5,13 @@
   column-gap: 10px;
 }
 
-.left {
+.pNoticia {
   float: left;
   background-color: white;
   padding: 20px;
+  border-radius: 10px;
 }
-.left > a {
+.pNoticia > a {
   display: flex;
   flex-direction: column;
 }
@@ -18,7 +19,13 @@
 .sNoticias {
   width: 100%;
 }
+.sNoticias > ul {
+  display: grid;
+  column-gap: 10px;
+  row-gap: 10px;
+}
 .sNoticias > ul > li {
+  border-radius: 10px;
   list-style: none;
   background-color: white;
   padding: 30px;

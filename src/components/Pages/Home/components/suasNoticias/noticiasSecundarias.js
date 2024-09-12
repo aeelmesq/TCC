@@ -1,11 +1,11 @@
-import { formatarSite } from '../../../utilits';
+import { formatarSite } from '../../../../utilits';
 
-export default function SeusInteresses({ data }) {
-  const noticias = Array.isArray(data) ? [...data] : [];
+export default function NoticiasSecundarias({ data }) {
+  const noticias = Array.isArray(data) ? [...data].slice(1, 4) : [];
 
   return (
-    <div className="sNoticias" id="blockInteresse">
-      <ul id="columnInteresse">
+    <div className="sNoticias">
+      <ul>
         {noticias.map((noticia, index) => (
           <li key={index}>
             <div>

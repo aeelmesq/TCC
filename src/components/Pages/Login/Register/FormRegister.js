@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { clickEye } from "../../../utilits";
 import CreateInput from "../CreateInput";
+import WarningAlert from "../WarningAlert";
 
 export default function FormRegister() {
   const [passType, setPassType] = useState("password");
@@ -18,6 +19,8 @@ export default function FormRegister() {
       Name: "",
       Email: "",
       password: "",
+      comfimPassword: "",
+      terms: "",
     },
   });
 
@@ -31,7 +34,11 @@ export default function FormRegister() {
       }
       setFormInfos((prevInfos) => ({
         ...prevInfos,
-        Errors: { ...prevInfos.Errors, password: "Confirme sua senha!" },
+        Errors: {
+          ...prevInfos.Errors,
+          password: "",
+          comfimPassword: "Confirme sua senha!",
+        },
       }));
       return;
     }
@@ -54,28 +61,52 @@ export default function FormRegister() {
           if (formInfos.terms) {
             setFormInfos((prevInfos) => ({
               ...prevInfos,
-              Errors: { ...prevInfos.Errors, Name: "", Email: "" },
+              Errors: { ...prevInfos.Errors, Name: "", Email: "", terms: "" },
             }));
             setRegisterStage(2);
             return;
           }
+          setFormInfos((prevInfos) => ({
+            ...prevInfos,
+            Errors: {
+              ...prevInfos.Errors,
+              Name: "",
+              Email: "",
+              terms: "É necessario concordar com os termos",
+            },
+          }));
           return;
         }
         setFormInfos((prevInfos) => ({
           ...prevInfos,
-          Errors: { ...prevInfos.Errors, Name: "", Email: "Email invalido" },
+          Errors: {
+            ...prevInfos.Errors,
+            Name: "",
+            Email: "Email invalido",
+            terms: "",
+          },
         }));
         return;
       }
       setFormInfos((prevInfos) => ({
         ...prevInfos,
-        Errors: { ...prevInfos.Errors, Name: "", Email: "Digite o email" },
+        Errors: {
+          ...prevInfos.Errors,
+          Name: "",
+          Email: "Digite o email",
+          terms: "",
+        },
       }));
       return;
     }
     setFormInfos((prevInfos) => ({
       ...prevInfos,
-      Errors: { ...prevInfos.Errors, Name: "Digite o nome", Email: "" },
+      Errors: {
+        ...prevInfos.Errors,
+        Name: "Digite o nome",
+        Email: "",
+        terms: "",
+      },
     }));
   }
 
@@ -99,12 +130,10 @@ export default function FormRegister() {
             icon={"bi bi-person-fill"}
             firstFocus={true}
           />
-          {formInfos.Errors.Name && (
-            <article className="FormDiv warning">
-              <p>{formInfos.Errors.Name}</p>
-            </article>
-          )}
           {
+            formInfos.Errors.Name && (
+              <WarningAlert alert={formInfos.Errors.Name} />
+            )
             //campo de email
           }
           <CreateInput
@@ -121,9 +150,7 @@ export default function FormRegister() {
             firstFocus={false}
           />
           {formInfos.Errors.Email && (
-            <article className="FormDiv warning">
-              <p>{formInfos.Errors.Email}</p>
-            </article>
+            <WarningAlert alert={formInfos.Errors.Email} />
           )}
           <article className="FormDiv">
             <input
@@ -142,6 +169,9 @@ export default function FormRegister() {
             </label>
           </article>
           {
+            formInfos.Errors.terms && (
+              <WarningAlert alert={formInfos.Errors.terms} />
+            )
             //botão de continuar
           }
           <article className="FormDiv">
@@ -188,9 +218,7 @@ export default function FormRegister() {
           {
             //alerta de invalit password
             formInfos.Errors.password && (
-              <article className="FormDiv warning">
-                <p>{formInfos.Errors.password}</p>
-              </article>
+              <WarningAlert alert={formInfos.Errors.password} />
             )
             //Input de confirmação de senha
           }
@@ -212,6 +240,9 @@ export default function FormRegister() {
               })
             }
           />
+          {formInfos.Errors.comfimPassword && (
+            <WarningAlert alert={formInfos.Errors.comfimPassword} />
+          )}
           <article className="FormDiv">
             <p>
               já possue uma <a href="?menu=SingIn&page=2">conta?</a>

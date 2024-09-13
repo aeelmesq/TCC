@@ -183,6 +183,25 @@ hr {
     opacity: 0;
     display: none;
 }
+#terms {
+    cursor: pointer;
+}
+#prevBtn {
+    border-radius: 10px;
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+    padding: 6px 12px;
+    font-size: 12pt;
+    transition: 0.7s;
+}
+#prevBtn:hover {
+    background-color: black;
+    color: white;
+}
+.contCenter button {
+    margin: 7px;
+}
 @media screen and (max-width: 1030px) {
     #leftBar {
         display: none;

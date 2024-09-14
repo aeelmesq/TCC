@@ -6,31 +6,34 @@ const select = getUlrParam("menu") ? getUlrParam("menu") : "Home";
 
 function MenuItem({ link, output, index }) {
   return (
-    <li className="MenuItem">
-      <a
-        href={"?menu=" + link}
-        key={index}
-        className={link === select ? "on" : "of"}
-      >
-        {output}
-      </a>
-    </li>
+    <>
+      <li className="MenuItem">
+        <a
+          href={"?menu=" + link}
+          key={index}
+          className={link === select ? "on" : "of"}
+        >
+          {output}
+        </a>
+      </li>
+    </>
   );
 }
 
 function Menu() {
   const menu = useRef(null);
+  const btn = useRef(null);
 
-  function MenuAction(e) {
-    if (e.checked) {
-      menu.current.style.visibility = "visible";
-      e.classList.remove("bi-list");
-      e.classList.add("bi-x-lg");
+  function MenuAction(target) {
+    if (target.checked) {
+      menu.current.classList.remove("hiddenM");
+      btn.current.classList.remove("bi-list");
+      btn.current.classList.add("bi-x-lg");
       return;
     }
-    menu.current.style.visibility = "hidden";
-    e.classList.remove("bi-x-lg");
-    e.classList.add("bi-list");
+    menu.current.classList.add("hiddenM");
+    btn.current.classList.remove("bi-x-lg");
+    btn.current.classList.add("bi-list");
   }
 
   let menuItens = pages.map((page, index) => {
@@ -39,16 +42,16 @@ function Menu() {
   return (
     <>
       <label htmlFor="menuBtn" className="hanbBtn">
-        <i class="bi bi-list"></i>
+        <i class="bi bi-list" ref={btn}></i>
       </label>
       <input
         type="checkbox"
         name="menuBtn"
         id="menuBtn"
         className="hidden"
-        onChange={(e) => MenuAction(e)}
+        onChange={(e) => MenuAction(e.target)}
       />
-      <ul className="menu" ref={menu}>
+      <ul className="menu hiddenM" ref={menu}>
         {menuItens}
       </ul>
     </>

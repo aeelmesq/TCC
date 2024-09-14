@@ -86,11 +86,35 @@
     .hanbBtn {
         visibility: visible;
         cursor: pointer;
+        z-index: 100;
+        color: black;
     }
     .menu {
-        visibility: hidden;
         display: inline;
         position: absolute;
         background-color: white;
+        height: 300px;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .MenuItem {
+        width: 100%;
+        margin: 0;
+        padding: 1px;
+    }
+    .menu a {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        border-radius: 7px;
+    }
+    .hiddenM {
+        display: none;
+        visibility: hidden;
+        overflow: hidden;
+        width: 0;
+        height: 0;
     }
 }

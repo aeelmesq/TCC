@@ -18,12 +18,20 @@
         transition: 0.7s;
     }
 }
-@keyframes slideRightScreen {
+@keyframes slideLeftScreen {
     0% {
         transform: translateX(100vw);
     }
     100% {
-        transform: translateX(200px);
+        transform: translateX(0);
+    }
+}
+@keyframes slideRigthScreen {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100vw);
     }
 }
 #webHeader {
@@ -51,6 +59,11 @@
     align-items: center;
     height: 100%;
     justify-content: right;
+}
+#navBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #right ul{
     display: flex;
@@ -90,15 +103,32 @@
 .hanbBtn {
     visibility: hidden;
 }
-@media screen and (max-width: 885px) {
+.xBtn {
+    display: none;
+}
+@media screen and (max-width: 880px) {
     .hanbBtn {
         visibility: visible;
+        cursor: pointer;
+        font-size: 20pt;
+        color: black;
+        background: none;
+        border: none;
+        margin: 0 15px 0 0;
+    }
+    .xBtn {
+        display: block;
         cursor: pointer;
         z-index: 100;
         font-size: 15pt;
         color: black;
+        background: none;
+        border: none;
     }
     .menu {
+        border-bottom: 1px solid white;
+    }
+    #navBar {
         z-index: 0;
         display: inline;
         position: fixed;
@@ -106,38 +136,44 @@
         background-color: rgb(53, 53, 53);
         height: 100vh;
         align-items: center;
-        width: 200px;
+        width: 250px;
         justify-content: center;
         flex-wrap: wrap;
     }
-    .MenuItem {
+    #navBar ul {
+        display: inline;
         width: 100%;
-        margin: 70px;
-        padding: 1px;
-    }
-    .menu a {
+        text-align: right;
         margin: 0;
+    }
+    #navBar ul a {
         width: 100%;
-        text-align: center;
-        border-radius: 7px;
-    }
-    .hiddenM {
-        animation: slideRightScreen 2s linear;
-        display: none;
-        visibility: hidden;
-        overflow: hidden;
-    }
-    .xRight {
-        position: fixed;
-        top: 0;
-        padding: 5px;
-        right: 0;
-        transition: 0.7s;
+        padding: 3px;
+        background: none;
+        border: none;
+        color: black;
+        padding: 7px 10px;
+        font-size: 14pt;
+        margin: 0;
+        transition: 0.3s;
     }
     .on {
-        background-color: blue;
+        background-color: rgba(236, 236, 236, 0.466);
     }
-    .xRight:hover {
+    #navBar ul a:hover {
+        background-color: rgba(236, 236, 236, 0.466);
+    }
+    .slideToLeft {
+        animation: slideLeftScreen 0.3s linear;
+    }
+    .hiddenM {
+        overflow: hidden;
+        animation: slideRigthScreen 0.5s linear;
+        transition: 0.5s;
+        position: fixed;
+        transform: translateX(100vw);
+    }
+    .xBtn:hover {
         background-color: red;
     }
 }

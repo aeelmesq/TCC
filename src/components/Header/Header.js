@@ -9,6 +9,8 @@ function Header() {
 
   const [windonwScrollYTpr, setWindonwScrollYTpr] = useState(0);
 
+  const [menuState, setMenuState] = useState(null);
+
   window.addEventListener("scroll", () => {
     setWindonwScrollYTpr(windonwScrollY);
     setWindonwScrollY(window.scrollY);
@@ -30,13 +32,38 @@ function Header() {
         <h1>ALT</h1>
       </section>
       <section id="right">
-        <Menu />
-        <DbButton
-          link1={"?menu=SingIn&page=2"}
-          output1={"Sing In"}
-          link2={"?menu=Register&page=2"}
-          output2={"Reister"}
-        />
+        <button
+          className="hanbBtn"
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            setMenuState(true);
+          }}
+        >
+          <i className="bi bi-list"></i>
+        </button>
+        <div
+          id="navBar"
+          className={menuState ? "slideToLeft" : "slideReverse hiddenM"}
+        >
+          <button
+            className="xBtn"
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              setMenuState(false);
+            }}
+          >
+            X
+          </button>
+          <Menu />
+          <DbButton
+            link1={"?menu=SingIn&page=2"}
+            output1={"Sing In"}
+            link2={"?menu=Register&page=2"}
+            output2={"Reister"}
+          />
+        </div>
       </section>
     </header>
   );

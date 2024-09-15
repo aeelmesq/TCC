@@ -18,6 +18,14 @@
         transition: 0.7s;
     }
 }
+@keyframes slideRightScreen {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(200px);
+    }
+}
 #webHeader {
     width: 100%;
     height: 70px;
@@ -30,14 +38,14 @@
     z-index: 0;
 }
 #left {
-    width: 20%;
+    width: 12%;
     display: flex;
     float: left;
     height: 100%;
     align-items: center;
 }
 #right {
-    width: 80%;
+    width: 96%;
     display: flex;
     float: right;
     align-items: center;
@@ -82,26 +90,29 @@
 .hanbBtn {
     visibility: hidden;
 }
-@media screen and (max-width: 948px) {
+@media screen and (max-width: 885px) {
     .hanbBtn {
         visibility: visible;
         cursor: pointer;
         z-index: 100;
+        font-size: 15pt;
         color: black;
     }
     .menu {
+        z-index: 0;
         display: inline;
-        position: absolute;
-        background-color: white;
-        height: 300px;
+        position: fixed;
+        top: 0;
+        background-color: rgb(53, 53, 53);
+        height: 100vh;
         align-items: center;
-        width: 100%;
+        width: 200px;
         justify-content: center;
         flex-wrap: wrap;
     }
     .MenuItem {
         width: 100%;
-        margin: 0;
+        margin: 70px;
         padding: 1px;
     }
     .menu a {
@@ -111,10 +122,22 @@
         border-radius: 7px;
     }
     .hiddenM {
+        animation: slideRightScreen 2s linear;
         display: none;
         visibility: hidden;
         overflow: hidden;
-        width: 0;
-        height: 0;
+    }
+    .xRight {
+        position: fixed;
+        top: 0;
+        padding: 5px;
+        right: 0;
+        transition: 0.7s;
+    }
+    .on {
+        background-color: blue;
+    }
+    .xRight:hover {
+        background-color: red;
     }
 }

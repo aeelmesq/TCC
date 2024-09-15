@@ -25,15 +25,17 @@ function Menu() {
   const btn = useRef(null);
 
   function MenuAction(target) {
-    if (target.checked) {
+    if (target) {
       menu.current.classList.remove("hiddenM");
       btn.current.classList.remove("bi-list");
       btn.current.classList.add("bi-x-lg");
+      btn.current.classList.add("xRight");
       return;
     }
     menu.current.classList.add("hiddenM");
     btn.current.classList.remove("bi-x-lg");
     btn.current.classList.add("bi-list");
+    btn.current.classList.remove("xRight");
   }
 
   let menuItens = pages.map((page, index) => {
@@ -49,7 +51,7 @@ function Menu() {
         name="menuBtn"
         id="menuBtn"
         className="hidden"
-        onChange={(e) => MenuAction(e.target)}
+        onChange={(e) => MenuAction(e.target.checked)}
       />
       <ul className="menu hiddenM" ref={menu}>
         {menuItens}

@@ -2,7 +2,7 @@ import "../../StyleComponents/Header.css";
 import DbButton from "./DbButton.js";
 import Menu from "./Menu.js";
 import logo from "../../img/logo512.png";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 function Header() {
   const [windonwScrollY, setWindonwScrollY] = useState(0);
@@ -17,6 +17,15 @@ function Header() {
     setWindonwScrollYTpr(windonwScrollY);
     setWindonwScrollY(window.scrollY);
   });
+
+  useEffect(() => {
+    if (menuState) {
+      const menu = document.getElementById("navBar");
+
+      menu.addEventListener("mouseleave", () => setMenuState(false));
+      return;
+    }
+  }, [menuState]);
 
   return (
     <header

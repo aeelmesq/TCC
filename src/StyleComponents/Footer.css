@@ -1,15 +1,32 @@
 @keyframes rot {
-    0%{
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 footer {
-    border-top: 1px solid #d9d9d9;
+  border-top: 1px solid #d9d9d9;
+  width: 100%;
+  height: calc(100vh - 300px);
 }
 #logo {
-    cursor: pointer;
-    animation: rot 5s linear infinite;
+  cursor: pointer;
+  animation: rot 5s linear infinite;
+}
+
+#tRight,
+#tLeft {
+  width: 0;
+  height: 0;
+  border-left: 160px solid transparent;
+  border-right: 160px solid transparent;
+  border-bottom: 160px solid lightblue;
+}
+#tRight {
+  position: relative;
+  right: 0;
+  top: 50px;
+  rotate: 45deg;
 }

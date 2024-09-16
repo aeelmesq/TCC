@@ -22,7 +22,13 @@ function Header() {
     if (menuState) {
       const menu = document.getElementById("navBar");
 
-      menu.addEventListener("mouseleave", () => setMenuState(false));
+      function hiddenM() {
+        setMenuState(false);
+        Btn.current.classList.remove("pressBtn");
+        menu.removeEventListener("mouseleave", hiddenM);
+      }
+
+      menu.addEventListener("mouseleave", hiddenM);
       return;
     }
   }, [menuState]);

@@ -30,14 +30,14 @@
     z-index: 0;
 }
 #left {
-    width: 40%;
+    width: 20%;
     display: flex;
     float: left;
     height: 100%;
     align-items: center;
 }
 #right {
-    width: 60%;
+    width: 80%;
     display: flex;
     float: right;
     align-items: center;
@@ -78,4 +78,19 @@
     position: fixed;
     top: -70px;
     animation: slideUp 0.2s linear;
+}
+.hanbBtn {
+    visibility: hidden;
+}
+@media screen and (max-width: 948px) {
+    .hanbBtn {
+        visibility: visible;
+        cursor: pointer;
+    }
+    .menu {
+        visibility: hidden;
+        display: inline;
+        position: absolute;
+        background-color: white;
+    }
 }

@@ -1,13 +1,11 @@
 import logo from "../../../img/logo512.png";
 import "../../../StyleComponents/LoginPage.css";
 import SingIn from "./SingIn/SingIn";
-import { getUlrParam } from "../../utilits";
 import Register from "./Register/Register";
 
-export default function Login(renderScreen) {
-  const menuSelect = getUlrParam("menu");
+export default function Login({ renderScreen }) {
   function RenderForm() {
-    switch (menuSelect) {
+    switch (renderScreen) {
       case "SingIn":
         return (
           <>
@@ -32,7 +30,7 @@ export default function Login(renderScreen) {
   return (
     <main id="LoginPage">
       <header id="leftBar">
-        <div>
+        <div id="backBtn">
           <a href="?menu=Home&page=1">
             <i className="bi bi-caret-left-fill"></i>
             Voltar

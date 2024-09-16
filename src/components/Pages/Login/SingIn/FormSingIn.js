@@ -1,53 +1,47 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { clickEye } from "../../../utilits";
+import CreateInput from "../CreateInput";
 
 export default function FormSingIn() {
   const [inputType, setInputType] = useState("password");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  useEffect(() => {
+    console.log(email);
+  }, [email]);
+
   return (
     <form>
       {
         //campo de email
       }
-      <article className="FormDiv">
-        <label htmlFor="Email">Email:</label>
-        <div className="inputGroup">
-          <input
-            type="email"
-            name="Email"
-            id="Email"
-            required
-            autoFocus
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <i className="bi bi-envelope-at"></i>
-        </div>
-      </article>
+      <CreateInput
+        title={"Email"}
+        name={"userEmail"}
+        ofType={"email"}
+        setValue={(e) => setEmail(e.target.value)}
+        initValue={email}
+        icon={"bi bi-envelope-at"}
+        firstFocus={true}
+      />
       {
         //campo de senha
       }
-      <article className="FormDiv">
-        <label htmlFor="pass">Senha:</label>
-        <div className="inputGroup">
-          <input
-            type={inputType}
-            name="pass"
-            id="pass"
-            required
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <i
-            className="bi bi-eye-slash-fill"
-            onClick={(e) =>
-              clickEye(e, {
-                state: { value: inputType, setValue: setInputType },
-              })
-            }
-          ></i>
-        </div>
-      </article>
+      <CreateInput
+        title={"Senha"}
+        name={"userPass"}
+        ofType={inputType}
+        setValue={(e) => setPassword(e.target.value)}
+        initValue={password}
+        icon={"bi bi-eye-slash-fill"}
+        firstFocus={false}
+        clickIcon={(e) =>
+          clickEye(e, {
+            state: { value: inputType, setValue: setInputType },
+          })
+        }
+      />
       {
         //link para página register
       }

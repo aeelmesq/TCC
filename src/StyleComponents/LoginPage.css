@@ -77,6 +77,13 @@
     margin: 10px 0;
     width: 65%;
 }
+.FormDiv a {
+    color: blue;
+    text-decoration: none;
+}
+.FormDiv a:hover {
+    text-decoration:underline;
+}
 .contCenter {
     justify-content: center;
     width: 100%;
@@ -109,9 +116,13 @@
     align-items: center;
     border: 1px solid #acacac;
 }
+.inputGroup input:hover {
+    box-shadow: 1px 1px 5px rgba(7, 106, 199, 0.72);
+}
 textarea:focus, .inputGroup input:focus {
     outline: none;
     border: 1px solid blue;
+    box-shadow: 1px 1px 5px rgb(7, 106, 199);
 }
 #FormHeader {
     width: 100%;
@@ -159,7 +170,7 @@ hr {
     width: 100%;
 }
 .warning {
-    background-color: rgba(255, 51, 51, 0.63);
+    background-color: rgba(255, 62, 62, 0.576);
     border-radius: 0 0 5px 5px;
     margin: 0 ;
     width: calc(60% - 3px);
@@ -171,4 +182,38 @@ hr {
 .disable {
     opacity: 0;
     display: none;
+}
+#terms {
+    cursor: pointer;
+}
+#prevBtn {
+    border-radius: 10px;
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+    padding: 6px 12px;
+    font-size: 12pt;
+    transition: 0.7s;
+}
+#prevBtn:hover {
+    background-color: black;
+    color: white;
+}
+.contCenter button {
+    margin: 7px;
+}
+@media screen and (max-width: 1030px) {
+    #leftBar {
+        display: none;
+    }
+    #mainSection {
+        width: 100%;
+    }
+    #backBtn {
+        display: block;
+        position: fixed;
+        visibility: visible;
+        top: 0;
+        left: 0;
+    }
 }

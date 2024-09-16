@@ -1,52 +1,112 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { clickEye } from "../../../utilits";
+import CreateInput from "../CreateInput";
+import WarningAlert from "../WarningAlert";
 
 export default function FormRegister() {
   const [passType, setPassType] = useState("password");
   const [confPassType, setConfPassType] = useState("password");
   const [registerStage, setRegisterStage] = useState(1);
-  const confirmPassword = useRef(null);
 
-  //State que contém as infos de registro
+  //State que contém as infos do form
   const [formInfos, setFormInfos] = useState({
     Name: "",
     Email: "",
+    terms: false,
     password: "",
+    comfimPassword: "",
     Errors: {
       Name: "",
       Email: "",
       password: "",
+      comfimPassword: "",
+      terms: "",
     },
   });
 
+  //função que valida a senha passada pelo usúario
+  function verifiPassword() {
+    if (formInfos.password.length >= 8) {
+      if (formInfos.password === formInfos.comfimPassword) {
+        let msg = `Olá ,${formInfos.Name}`;
+        window.location = `./?menu=Home&modal=Menssagem;${msg}`;
+        return;
+      }
+      setFormInfos((prevInfos) => ({
+        ...prevInfos,
+        Errors: {
+          ...prevInfos.Errors,
+          password: "",
+          comfimPassword: "Confirme sua senha!",
+        },
+      }));
+      return;
+    }
+    setFormInfos((prevInfos) => ({
+      ...prevInfos,
+      Errors: {
+        ...prevInfos.Errors,
+        password: "A senha precisa ter 8 ou mais caracters!",
+      },
+    }));
+  }
+
+  //função que valida o Nome e o Email passado pelo usúario
   function confirmInfos() {
     let mailSplit = formInfos.Email.split("");
 
     if (formInfos.Name.length > 0) {
       if (formInfos.Email.length > 0) {
         if (mailSplit.includes("@") && mailSplit.includes(".")) {
+          if (formInfos.terms) {
+            setFormInfos((prevInfos) => ({
+              ...prevInfos,
+              Errors: { ...prevInfos.Errors, Name: "", Email: "", terms: "" },
+            }));
+            setRegisterStage(2);
+            return;
+          }
           setFormInfos((prevInfos) => ({
             ...prevInfos,
-            Errors: { Name: "", Email: "" },
+            Errors: {
+              ...prevInfos.Errors,
+              Name: "",
+              Email: "",
+              terms: "É necessario concordar com os termos",
+            },
           }));
-          setRegisterStage(2);
           return;
         }
         setFormInfos((prevInfos) => ({
           ...prevInfos,
-          Errors: { Name: "", Email: "Email invalido" },
+          Errors: {
+            ...prevInfos.Errors,
+            Name: "",
+            Email: "Email invalido",
+            terms: "",
+          },
         }));
         return;
       }
       setFormInfos((prevInfos) => ({
         ...prevInfos,
-        Errors: { Name: "", Email: "Digite o email" },
+        Errors: {
+          ...prevInfos.Errors,
+          Name: "",
+          Email: "Digite o email",
+          terms: "",
+        },
       }));
       return;
     }
     setFormInfos((prevInfos) => ({
       ...prevInfos,
-      Errors: { Name: "Digite o nome", Email: "" },
+      Errors: {
+        ...prevInfos.Errors,
+        Name: "Digite o nome",
+        Email: "",
+        terms: "",
+      },
     }));
   }
 
@@ -57,57 +117,61 @@ export default function FormRegister() {
           {
             //campo de nome
           }
-          <article className="FormDiv">
-            <label htmlFor="Nome">Nome:</label>
-            <div className="inputGroup">
-              <input
-                type="text"
-                name="Nome"
-                value={formInfos.Name}
-                id="Nome"
-                required
-                autoFocus
-                onChange={(e) =>
-                  setFormInfos((prevFormInfos) => {
-                    return { ...prevFormInfos, Name: e.target.value };
-                  })
-                }
-              />
-              <i className="bi bi-person-fill"></i>
-            </div>
-          </article>
-          {formInfos.Errors.Name && (
-            <article className="FormDiv warning">
-              <p>{formInfos.Errors.Name}</p>
-            </article>
-          )}
+          <CreateInput
+            title={"Nome"}
+            Name={"userName"}
+            ofType={"text"}
+            setValue={(e) =>
+              setFormInfos((prevFormInfos) => {
+                return { ...prevFormInfos, Name: e.target.value };
+              })
+            }
+            initValue={formInfos.Name}
+            icon={"bi bi-person-fill"}
+            firstFocus={true}
+          />
           {
+            formInfos.Errors.Name && (
+              <WarningAlert alert={formInfos.Errors.Name} />
+            )
             //campo de email
           }
-          <article className="FormDiv">
-            <label htmlFor="Email">Email:</label>
-            <div className="inputGroup">
-              <input
-                type="email"
-                name="Email"
-                value={formInfos.Email}
-                id="Email"
-                required
-                onChange={(e) =>
-                  setFormInfos((prevFormInfos) => {
-                    return { ...prevFormInfos, Email: e.target.value };
-                  })
-                }
-              />
-              <i className="bi bi-envelope-at"></i>
-            </div>
-          </article>
+          <CreateInput
+            title={"Email"}
+            Name={"userEmail"}
+            ofType={"email"}
+            setValue={(e) =>
+              setFormInfos((prevFormInfos) => {
+                return { ...prevFormInfos, Email: e.target.value };
+              })
+            }
+            initValue={formInfos.Email}
+            icon={"bi bi-envelope-at"}
+            firstFocus={false}
+          />
           {formInfos.Errors.Email && (
-            <article className="FormDiv warning">
-              <p>{formInfos.Errors.Email}</p>
-            </article>
+            <WarningAlert alert={formInfos.Errors.Email} />
           )}
+          <article className="FormDiv">
+            <input
+              type="checkbox"
+              name="terms"
+              id="terms"
+              checked={formInfos.terms}
+              onClick={(e) =>
+                setFormInfos((prevInfos) => {
+                  return { ...prevInfos, terms: e.target.checked };
+                })
+              }
+            />
+            <label htmlFor="terms">
+              Concordo com todos os <button type="button">Termos de uso</button>
+            </label>
+          </article>
           {
+            formInfos.Errors.terms && (
+              <WarningAlert alert={formInfos.Errors.terms} />
+            )
             //botão de continuar
           }
           <article className="FormDiv">
@@ -133,69 +197,52 @@ export default function FormRegister() {
           {
             //campo de senha
           }
-          <article className="FormDiv">
-            <label htmlFor="pass">Senha:</label>
-            <div className="inputGroup">
-              <input
-                type={passType}
-                name="pass"
-                id="pass"
-                value={formInfos.password}
-                required
-                min={8}
-                onChange={(e) =>
-                  setFormInfos((prevFormInfos) => {
-                    return { ...prevFormInfos, password: e.target.value };
-                  })
-                }
-              />
-              <i
-                className="bi bi-eye-slash-fill"
-                onClick={(e) =>
-                  clickEye(e, {
-                    state: { value: passType, setValue: setPassType },
-                  })
-                }
-              ></i>
-            </div>
-          </article>
+          <CreateInput
+            title={"Senha"}
+            Name={"userPassword"}
+            ofType={passType}
+            setValue={(e) =>
+              setFormInfos((prevFormInfos) => {
+                return { ...prevFormInfos, password: e.target.value };
+              })
+            }
+            initValue={formInfos.password}
+            icon={"bi bi-eye-slash-fill"}
+            firstFocus={false}
+            clickIcon={(e) =>
+              clickEye(e, {
+                state: { value: passType, setValue: setPassType },
+              })
+            }
+          />
           {
             //alerta de invalit password
-          }
-          <article
-            className={
-              formInfos.password.length < 8
-                ? "FormDiv warning"
-                : "FormDiv warning disable"
-            }
-          >
-            <p>A senha precisa ter 8 ou mais caracters</p>
-          </article>
-          {
+            formInfos.Errors.password && (
+              <WarningAlert alert={formInfos.Errors.password} />
+            )
             //Input de confirmação de senha
           }
-          <article className="FormDiv">
-            <label htmlFor="confirmPass">Confirmar senha:</label>
-            <div className="inputGroup">
-              <input
-                ref={confirmPassword}
-                type={confPassType}
-                name="confirmPass"
-                id="confirmPass"
-                value=""
-                required
-                min={8}
-              />
-              <i
-                className="bi bi-eye-slash-fill"
-                onClick={(e) =>
-                  clickEye(e, {
-                    state: { value: confPassType, setValue: setConfPassType },
-                  })
-                }
-              ></i>
-            </div>
-          </article>
+          <CreateInput
+            title={"Confirmar Senha"}
+            Name={"confirmPassword"}
+            ofType={confPassType}
+            setValue={(e) =>
+              setFormInfos((prevFormInfos) => {
+                return { ...prevFormInfos, comfimPassword: e.target.value };
+              })
+            }
+            initValue={formInfos.comfimPassword}
+            icon={"bi bi-eye-slash-fill"}
+            firstFocus={false}
+            clickIcon={(e) =>
+              clickEye(e, {
+                state: { value: confPassType, setValue: setConfPassType },
+              })
+            }
+          />
+          {formInfos.Errors.comfimPassword && (
+            <WarningAlert alert={formInfos.Errors.comfimPassword} />
+          )}
           <article className="FormDiv">
             <p>
               já possue uma <a href="?menu=SingIn&page=2">conta?</a>
@@ -218,13 +265,7 @@ export default function FormRegister() {
             {
               //botão de criação de registro
             }
-            <button
-              type="button"
-              id="submmitBtn"
-              onClick={(e) => {
-                console.log(formInfos);
-              }}
-            >
+            <button type="button" id="submmitBtn" onClick={verifiPassword}>
               Criar
             </button>
           </article>

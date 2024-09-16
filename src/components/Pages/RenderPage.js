@@ -4,9 +4,18 @@ import "../../StyleComponents/Pages.css";
 import ForYou from "./ForYou/ForYou.js";
 import BtnScrollUp from "../BtnScrollUp/BtnScrollUp.js";
 import Login from "./Login/Login.js";
+import Modal from "../Modal/Modal.js";
 
 function RenderPage() {
   let menuSelect = getUlrParam("menu");
+  let modalInfos = getUlrParam("modal");
+
+  function ModalRender() {
+    if (modalInfos) {
+      let infos = modalInfos.split(";");
+      return <Modal title={infos[0]} msg={infos[1]} />;
+    }
+  }
 
   function Render() {
     //Chamada da página com base na Url
@@ -58,6 +67,7 @@ function RenderPage() {
   return (
     <>
       <Render />
+      <ModalRender />
     </>
   );
 }

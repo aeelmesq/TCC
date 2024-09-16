@@ -6,7 +6,7 @@ export default function FooterTemplate() {
       <i className="triangle" id="tLeft"></i>
       <i className="triangle" id="tRight"></i>
 
-      {/* <Footer /> */}
+      <Footer />
     </footer>
   );
 }

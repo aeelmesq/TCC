@@ -1,32 +1,86 @@
-@keyframes rot {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+
 footer {
   border-top: 1px solid #d9d9d9;
-  width: 100%;
-  height: calc(100vh - 300px);
+  height: calc(100vh - 450px);
+  position: relative;
+  background-color: #6a2870;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
+
 #logo {
   cursor: pointer;
-  animation: rot 5s linear infinite;
 }
 
 #tRight,
 #tLeft {
   width: 0;
   height: 0;
-  border-left: 160px solid transparent;
+  content: '';
+}
+#tLeft {
+  position: absolute;
+  bottom: 0;
+  border-top: 160px solid transparent;
   border-right: 160px solid transparent;
-  border-bottom: 160px solid lightblue;
+  border-left: 160px solid #34143C;
 }
 #tRight {
-  position: relative;
+  position: absolute;
   right: 0;
-  top: 50px;
-  rotate: 45deg;
+  top: 0;
+  border-bottom: 160px solid transparent;
+  border-left: 160px solid transparent;
+  border-right: 160px solid #34143C;
+}
+
+#bfLeft {
+  text-align: center;
+  display: grid;
+}
+#bfLeft > img {
+  margin-bottom: 24px;
+}
+#socialMediaList > div {
+  display: grid;
+  grid-template-columns: repeat(4, 70px);
+  justify-content: center;
+}
+#socialMediaList > div > a > i {
+  color: white;
+  font-size: 24px;
+}
+
+#bfRight > div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 60px;
+}
+#bfRight > div > ul > a {
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+}
+#bfRight > div > ul > a:hover {
+  color: rgba(256, 256, 256, 0.6);
+}
+#bfRight > div > ul > a > li {
+  list-style: none;
+  margin-bottom: 30px;
+}
+#bfRight > div > ul > h1 {
+  color: white;
+  margin-bottom: 40px;
+}
+
+#bfMiddle {
+  grid-column: span 2;
+}
+#bfMiddle > div {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
 }

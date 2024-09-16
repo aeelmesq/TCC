@@ -36,21 +36,19 @@ const linkBlock5 = [
 
 function ListItens({ block }) {
   return block.map((link) => (
-    <li key={link.name}>
-      <a href={link.name}>{link.name}</a>
-    </li>
+      <a href={link.name}>
+        <li key={link.name}>{link.name}</li>
+      </a>
   ));
 }
 
 function List({ title, nameBlock }) {
-  return (
-    <div>
+  return <>
+    <ul>
       <h1>{title}</h1>
-      <ul>
-        <ListItens block={nameBlock} />
-      </ul>
-    </div>
-  );
+      <ListItens block={nameBlock} />
+    </ul>
+  </>
 }
 
 export default function Bloco() {

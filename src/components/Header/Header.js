@@ -2,7 +2,7 @@ import "../../StyleComponents/Header.css";
 import DbButton from "./DbButton.js";
 import Menu from "./Menu.js";
 import logo from "../../img/logo512.png";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function Header() {
   const [windonwScrollY, setWindonwScrollY] = useState(0);
@@ -10,6 +10,8 @@ function Header() {
   const [windonwScrollYTpr, setWindonwScrollYTpr] = useState(0);
 
   const [menuState, setMenuState] = useState(null);
+
+  const Btn = useRef(null);
 
   window.addEventListener("scroll", () => {
     setWindonwScrollYTpr(windonwScrollY);
@@ -32,11 +34,16 @@ function Header() {
         <h1>ALT</h1>
       </section>
       <section id="right">
+        {
+          //botão de abrir o menu
+        }
         <button
           className="hanbBtn"
           type="button"
+          ref={Btn}
           onClick={(e) => {
             e.preventDefault();
+            Btn.current.classList.add("pressBtn");
             setMenuState(true);
           }}
         >
@@ -46,11 +53,15 @@ function Header() {
           id="navBar"
           className={menuState ? "slideToLeft" : "slideReverse hiddenM"}
         >
+          {
+            //botão de fechar o menu
+          }
           <button
             className="xBtn"
             type="button"
             onClick={(e) => {
               e.preventDefault();
+              Btn.current.classList.remove("pressBtn");
               setMenuState(false);
             }}
           >

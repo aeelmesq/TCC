@@ -7,6 +7,7 @@ export default function CreateInput({
   icon,
   firstFocus,
   clickIcon = () => {},
+  addClass,
 }) {
   return (
     <>
@@ -20,6 +21,7 @@ export default function CreateInput({
             id={Name}
             autoFocus={firstFocus}
             onChange={setValue}
+            className={addClass}
           />
           <i className={icon} onClick={clickIcon}></i>
         </div>

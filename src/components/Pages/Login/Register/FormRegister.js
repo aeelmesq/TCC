@@ -134,6 +134,7 @@ export default function FormRegister() {
             initValue={formInfos.Name}
             icon={"bi bi-person-fill"}
             firstFocus={true}
+            addClass={formInfos.Errors.Name && "inputError"}
           />
           {
             formInfos.Errors.Name && (
@@ -152,6 +153,7 @@ export default function FormRegister() {
             }
             initValue={formInfos.Email}
             icon={"bi bi-envelope-at"}
+            addClass={formInfos.Errors.Email && "inputError"}
           />
           {formInfos.Errors.Email && (
             <WarningAlert alert={formInfos.Errors.Email} />
@@ -217,6 +219,7 @@ export default function FormRegister() {
                 state: { value: passType, setValue: setPassType },
               })
             }
+            addClass={formInfos.Errors.password && "inputError"}
           />
           {
             //alerta de invalit password
@@ -241,6 +244,7 @@ export default function FormRegister() {
                 state: { value: confPassType, setValue: setConfPassType },
               })
             }
+            addClass={formInfos.Errors.comfimPassword && "inputError"}
           />
           {formInfos.Errors.comfimPassword && (
             <WarningAlert alert={formInfos.Errors.comfimPassword} />

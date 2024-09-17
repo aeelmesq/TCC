@@ -26,7 +26,7 @@ const linkBlock4 = [
   { name: 'Curiosidades' },
 ];
 const linkBlock5 = [
-  { name: 'Equitpe ALT' },
+  { name: 'Equipe ALT' },
   { name: 'Sobre Nós' },
   { name: 'Fale Conosco' },
   { name: 'Segurança e Privacidade' },

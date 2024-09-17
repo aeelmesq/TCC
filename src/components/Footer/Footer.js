@@ -14,10 +14,8 @@ export default function Footer() {
         <Bloco />
       </section>
       <section id='bfMiddle'>
-        <div>
-          <RedesSociaisList />
-          <hr />
-        </div>
+        <RedesSociaisList />
+        <hr />
       </section>
     </>
   );

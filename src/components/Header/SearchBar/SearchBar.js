@@ -17,7 +17,6 @@ function SearchBar() {
           <i className="bi bi-search"></i>
         </button>
       </form>
-      {search && <div className="">{search}</div>}
     </section>
   );
 }

@@ -18,6 +18,33 @@
         transition: 0.7s;
     }
 }
+@keyframes slideLeftScreen {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes slideRigthScreen {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}
+@keyframes Press {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 #webHeader {
     width: 100%;
     height: 70px;
@@ -25,24 +52,29 @@
     border-bottom: 1px solid #d9d9d9;
     align-items: center;
     transition: 0.9s;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.976);
     transition: 0.7s;
-    z-index: 0;
+    z-index: 10;
 }
 #left {
-    width: 20%;
+    width: 12%;
     display: flex;
     float: left;
     height: 100%;
     align-items: center;
 }
 #right {
-    width: 80%;
+    width: 96%;
     display: flex;
     float: right;
     align-items: center;
     height: 100%;
     justify-content: right;
+}
+#navBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #right ul{
     display: flex;
@@ -82,15 +114,122 @@
 .hanbBtn {
     visibility: hidden;
 }
-@media screen and (max-width: 948px) {
+.xBtn {
+    display: none;
+}
+@media screen and (max-width: 880px) {
     .hanbBtn {
         visibility: visible;
         cursor: pointer;
+        font-size: 20pt;
+        color: black;
+        background: none;
+        border: none;
+        margin: 0 15px 0 0;
+        padding: 3px;
+        border-radius: 10px;
+        transition: 0.5s;
     }
-    .menu {
-        visibility: hidden;
+    #left {
+        width: 92%;
+        justify-content: center;
+    }
+    #left img {
+        margin-left: calc(8% + 60px);
+    }
+    #left h1 {
+        display: none;
+    }
+    #right {
+        width: 8%;
+        border-left: 1px solid #ececec;
+        height: 40px;
+    }
+    .hanbBtn:hover {
+        background-color: #f6f6f6;
+    }
+    .xBtn {
+        display: block;
+        cursor: pointer;
+        z-index: 100;
+        font-size: 15pt;
+        color: black;
+        background: none;
+        transition: 0.5s;
+        border: none;
+        width: 30px;
+        height: 30px;
+        margin-left: calc(100% - 30px);
+        margin-bottom: 5px;
+    }
+    .pressBtn {
+        animation: Press 0.1s linear;
+        background-color: #000000;
+    }
+    #navBar {
+        z-index: 0;
+        display: block;
+        position: fixed;
+        top: 0;
+        background-color: rgb(53, 53, 53);
+        height: 100vh;
+        width: 350px;
+        z-index: 11;
+        box-shadow: -3px -3px 3px rgba(0, 0, 0, 0.397);
+    }
+    #navBar ul {
         display: inline;
-        position: absolute;
-        background-color: white;
+        width: 100%;
+        text-align: right;
+        margin: 0;
+    }
+    #navBar ul a {
+        width: 100%;
+        padding: 3px;
+        background: none;
+        border: none;
+        color: black;
+        padding: 7px 10px;
+        font-size: 14pt;
+        margin: 2px 0;
+        transition: 0.3s;
+    }
+    #navBar ul li {
+        border-bottom: 1px solid rgba(236, 236, 236, 0.466);
+    }
+    #navBar ul li .on {
+        background-color: rgba(236, 236, 236, 0.313);
+    }
+    #navBar ul a:hover {
+        background-color: rgba(236, 236, 236, 0.313);
+    }
+    .slideToLeft {
+        animation: slideLeftScreen 0.3s linear;
+    }
+    .hiddenM {
+        overflow: hidden;
+        animation: slideRigthScreen 0.5s linear;
+        transition: 0.5s;
+        position: fixed;
+        transform: translateX(100vw);
+    }
+    .xBtn:hover {
+        background-color: red;
+    }
+}
+@media screen and (max-width: 660px) {
+    #left {
+        width: 90%;
+    }
+    #right {
+        width: 10%;
+    }
+}
+@media screen and (max-width: 470px) {
+    #left {
+        width: 86%;
+    }
+    #right {
+        width: 14%;
     }
 }

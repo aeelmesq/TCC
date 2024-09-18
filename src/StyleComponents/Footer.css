@@ -8,8 +8,8 @@ footer {
   align-content: center;
   justify-content: center;
   align-items: center;
-  padding: 0 200px;
-  column-gap: 100px;
+  padding: 0 150px;
+  column-gap: 40px;
 }
 
 #logo {
@@ -21,6 +21,7 @@ footer {
   width: 0;
   height: 0;
   content: '';
+  pointer-events: none;
 }
 #tLeft {
   position: absolute;
@@ -40,26 +41,11 @@ footer {
 
 #bfLeft {
   text-align: center;
-  display: grid;
-}
-#bfLeft > img {
-  margin-bottom: 24px;
-}
-
-#socialMediaList > div {
-  display: grid;
-  grid-template-columns: repeat(4, 70px);
-  justify-content: center;
-}
-#socialMediaList > div > a > i {
-  color: white;
-  font-size: 24px;
 }
 
 #bfRight > div {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
 }
 #bfRight > div > ul > a {
   text-decoration: none;
@@ -81,11 +67,28 @@ footer {
 #bfMiddle {
   grid-column: span 2;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 4fr;
+  column-gap: 20px;
   align-content: center;
   justify-content: center;
   align-items: center;
 }
+
+/*Formata as redes sociais*/
+#socialMediaList > div {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  column-gap: 60px;
+  justify-content: center;
+}
+#socialMediaList > div > a > i {
+  color: white;
+  font-size: 24px;
+}
+#socialMediaList > div > a > i:hover {
+  color: rgba(256, 256, 256, 0.6);
+}
+
 #bfMiddle > hr {
-  width: 80%;
+  width: 100%;
 }

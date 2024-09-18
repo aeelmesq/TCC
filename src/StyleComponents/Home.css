@@ -50,3 +50,23 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+.flexBlock > img {
+  width: 1000px;
+  position: absolute;
+  z-index: 0;
+}
+.showImg {
+  z-index: 3;
+}
+.flexBlock {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+  overflow: hidden;
+  width: 100%;
+  background-color: black;
+  border-radius: 10px;
+}

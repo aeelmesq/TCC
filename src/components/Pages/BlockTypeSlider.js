@@ -1,5 +1,5 @@
-import categorias from '../../consts/Cat.js';
-import { useRef, useState } from 'react';
+import categorias from "../../consts/Cat.js";
+import { useRef, useState } from "react";
 
 export default function BlockTypeSlider({ style }) {
   const slider = useRef(null);
@@ -23,7 +23,7 @@ export default function BlockTypeSlider({ style }) {
     e.preventDefault();
     slider.current.scrollLeft -= slider.current.offsetWidth / 3;
     setSliderPosition(
-      slider.current.scrollLeft - slider.current.offsetWidth / 3,
+      slider.current.scrollLeft - slider.current.offsetWidth / 3
     );
   };
   const moveToRight = (e) => {
@@ -31,7 +31,7 @@ export default function BlockTypeSlider({ style }) {
     setMaxScrollLeft(slider.current.scrollWidth - slider.current.clientWidth);
     slider.current.scrollLeft += slider.current.offsetWidth / 3;
     setSliderPosition(
-      slider.current.scrollLeft + slider.current.offsetWidth / 3,
+      slider.current.scrollLeft + slider.current.offsetWidth / 3
     );
   };
 
@@ -40,13 +40,13 @@ export default function BlockTypeSlider({ style }) {
       <section
         className="block"
         style={
-          style == 'none'
-            ? { backgroundColor: 'transparent', boxShadow: 'none', margin: '0' }
-            : ''
+          style == "none"
+            ? { backgroundColor: "transparent", boxShadow: "none", margin: "0" }
+            : ""
         }
       >
         <button
-          className={sliderPosition > 0 ? 'btnLeft' : 'btnLeft btnOf'}
+          className={sliderPosition > 0 ? "btnLeft" : "btnLeft btnOf"}
           onClick={moveToLeft}
         >
           <i className="bi bi-caret-left-fill"></i>
@@ -58,7 +58,7 @@ export default function BlockTypeSlider({ style }) {
         </div>
         <button
           className={
-            sliderPosition <= maxScrollLeft ? 'btnRight' : 'btnRight btnOf'
+            sliderPosition <= maxScrollLeft ? "btnRight" : "btnRight btnOf"
           }
           onClick={moveToRight}
         >

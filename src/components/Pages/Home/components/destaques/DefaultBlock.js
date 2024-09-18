@@ -24,7 +24,7 @@ export default function Destaques({ title, style }) {
   return (
     <div className={style}>
       <h1>{title}</h1>
-      <div className="flexBlock">
+      <div className="slides">
         {Data.map((obj, index) => {
           return (
             <Lide

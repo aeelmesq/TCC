@@ -1,7 +1,7 @@
 import img1 from "../../../../../img/foto-noticia.jpg";
 import img2 from "../../../../../img/foto-Penapolis.jpg";
 import Lide from "./Lide";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const Data = [
   {
@@ -18,21 +18,37 @@ const Data = [
   },
 ];
 
-function slideActions(e) {
-  e.preventDefault();
-  setInterval(() => {
-    e.target.scrollLeft += e.target.offsetWidth;
-    console.log("hello");
-  }, 7000);
-}
-
 export default function Destaques({ title, style }) {
-  const [imgI, setImgI] = useState(0);
+  function setNextItem() {
+    let slideItems = document.querySelectorAll("div.slide");
+    setScrollMult((prevScrollMult) => {
+      console.log("ok");
+      if (prevScrollMult == slideItems.length) {
+        return 1;
+      } else {
+        return prevScrollMult + 1;
+      }
+    });
+  }
+
+  const [scrollMult, setScrollMult] = useState(1);
+  const slider = useRef(null);
+
+  useEffect(() => {
+    slider.current.scrollLeft =
+      slider.current.offsetWidth * (scrollMult - 1) + 5;
+  }, [scrollMult]);
+
+  useEffect(() => {
+    const intervalid = setInterval(setNextItem, 5000);
+
+    return () => clearInterval(intervalid);
+  }, []);
 
   return (
     <div className={style}>
       <h1>{title}</h1>
-      <div className="slides" onLoad={(e) => slideActions(e)}>
+      <div className="slides" ref={slider}>
         {Data.map((obj, index) => {
           return (
             <Lide

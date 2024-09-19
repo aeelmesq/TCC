@@ -18,13 +18,21 @@ const Data = [
   },
 ];
 
+function slideActions(e) {
+  e.preventDefault();
+  setInterval(() => {
+    e.target.scrollLeft += e.target.offsetWidth;
+    console.log("hello");
+  }, 7000);
+}
+
 export default function Destaques({ title, style }) {
   const [imgI, setImgI] = useState(0);
 
   return (
     <div className={style}>
       <h1>{title}</h1>
-      <div className="slides">
+      <div className="slides" onLoad={(e) => slideActions(e)}>
         {Data.map((obj, index) => {
           return (
             <Lide
@@ -32,7 +40,6 @@ export default function Destaques({ title, style }) {
               img={obj.img}
               fonte={obj.fonte}
               link={obj.Link}
-              style={index === imgI && "showImg"}
             />
           );
         })}

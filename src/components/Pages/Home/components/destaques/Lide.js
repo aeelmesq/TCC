@@ -1,14 +1,13 @@
-export default function Lide({ title, img, fonte, link, style }) {
+export default function Lide({ title, img, fonte, link }) {
   return (
     <>
-      <div
-        className="slide"
-        style={{
-          backgroundImage: `url(${img})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      ></div>
+      <div className="slide">
+        <img src={img} alt="imagen" />
+        <div className="imgCover">
+          <small>{fonte}</small>
+          <a href={`https://${link}.com`}>{title}</a>
+        </div>
+      </div>
     </>
   );
 }

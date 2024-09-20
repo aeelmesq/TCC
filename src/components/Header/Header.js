@@ -2,17 +2,36 @@ import "../../StyleComponents/Header.css";
 import DbButton from "./DbButton.js";
 import Menu from "./Menu.js";
 import logo from "../../logo.svg";
-import { useState } from "react";
+import { useState, useRef, useEffect  } from "react";
 
 function Header() {
   const [windonwScrollY, setWindonwScrollY] = useState(0);
 
   const [windonwScrollYTpr, setWindonwScrollYTpr] = useState(0);
 
+  const [menuState, setMenuState] = useState(null);
+
+  const Btn = useRef(null);
+
   window.addEventListener("scroll", () => {
     setWindonwScrollYTpr(windonwScrollY);
     setWindonwScrollY(window.scrollY);
   });
+
+  useEffect(() => {
+    if (menuState) {
+      const menu = document.getElementById("navBar");
+
+      function hiddenM() {
+        setMenuState(false);
+        Btn.current.classList.remove("pressBtn");
+        menu.removeEventListener("mouseleave", hiddenM);
+      }
+
+      menu.addEventListener("mouseleave", hiddenM);
+      return;
+    }
+  }, [menuState]);
 
   return (
     <header
@@ -29,13 +48,47 @@ function Header() {
         <img src={logo} alt="Logo" width="60px" />
       </section>
       <section id="right">
-        <Menu />
-        <DbButton
-          link1={"?menu=SingIn&page=2"}
-          output1={"Sign In"}
-          link2={"?menu=Register&page=2"}
-          output2={"Register"}
-        />
+        {
+          //botão de abrir o menu
+        }
+        <button
+          className="hanbBtn"
+          type="button"
+          ref={Btn}
+          onClick={(e) => {
+            e.preventDefault();
+            Btn.current.classList.add("pressBtn");
+            setMenuState(true);
+          }}
+        >
+          <i className="bi bi-list"></i>
+        </button>
+        <div
+          id="navBar"
+          className={menuState ? "slideToLeft" : "slideReverse hiddenM"}
+        >
+          {
+            //botão de fechar o menu
+          }
+          <button
+            className="xBtn"
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              Btn.current.classList.remove("pressBtn");
+              setMenuState(false);
+            }}
+          >
+            X
+          </button>
+          <Menu />
+          <DbButton
+            link1={"?menu=SingIn&page=2"}
+            output1={"Sing In"}
+            link2={"?menu=Register&page=2"}
+            output2={"Reister"}
+          />
+        </div>
       </section>
     </header>
   );

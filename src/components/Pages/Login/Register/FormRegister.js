@@ -24,12 +24,17 @@ export default function FormRegister() {
     },
   });
 
+  function handleSubmmit() {
+    let msg = `Olá ,${formInfos.Name}`;
+    console.log(formInfos.Name);
+    window.location = `./?menu=Home&modal=Menssagem;${msg}`;
+  }
+
   //função que valida a senha passada pelo usúario
   function verifiPassword() {
     if (formInfos.password.length >= 8) {
       if (formInfos.password === formInfos.comfimPassword) {
-        let msg = `Olá ,${formInfos.Name}`;
-        window.location = `./?menu=Home&modal=Menssagem;${msg}`;
+        handleSubmmit();
         return;
       }
       setFormInfos((prevInfos) => ({
@@ -147,7 +152,6 @@ export default function FormRegister() {
             }
             initValue={formInfos.Email}
             icon={"bi bi-envelope-at"}
-            firstFocus={false}
           />
           {formInfos.Errors.Email && (
             <WarningAlert alert={formInfos.Errors.Email} />
@@ -208,7 +212,6 @@ export default function FormRegister() {
             }
             initValue={formInfos.password}
             icon={"bi bi-eye-slash-fill"}
-            firstFocus={false}
             clickIcon={(e) =>
               clickEye(e, {
                 state: { value: passType, setValue: setPassType },
@@ -233,7 +236,6 @@ export default function FormRegister() {
             }
             initValue={formInfos.comfimPassword}
             icon={"bi bi-eye-slash-fill"}
-            firstFocus={false}
             clickIcon={(e) =>
               clickEye(e, {
                 state: { value: confPassType, setValue: setConfPassType },

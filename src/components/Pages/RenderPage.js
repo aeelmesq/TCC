@@ -26,7 +26,6 @@ function RenderPage() {
             <main className="container">
               <Home />
             </main>
-            <BtnScrollUp />
           </>
         );
       case "ParaVoce":
@@ -35,7 +34,6 @@ function RenderPage() {
             <main className="container">
               <ForYou />
             </main>
-            <BtnScrollUp />
           </>
         );
       case "Preferencias":
@@ -56,7 +54,6 @@ function RenderPage() {
             <main className="container">
               <Home />
             </main>
-            <BtnScrollUp />
           </>
         );
       default:
@@ -68,6 +65,7 @@ function RenderPage() {
     <>
       <Render />
       <ModalRender />
+      <BtnScrollUp />
     </>
   );
 }

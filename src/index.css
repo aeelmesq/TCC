@@ -93,3 +93,9 @@ body {
 .modalHead button:hover {
   background-color: red;
 }
+@media screen and (max-width: 745px) {
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+}

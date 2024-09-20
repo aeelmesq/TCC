@@ -1,7 +1,7 @@
 import "./style.css";
 import Header from "./components/Header/Header.js";
 import SearchBar from "./components/Header/SearchBar/SearchBar.js";
-import Footer from "./components/Footer/Footer.js";
+import FooterTemplate from "./components/Footer/footerTemplate.js";
 import RenderPage from "./components/Pages/RenderPage.js";
 import { getUlrParam } from "./components/utilits.js";
 
@@ -16,7 +16,7 @@ function FullPage() {
           <SearchBar />
           <RenderPage />
           <div>
-            <Footer />
+            <FooterTemplate />
           </div>
         </>
       );
@@ -33,7 +33,7 @@ function FullPage() {
           <SearchBar />
           <RenderPage />
           <div>
-            <Footer />
+            <FooterTemplate />
           </div>
         </>
       );

@@ -1,8 +1,8 @@
 import "../../StyleComponents/Header.css";
 import DbButton from "./DbButton.js";
 import Menu from "./Menu.js";
-import logo from "../../img/logo512.png";
-import { useState, useRef, useEffect } from "react";
+import logo from "../../logo.svg";
+import { useState, useRef, useEffect  } from "react";
 
 function Header() {
   const [windonwScrollY, setWindonwScrollY] = useState(0);
@@ -46,7 +46,6 @@ function Header() {
     >
       <section id="left">
         <img src={logo} alt="Logo" width="60px" />
-        <h1>ALT</h1>
       </section>
       <section id="right">
         {

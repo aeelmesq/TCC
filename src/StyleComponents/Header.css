@@ -1,3 +1,4 @@
+/*animações*/
 @keyframes slideDow {
     0%{
         top: -100px;
@@ -45,6 +46,9 @@
         transform: scale(1);
     }
 }
+/*fim animações*/
+
+/*estilos do header*/
 #webHeader {
     width: 100%;
     height: 70px;
@@ -63,6 +67,8 @@
     height: 100%;
     align-items: center;
 }
+
+/*estilos do menu*/
 #right {
     width: 96%;
     display: flex;
@@ -117,7 +123,11 @@
 .xBtn {
     display: none;
 }
+
+/*Responsivo para telas de 880px até 660px*/
 @media screen and (max-width: 880px) {
+
+    /*estilos do menu hanburguer*/
     .hanbBtn {
         visibility: visible;
         cursor: pointer;
@@ -148,6 +158,8 @@
     .hanbBtn:hover {
         background-color: #f6f6f6;
     }
+
+    /*estilos do btn de fechar o menu responsivo*/
     .xBtn {
         display: block;
         cursor: pointer;
@@ -166,6 +178,8 @@
         animation: Press 0.1s linear;
         background-color: #000000;
     }
+
+    /*etilos do menu responsivo*/
     #navBar {
         z-index: 0;
         display: block;
@@ -217,6 +231,8 @@
         background-color: red;
     }
 }
+
+/*Responsivo para telas de 660px até 470px*/
 @media screen and (max-width: 660px) {
     #left {
         width: 90%;
@@ -225,6 +241,8 @@
         width: 10%;
     }
 }
+
+/*Responsivo para telas de 470px*/
 @media screen and (max-width: 470px) {
     #left {
         width: 86%;

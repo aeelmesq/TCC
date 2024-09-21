@@ -28,7 +28,6 @@ export default function Destaques({ title, style }) {
   function setNextItem() {
     let slideItems = document.querySelectorAll("div.slide");
     setScrollMult((prevScrollMult) => {
-      console.log("ok");
       if (prevScrollMult === slideItems.length - 1) {
         return 0;
       } else {
@@ -41,11 +40,15 @@ export default function Destaques({ title, style }) {
   const slider = useRef(null);
 
   useEffect(() => {
+    let sliderBtns = document.getElementsByName("btnRadio");
+
+    sliderBtns[scrollMult].checked = true;
+
     slider.current.scrollLeft = slider.current.offsetWidth * scrollMult + 5;
   }, [scrollMult]);
 
   useEffect(() => {
-    const intervalid = setInterval(setNextItem, 7000);
+    let intervalid = setInterval(setNextItem, 7000);
 
     return () => clearInterval(intervalid);
   }, []);
@@ -62,6 +65,22 @@ export default function Destaques({ title, style }) {
               fonte={obj.fonte}
               link={obj.Link}
             />
+          );
+        })}
+      </div>
+      <div className="sliderBtns">
+        {Data.map((item, index) => {
+          return (
+            <>
+              <input
+                type="radio"
+                name="btnRadio"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setScrollMult(index);
+                }}
+              />
+            </>
           );
         })}
       </div>

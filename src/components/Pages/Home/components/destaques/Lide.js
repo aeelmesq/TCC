@@ -1,3 +1,5 @@
+import { formatarSite } from "../../../../utilits";
+
 export default function Lide({ title, img, fonte, link }) {
   return (
     <>
@@ -5,7 +7,7 @@ export default function Lide({ title, img, fonte, link }) {
         <img src={img} alt={`Imagem ${title}`} />
         <div className="imgCover">
           <small>{fonte}</small>
-          <a href={`https://${link}.com`}>{title}</a>
+          <a href={formatarSite(link)}>{title}</a>
         </div>
       </div>
     </>

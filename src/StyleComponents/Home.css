@@ -64,8 +64,8 @@
   display: flex;
   align-items: center;
   padding: 5px 0;
-  scroll-behavior: smooth;
-  box-shadow: 0px 0px 4px black;
+  scroll-margin: 25px;
+  box-shadow: 0px 0px 2px black;
 }
 
 .slides::-webkit-scrollbar {
@@ -74,12 +74,11 @@
 
 /*estilo dos items do slider*/
 .slide {
-  width: calc(100% - 3px);
+  width: calc(100% - 2px);
   display: flex;
   height: 500px;
-  margin: 0px 3px;
+  margin: 0px 1px;
   background-color: rgba(38, 38, 38, 0.199);
-  display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -94,7 +93,6 @@
   width: 100%;
   flex: none;
   transition: 0.5s;
-  box-shadow: 0 0 10px black;
 }
 
 .slide:hover > img {
@@ -151,12 +149,13 @@
 }
 
 .sliderBtns {
-  position: absolute;
+  position: relative;
   z-index: 5;
-  left: calc(50% - 60px);
-  transform: translateY(-15px);
   transition: 0.5s;
-  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 7px;
 }
 
 .sliderBtns > input {
@@ -165,16 +164,15 @@
   width: 10px;
   height: 10px;
   transition: 0.5s;
+  position: relative;
   border: none;
   appearance: none;
-  border-radius: 50%;
+  border-radius: 100%;
   background-color: rgb(15, 15, 15);
-  border: 2px solid transparent;
 }
 
 .sliderBtns > input:checked {
   transform: scale(1.6);
-  border: 2px solid rgb(82, 1, 158);
 }
 
 .sliderBtns > input:hover {

@@ -22,6 +22,12 @@ const Data = [
     fonte: "G1",
     Link: "g1.globo",
   },
+  {
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    img: img2,
+    fonte: "G1",
+    Link: "g1.globo",
+  },
 ];
 
 export default function Destaques({ title, style }) {
@@ -44,7 +50,7 @@ export default function Destaques({ title, style }) {
 
     sliderBtns[scrollMult].checked = true;
 
-    slider.current.scrollLeft = slider.current.offsetWidth * scrollMult + 5;
+    slider.current.scrollLeft = slider.current.offsetWidth * scrollMult;
   }, [scrollMult]);
 
   useEffect(() => {

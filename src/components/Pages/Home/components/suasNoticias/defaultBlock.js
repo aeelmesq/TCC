@@ -1,6 +1,17 @@
-import BlocoPrincipal from './blocoNoticias';
+import BlocoPrincipal from './blocoPrincipal';
 import BlocoRight from './blocoRight';
-import { noticias } from '../../data';
+import API_NEWS from '../../../../../API/mediaStack';
+
+function noticiaPainel() {
+  const {noticias} = API_NEWS()
+
+  if (!Array.isArray(noticias) || noticias.length === 0) {
+    return []
+  }
+  const data = noticias.filter((noticia) => noticia.url !== null )
+
+  return data
+}
 
 export default function SuasNoticias({ title, style }) {
   return (
@@ -8,7 +19,7 @@ export default function SuasNoticias({ title, style }) {
       <h1>{title}</h1>
       <div className="principalBlock">
         <div className="block">
-          <BlocoPrincipal data={noticias} />
+          <BlocoPrincipal data={noticiaPainel()} />
         </div>
         <aside className="asideBlock">
           <BlocoRight />

@@ -8,6 +8,7 @@
 }
 body {
   font: normal 12pt Arial;
+  overflow-x: hidden;
 }
 .container {
   margin: auto;
@@ -18,8 +19,8 @@ body {
   display: flex;
 }
 .DbBtn .btn1 a {
-  background-color: #e4e4e4;
-  border: 1px solid #acacac;
+  background: none;
+  border: 1px solid #000;
   transition: 0.7s;
   color: black;
 }
@@ -36,11 +37,13 @@ body {
 .DbBtn .btn2 a {
   background-color: black;
   color: white;
-  border: 1px solid white;
+  border: 1px solid transparent;
   transition: 0.7s;
 }
 .DbBtn .btn1 a:hover {
-  opacity: 0.87;
+  background-color: #000;
+  color: white;
+  border-color: transparent;
 }
 .DbBtn .btn2 a:hover {
   color: black;

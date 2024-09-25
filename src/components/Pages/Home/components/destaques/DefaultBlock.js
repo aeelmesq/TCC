@@ -5,13 +5,25 @@ import { useEffect, useState, useRef } from "react";
 
 const Data = [
   {
-    title: "teste",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     img: img1,
     fonte: "G1",
     Link: "g1.globo",
   },
   {
-    title: "teste",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    img: img2,
+    fonte: "G1",
+    Link: "g1.globo",
+  },
+  {
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    img: img1,
+    fonte: "G1",
+    Link: "g1.globo",
+  },
+  {
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     img: img2,
     fonte: "G1",
     Link: "g1.globo",
@@ -22,8 +34,7 @@ export default function Destaques({ title, style }) {
   function setNextItem() {
     let slideItems = document.querySelectorAll("div.slide");
     setScrollMult((prevScrollMult) => {
-      console.log("ok");
-      if (prevScrollMult == slideItems.length - 1) {
+      if (prevScrollMult === slideItems.length - 1) {
         return 0;
       } else {
         return prevScrollMult + 1;
@@ -35,11 +46,15 @@ export default function Destaques({ title, style }) {
   const slider = useRef(null);
 
   useEffect(() => {
-    slider.current.scrollLeft = slider.current.offsetWidth * scrollMult + 5;
+    let sliderBtns = document.getElementsByName("btnRadio");
+
+    sliderBtns[scrollMult].checked = true;
+
+    slider.current.scrollLeft = slider.current.offsetWidth * scrollMult;
   }, [scrollMult]);
 
   useEffect(() => {
-    const intervalid = setInterval(setNextItem, 7500);
+    let intervalid = setInterval(setNextItem, 7000);
 
     return () => clearInterval(intervalid);
   }, []);
@@ -56,6 +71,22 @@ export default function Destaques({ title, style }) {
               fonte={obj.fonte}
               link={obj.Link}
             />
+          );
+        })}
+      </div>
+      <div className="sliderBtns">
+        {Data.map((item, index) => {
+          return (
+            <>
+              <input
+                type="radio"
+                name="btnRadio"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setScrollMult(index);
+                }}
+              />
+            </>
           );
         })}
       </div>

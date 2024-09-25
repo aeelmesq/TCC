@@ -1,0 +1,13 @@
+.grid-2 {
+ display: grid;
+ grid-template-columns: 30% 70%;
+ gap: -20px;
+}
+
+.leftBlock {
+    grid-column: 1;
+}
+
+.rightBlock {
+    grid-column: 2;
+}

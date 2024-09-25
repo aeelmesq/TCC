@@ -1,6 +1,5 @@
-import BlocoPrincipal from "../../../Home/components/suasNoticias/blocoNoticias";
-import BlocoRight from "../../../Home/components/suasNoticias/blocoRight";
 import { noticias } from "../../../Home/data";
+import TableNews from "./TableNews";
 
 export default function Recomendacoes() {
   return (
@@ -8,10 +7,9 @@ export default function Recomendacoes() {
       <div>
         <h1>Recomendações</h1>
         <hr />
-        <section>
-          <div>
-            <BlocoPrincipal data={noticias} />
-          </div>
+        <section className="block grid-2">
+          <TableNews data={noticias} />
+          <hr />
         </section>
       </div>
     </>

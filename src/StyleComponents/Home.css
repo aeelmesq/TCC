@@ -90,6 +90,7 @@
   position: absolute;
   background-color: rgba(0, 0, 0, 0.379);
   flex: none;
+  flex-wrap: wrap;
   display: flex;
   cursor: pointer;
   transition: 0.7s;
@@ -104,6 +105,13 @@
 }
 .imgCover > a {
   text-decoration: none;
+  flex: none;
   color: white;
-  font-size: larger;
+  font-size: 16pt;
+  display: flex;
+  align-self:last baseline;
+}
+.imgCover > small {
+  width: 100%;
+  flex: none;
 }

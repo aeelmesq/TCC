@@ -23,24 +23,23 @@ export default function Destaques({ title, style }) {
     let slideItems = document.querySelectorAll("div.slide");
     setScrollMult((prevScrollMult) => {
       console.log("ok");
-      if (prevScrollMult == slideItems.length) {
-        return 1;
+      if (prevScrollMult == slideItems.length - 1) {
+        return 0;
       } else {
         return prevScrollMult + 1;
       }
     });
   }
 
-  const [scrollMult, setScrollMult] = useState(1);
+  const [scrollMult, setScrollMult] = useState(0);
   const slider = useRef(null);
 
   useEffect(() => {
-    slider.current.scrollLeft =
-      slider.current.offsetWidth * (scrollMult - 1) + 5;
+    slider.current.scrollLeft = slider.current.offsetWidth * scrollMult + 5;
   }, [scrollMult]);
 
   useEffect(() => {
-    const intervalid = setInterval(setNextItem, 5000);
+    const intervalid = setInterval(setNextItem, 7500);
 
     return () => clearInterval(intervalid);
   }, []);

@@ -1,24 +1,23 @@
 import LeftBlock from "./leftBlock";
 
 export default function TableNews({ data = [{}] }) {
-  const leftBlockData = [];
-  const rightBlockData = [];
-
-  data.forEach((item, index) => {
-    if (index < 6) {
-      if (index % 3 === 0) leftBlockData.push(item);
-
-      rightBlockData.push(item);
-    }
-  });
-
+  const allNews = data.slice(0, 6);
   return (
     <>
-      {leftBlockData.map((news) => (
-        <>
-          <LeftBlock news={news} />
-        </>
-      ))}
+      {allNews.map((item, index) => {
+        if (index % 3 === 0) {
+          if (index === allNews.length - 1)
+            return <div className="fullBlock"></div>;
+
+          return <LeftBlock news={item} />;
+        }
+        return (
+          <>
+            <div className="rightBlock"></div>
+            {(index + 1) % 3 === 0 && <hr />}
+          </>
+        );
+      })}
     </>
   );
 }

@@ -9,7 +9,6 @@ export default function Recomendacoes() {
         <hr />
         <section className="block grid-2">
           <TableNews data={noticias} />
-          <hr />
         </section>
       </div>
     </>

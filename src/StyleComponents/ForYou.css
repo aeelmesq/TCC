@@ -1,13 +1,48 @@
 .grid-2 {
  display: grid;
- grid-template-columns: 30% 70%;
- gap: -20px;
+ grid-template-columns: 300px 2fr;
+ row-gap: 15px;
+ column-gap: 15px;
+ align-items: start;
+}
+
+.grid-2 > hr {
+    grid-column: span 2;
+    border: 1px solid rgb(235, 235, 235);
+}
+
+.leftBlock, .rightBlock, .fullBlock {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.leftBlock > img {
+    border-radius: 7px;
+    object-fit: cover;
+}
+
+.leftBlock > div {
+    text-align: left;
+    width: 250px;
 }
 
 .leftBlock {
     grid-column: 1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-height: 335px;
+    grid-row: span 2;
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;
 }
 
 .rightBlock {
     grid-column: 2;
+    min-height: 170px;
+}
+
+.fullBlock {
+    grid-column: span 2;
+    min-height: 285px;
 }

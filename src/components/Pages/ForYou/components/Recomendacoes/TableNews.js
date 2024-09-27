@@ -1,7 +1,7 @@
 import LeftBlock from "./leftBlock";
 
-export default function TableNews({ data = [{}] }) {
-  const allNews = data.slice(0, 6);
+export default function TableNews({ data = [{}], qdtNews }) {
+  const allNews = data.slice(0, qdtNews);
   return (
     <>
       {allNews.map((item, index) => {

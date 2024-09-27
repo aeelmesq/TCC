@@ -1,4 +1,6 @@
+import FullBlock from "./FullBlock";
 import LeftBlock from "./leftBlock";
+import RightBlock from "./RightBlock";
 
 export default function TableNews({ data = [{}], qdtNews }) {
   const allNews = data.slice(0, qdtNews);
@@ -6,14 +8,13 @@ export default function TableNews({ data = [{}], qdtNews }) {
     <>
       {allNews.map((item, index) => {
         if (index % 3 === 0) {
-          if (index === allNews.length - 1)
-            return <div className="fullBlock"></div>;
+          if (index === allNews.length - 1) return <FullBlock news={item} />;
 
           return <LeftBlock news={item} />;
         }
         return (
           <>
-            <div className="rightBlock"></div>
+            <RightBlock news={item} />
             {(index + 1) % 3 === 0 && <hr />}
           </>
         );

@@ -38,7 +38,7 @@
     grid-column: 1;
     padding-top: 10px;
     padding-bottom: 10px;
-    min-height: 365px;
+    min-height: 400px;
     grid-row: span 2;
     display: grid;
     grid-template-columns: 100%;
@@ -47,10 +47,19 @@
 
 .rightBlock {
     grid-column: 2;
-    min-height: 180px;
+    min-height: 200px;
 }
 
 .fullBlock {
     grid-column: span 2;
     min-height: 285px;
+}
+
+.fullBlock > a {
+    display: grid;
+    grid-template-columns: 1fr 355px;
+    align-items: center;
+    width: calc(100% - 20px);
+    height: 265px;
+    margin: 10px;
 }

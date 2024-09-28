@@ -22,6 +22,7 @@
     background-color: white;
     border-radius: 10px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.534);
+    font-size: 14pt;
 }
 
 .leftBlock > img {
@@ -52,7 +53,7 @@
 
 .fullBlock {
     grid-column: span 2;
-    min-height: 285px;
+    min-height: 265px;
 }
 
 .fullBlock > a {
@@ -60,6 +61,17 @@
     grid-template-columns: 1fr 355px;
     align-items: center;
     width: calc(100% - 20px);
-    height: 265px;
+    height: 250px;
     margin: 10px;
+}
+
+.fullBlock > a > div {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+}
+
+.fullBlock > a > img {
+    object-fit: cover;
+    border-radius: 10px;
 }

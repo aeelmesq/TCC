@@ -13,9 +13,18 @@
     row-gap: 7px;
 }
 
-.grid-2 > hr {
+.grid-2 hr {
     grid-column: span 2;
-    border-top: 1px solid gray;
+    border-top: 1px solid rgb(192, 192, 192);
+}
+
+.grid-2 a {
+    color: black;
+    text-decoration: none;
+}
+
+.grid-2 a:hover h2 {
+    text-decoration: underline;
 }
 
 .leftBlock, .rightBlock, .fullBlock {
@@ -73,5 +82,5 @@
 
 .fullBlock > a > img {
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 7px;
 }

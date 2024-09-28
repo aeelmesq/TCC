@@ -10,7 +10,7 @@ export default function Recomendacoes() {
             <h1>Recomendações {">"}</h1>
             <hr />
           </header>
-          <TableNews data={noticias} qdtNews={4} />
+          <TableNews data={noticias} qtdNews={4} />
         </section>
       </div>
     </>

@@ -1,3 +1,4 @@
+@import url("presets/colors.css");
 
 /*estilos da barra lateral da tela de login*/
 #LoginPage {
@@ -8,7 +9,7 @@
     flex-wrap: wrap;
 }
 #leftBar {
-    background-color: rgb(53, 53, 53);
+    background-color: var(--dark_Gray);
     height: 100vh;
     width: 35%;
     box-shadow: 2px 2px 3px black;

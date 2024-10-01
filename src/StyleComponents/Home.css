@@ -1,3 +1,5 @@
+@import url("presets/colors.css");
+
 .sectionBlock {
   margin-bottom: 20px;
 }
@@ -12,6 +14,7 @@
 .pNoticia {
   float: left;
   background-color: white;
+  box-shadow: var(--shadow_Block);
   padding: 20px;
   border-radius: 10px;
 }
@@ -32,6 +35,7 @@
   border-radius: 10px;
   list-style: none;
   background-color: white;
+  box-shadow: var(--shadow_Block);
   width: auto;
   padding: 30px;
 }

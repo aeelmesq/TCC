@@ -1,8 +1,10 @@
+@import url("presets/colors.css");
+
 footer {
   border-top: 1px solid #d9d9d9;
   height: calc(100vh - 450px);
   position: relative;
-  background-color: #6a2870;
+  background-color: var(--main_color);
   display: grid;
   grid-template-columns: 1fr 4fr;
   align-content: center;
@@ -29,7 +31,7 @@ footer {
   bottom: 0;
   border-top: 160px solid transparent;
   border-right: 160px solid transparent;
-  border-left: 160px solid #34143C;
+  border-left: 160px solid var(--sec_color);
 }
 #tRight {
   position: absolute;

@@ -1,4 +1,6 @@
 @import url("presets/colors.css");
+@import url("presets/presets.css");
+
 .grid-2 {
  display: grid;
  grid-template-columns: 400px 2fr;
@@ -31,7 +33,7 @@
 .leftBlock, .rightBlock, .fullBlock {
     background-color: white;
     border-radius: 10px;
-    box-shadow: var(--shadow_Block);
+    box-shadow: var(--default_Shadow);
     font-size: 14pt;
 }
 

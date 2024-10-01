@@ -1,3 +1,5 @@
+@import url("StyleComponents/presets/presets.css");
+
 #BtnScrollUp {
     position: fixed;
     height: 70px;
@@ -13,6 +15,7 @@
     font-size: 17pt;
     left: calc(100vw - 100px);
     top: calc(100vh - 80px);
+    box-shadow: var(--default_Shadow);
     z-index: 3;
 }
 #BtnScrollUp:hover {

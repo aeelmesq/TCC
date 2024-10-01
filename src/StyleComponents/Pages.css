@@ -1,4 +1,5 @@
 @import url("presets/colors.css");
+@import url("presets/presets.css");
 
 .block {
   background-color: var(--gray_Block);
@@ -10,7 +11,7 @@
   flex-direction: column;
   border-radius: 10px;
   margin: 15px 0;
-  box-shadow: var(--shadow_Block);
+  box-shadow: var(--default_Shadow);
 }
 
 .mainCont {

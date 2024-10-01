@@ -1,6 +1,7 @@
 
 /*animações*/
 @import url("presets/altAnimations.css");
+@import url("presets/presets.css");
 /*fim animações*/
 
 /*estilos do header*/
@@ -11,7 +12,7 @@
     border-bottom: 1px solid #d9d9d9;
     align-items: center;
     transition: 0.9s;
-    background-color: #6D2B6D;
+    background-color: #6d2b6dfd;
     transition: 0.4s;
     z-index: 10;
 }
@@ -66,7 +67,8 @@
 }
 .FixedHeader {
     position: fixed;
-    animation: slideDow 0.18s linear;
+    animation: slideDow 0.18s linear; 
+    box-shadow: var(--default_Shadow);
 }
 .upSideHeader {
     position: fixed;
@@ -88,7 +90,7 @@
         visibility: visible;
         cursor: pointer;
         font-size: 20pt;
-        color: black;
+        color: white;
         background: none;
         border: none;
         margin: 0 15px 0 0;
@@ -112,7 +114,7 @@
         height: 40px;
     }
     .hanbBtn:hover {
-        background-color: #f6f6f6;
+        background-color: var(--dark_Gray);
     }
 
     /*estilos do btn de fechar o menu responsivo*/

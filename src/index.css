@@ -9,6 +9,7 @@
 
 body {
   font: normal 12pt Arial;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -17,16 +18,17 @@ body::-webkit-scrollbar {
 }
 
 .container {
-  margin: auto;
-  width: calc(100% - 30vw);
+  display: grid;
+  grid-template-columns: minmax(calc(100% - 15dvw), calc(100% - 22dvw));
+  justify-content: center;
   height: 100%;
 }
 .DbBtn {
   display: flex;
 }
 .DbBtn .btn1 a {
-  background-color: #e4e4e4;
-  border: 1px solid #acacac;
+  background: none;
+  border: 1px solid #000;
   transition: 0.7s;
   color: black;
 }
@@ -43,11 +45,13 @@ body::-webkit-scrollbar {
 .DbBtn .btn2 a {
   background-color: black;
   color: white;
-  border: 1px solid white;
+  border: 1px solid transparent;
   transition: 0.7s;
 }
 .DbBtn .btn1 a:hover {
-  opacity: 0.87;
+  background-color: #000;
+  color: white;
+  border-color: transparent;
 }
 .DbBtn .btn2 a:hover {
   color: black;
@@ -100,7 +104,7 @@ body::-webkit-scrollbar {
 .modalHead button:hover {
   background-color: red;
 }
-@media screen and (max-width: 745px) {
+@media screen and (max-width: 780px) {
   .container {
     width: 100%;
     margin: 0;

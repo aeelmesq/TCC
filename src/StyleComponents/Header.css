@@ -1,50 +1,9 @@
-@keyframes slideDow {
-    0%{
-        top: -100px;
-        transition: 0.4s;
-    }
-    100%{
-        top: 0;
-        transition: 0.4s;
-    }
-}
-@keyframes slideUp {
-    0%{
-        top: 0;
-        transition: 0.4s;
-    }
-    100%{
-        top: -100px;
-        transition: 0.4s;
-    }
-}
-@keyframes slideLeftScreen {
-    0% {
-        transform: translateX(100vw);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-@keyframes slideRigthScreen {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(100vw);
-    }
-}
-@keyframes Press {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(0.8);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
+
+/*animações*/
+@import url("presets/altAnimations.css");
+/*fim animações*/
+
+/*estilos do header*/
 #webHeader {
     width: 100dvw;
     height: 70px;
@@ -64,6 +23,8 @@
     align-items: center;
     margin-left: 20px;
 }
+
+/*estilos do menu*/
 #right {
     width: 96%;
     display: flex;
@@ -118,7 +79,11 @@
 .xBtn {
     display: none;
 }
+
+/*Responsivo para telas de 880px até 660px*/
 @media screen and (max-width: 880px) {
+
+    /*estilos do menu hanburguer*/
     .hanbBtn {
         visibility: visible;
         cursor: pointer;
@@ -149,6 +114,8 @@
     .hanbBtn:hover {
         background-color: #f6f6f6;
     }
+
+    /*estilos do btn de fechar o menu responsivo*/
     .xBtn {
         display: block;
         cursor: pointer;
@@ -167,13 +134,15 @@
         animation: Press 0.1s linear;
         background-color: #000000;
     }
+
+    /*etilos do menu responsivo*/
     #navBar {
         z-index: 0;
         display: block;
         position: fixed;
         top: 0;
-        background-color: rgb(53, 53, 53);
-        height: 100vh;
+        background-color: var(--dark_Gray);
+        height: 100dvh;
         width: 350px;
         z-index: 11;
         box-shadow: -3px -3px 3px rgba(0, 0, 0, 0.397);
@@ -212,12 +181,14 @@
         animation: slideRigthScreen 0.5s linear;
         transition: 0.5s;
         position: fixed;
-        transform: translateX(100vw);
+        transform: translateX(100dvw);
     }
     .xBtn:hover {
         background-color: red;
     }
 }
+
+/*Responsivo para telas de 660px até 470px*/
 @media screen and (max-width: 660px) {
     #left {
         width: 90%;
@@ -226,6 +197,8 @@
         width: 10%;
     }
 }
+
+/*Responsivo para telas de 470px*/
 @media screen and (max-width: 470px) {
     #left {
         width: 86%;

@@ -1,5 +1,7 @@
+@import url("presets/colors.css");
+
 .block {
-  background-color: #d9d9d9;
+  background-color: var(--gray_Block);
   padding: 10px;
   width: 100%;
   display: flex;
@@ -8,7 +10,7 @@
   flex-direction: column;
   border-radius: 10px;
   margin: 15px 0;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow_Block);
 }
 
 .mainCont {
@@ -26,7 +28,7 @@
   display: none;
 }
 .card {
-  width: 31%;
+  width: calc(33% - 18px);
   height: 755px;
   background-color: white;
   margin: 10px;
@@ -37,7 +39,6 @@
   padding: 10px;
   height: 30px;
   border-radius: 10px 10px 0 0;
-  background-color: red;
 }
 .btnLeft,
 .btnRight {
@@ -60,11 +61,11 @@
   opacity: 0.7;
 }
 .btnLeft {
-  right: 86vw;
+  right: 89.3vw;
   z-index: 0;
 }
 .btnRight {
-  left: 86vw;
+  left: 90.7vw;
   z-index: 0;
 }
 .btnOf {

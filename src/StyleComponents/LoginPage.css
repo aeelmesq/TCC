@@ -1,3 +1,6 @@
+@import url("presets/colors.css");
+
+/*estilos da barra lateral da tela de login*/
 #LoginPage {
     width: 100%;
     height: 100vh;
@@ -6,7 +9,7 @@
     flex-wrap: wrap;
 }
 #leftBar {
-    background-color: rgb(53, 53, 53);
+    background-color: var(--dark_Gray);
     height: 100vh;
     width: 35%;
     box-shadow: 2px 2px 3px black;
@@ -28,6 +31,8 @@
     justify-content: center;
     height: 96vh;
 }
+
+/*estilos da section principal da tela de login*/
 #mainSection {
     display: flex;
     align-items: center;
@@ -45,86 +50,91 @@
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.308);
     overflow: hidden;
 }
-#FormLogin {
-    text-align: center;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    width: 100%;
-    min-height: 350px;
-}
-#FormLogin ul {
-    width: 100%;
-    margin-top: 10px;
-    justify-content: center;
-    align-items: center;
-}
-#FormLogin ul li {
-    margin:  0 7px;
-}
-#FormLogin form {
-    margin: 15px 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.FormDiv {
-    display: flex;
-    justify-content: left;
-    flex-wrap: wrap;
-    margin: 10px 0;
-    width: 65%;
-}
-.FormDiv a {
-    color: blue;
-    text-decoration: none;
-}
-.FormDiv a:hover {
-    text-decoration:underline;
-}
-.contCenter {
-    justify-content: center;
-    width: 100%;
-}
-.inputGroup {
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: right;
-}
-.inputGroup i {
-    z-index: 0;
-    margin-right: 2px ;
-    padding: 5px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    border-left: 1px solid #acacac;
-    position: absolute;
-    transition: 0.7s;
-    cursor: pointer;
-}
-.inputGroup input {
-    border-radius: 12px;
-    padding: 8px 5px;
-    width: 100%;
-    transition: 0.7s;
-    display: flex;
-    align-items: center;
-    border: 1px solid #acacac;
-}
-.inputGroup input:hover {
-    box-shadow: 1px 1px 5px rgba(7, 106, 199, 0.72);
-}
-textarea:focus, .inputGroup input:focus {
-    outline: none;
-    border: 1px solid blue;
-    box-shadow: 1px 1px 5px rgb(7, 106, 199);
-}
+
+/*estilos do formulario*/
+    #FormLogin {
+        text-align: center;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        width: 100%;
+        min-height: 350px;
+    }
+    #FormLogin ul {
+        width: 100%;
+        margin-top: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    #FormLogin ul li {
+        margin:  0 7px;
+    }
+    #FormLogin form {
+        margin: 15px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .FormDiv {
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap;
+        margin: 10px 0;
+        width: 65%;
+    }
+    .FormDiv a {
+        color: blue;
+        text-decoration: none;
+    }
+    .FormDiv a:hover {
+        text-decoration:underline;
+    }
+    .contCenter {
+        justify-content: center;
+        width: 100%;
+    }
+    /*estilos dos inputs*/
+        .inputGroup {
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: right;
+        }
+        .inputGroup i {
+            z-index: 0;
+            margin-right: 2px ;
+            padding: 5px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            border-left: 1px solid #acacac;
+            position: absolute;
+            transition: 0.7s;
+            cursor: pointer;
+        }
+        .inputGroup input {
+            border-radius: 12px;
+            padding: 8px 5px;
+            width: 100%;
+            transition: 0.7s;
+            display: flex;
+            align-items: center;
+            border: 1px solid #acacac;
+        }
+        .inputGroup input:hover {
+            box-shadow: 1px 1px 5px rgba(7, 106, 199, 0.72);
+        }
+        textarea:focus, .inputGroup input:focus {
+            outline: none;
+            border: 1px solid blue;
+            box-shadow: 1px 1px 5px rgb(7, 106, 199);
+        }
+    /*Fim dos estilos dos inputs*/
+/*Fim dos estilos do formulario*/
 #FormHeader {
     width: 100%;
     height: 70px;
@@ -135,38 +145,56 @@ textarea:focus, .inputGroup input:focus {
     color: white;
     border-radius: 8px 8px 0 0;
 }
-#GoogleBtn {
-    padding: 7px;
-    border-radius: 10px;
-    border: 1px solid black;
-    background: none;
-    font-size: 11pt;
-    width: 300px;
-    text-align: center;
-    transition: ease-in-out 0.5s;
-    cursor: pointer;
-}
-#GoogleBtn i {
-    float: left;
-}
-#GoogleBtn:hover {
-    background-color: black;
-    color: white;
-}
-#submmitBtn {
-    padding: 6px 12px;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: black;
-    color: white;
-    border: 1px solid black;
-    font-size: 12pt;
-    transition: ease-in-out 0.5s;
-}
-#submmitBtn:hover {
-    background: none;
-    color: black;
-}
+/*estilos dos Botões*/
+    #GoogleBtn {
+        padding: 7px;
+        border-radius: 10px;
+        border: 1px solid black;
+        background: none;
+        font-size: 11pt;
+        width: 300px;
+        text-align: center;
+        transition: ease-in-out 0.5s;
+        cursor: pointer;
+    }
+    #GoogleBtn i {
+        float: left;
+    }
+    #GoogleBtn:hover {
+        background-color: black;
+        color: white;
+    }
+    #submmitBtn {
+        padding: 6px 12px;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+        font-size: 12pt;
+        transition: ease-in-out 0.5s;
+    }
+    #submmitBtn:hover {
+        background: none;
+        color: black;
+    }
+    #prevBtn {
+        border-radius: 10px;
+        border: 1px solid black;
+        color: black;
+        cursor: pointer;
+        padding: 6px 12px;
+        font-size: 12pt;
+        transition: 0.7s;
+    }
+    #prevBtn:hover {
+        background-color: black;
+        color: white;
+    }
+    .contCenter button {
+        margin: 7px;
+    }
+/*fim dos estilos dos Botões*/
 hr {
     width: 100%;
 }
@@ -187,22 +215,7 @@ hr {
 #terms {
     cursor: pointer;
 }
-#prevBtn {
-    border-radius: 10px;
-    border: 1px solid black;
-    color: black;
-    cursor: pointer;
-    padding: 6px 12px;
-    font-size: 12pt;
-    transition: 0.7s;
-}
-#prevBtn:hover {
-    background-color: black;
-    color: white;
-}
-.contCenter button {
-    margin: 7px;
-}
+/*responsivo para tela de 1030px até 605px*/
 @media screen and (max-width: 1030px) {
     #leftBar {
         width: 100%;
@@ -218,6 +231,7 @@ hr {
         left: 7px;
     }
 }
+/*Responsivo para telas de 605px*/
 @media screen and (max-width: 605px) {
     #mainBlock {
         height: 100vh;

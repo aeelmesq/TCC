@@ -6,9 +6,16 @@
   padding: 0;
   scroll-behavior: smooth;
 }
+
 body {
   font: normal 12pt Arial;
 }
+
+body::-webkit-scrollbar {
+ visibility: hidden;
+ width: 0;
+}
+
 .container {
   margin: auto;
   width: calc(100% - 30vw);

@@ -13,8 +13,8 @@
     font-size: 17pt;
     left: calc(100vw - 100px);
     top: calc(100vh - 80px);
-    z-index: 0;
+    z-index: 3;
 }
-#BtnScrollUp {
+#BtnScrollUp:hover {
     opacity: 0.7;
 }

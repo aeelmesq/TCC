@@ -46,7 +46,7 @@
     }
 }
 #webHeader {
-    width: 100%;
+    width: 100dvw;
     height: 70px;
     display: flex;
     border-bottom: 1px solid #d9d9d9;

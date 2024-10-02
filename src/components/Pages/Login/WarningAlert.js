@@ -1,4 +1,6 @@
-export default function WarningAlert({ alert }) {
+import { memo } from "react";
+
+function WarningAlert({ alert }) {
   return (
     <>
       <article className="FormDiv warning">
@@ -7,3 +9,5 @@ export default function WarningAlert({ alert }) {
     </>
   );
 }
+
+export default memo(WarningAlert);

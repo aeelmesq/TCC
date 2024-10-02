@@ -3,7 +3,21 @@ import Header from "./components/Header/Header.js";
 import SearchBar from "./components/Header/SearchBar/SearchBar.js";
 import FooterTemplate from "./components/Footer/footerTemplate.js";
 import RenderPage from "./components/Pages/RenderPage.js";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { getUlrParam } from "./components/utilits.js";
+import Home from "./components/Pages/Home/Home.js";
+import ForYou from "./components/Pages/ForYou/ForYou.js";
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+  },
+  {
+    path: '/forYou',
+    element: <ForYou />,
+  }
+])
 
 function FullPage() {
   const page = getUlrParam("page");
@@ -43,7 +57,7 @@ function FullPage() {
 function App() {
   return (
     <>
-      <FullPage />
+      <RouterProvider router={router}>
     </>
   );
 }

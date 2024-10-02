@@ -64,7 +64,7 @@
   background-color: black;
   overflow-x: scroll;
   overflow-y: hidden;
-  height: 495px;
+  height: 70dvh;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -81,7 +81,7 @@
 .slide {
   width: calc(100% - 2px);
   display: flex;
-  height: 500px;
+  height: 70dvh;
   margin: 0px 1px;
   background-color: rgba(38, 38, 38, 0.199);
   justify-content: center;
@@ -106,7 +106,6 @@
 }
 
 .imgCover {
-  height: 504px;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.379);
   flex: none;
@@ -120,7 +119,7 @@
 
 .slide > .imgCover {
   width: 100%;
-  height: 500px;
+  height: 70dvh;
   color: white;
 }
 

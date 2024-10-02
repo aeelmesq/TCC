@@ -5,8 +5,9 @@ import FooterTemplate from "./components/Footer/footerTemplate.js";
 import RenderPage from "./components/Pages/RenderPage.js";
 import { getUlrParam } from "./components/utilits.js";
 
-//Importação e testes com api
-import Noticias from './api/news.js';
+// Importação Grid
+import { Grid, GridItem } from '@chakra-ui/react'
+
 
 function FullPage() {
   const page = getUlrParam("page");
@@ -15,7 +16,6 @@ function FullPage() {
     case "1":
       return (
         <>
-          <Noticias />
           <Header />
           <SearchBar />
           <RenderPage />
@@ -33,7 +33,6 @@ function FullPage() {
     default:
       return (
         <>
-          <Noticias />
           <Header />
           <SearchBar />
           <RenderPage />

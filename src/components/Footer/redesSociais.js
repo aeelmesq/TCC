@@ -9,7 +9,7 @@ function SocialMediaItem({ name }) {
 
 export default function RedesSociaisList() {
   return (
-    <div id="socialMediaList">
+    <div>
       <div>
         <SocialMediaItem name="Twitter-X" />
         <SocialMediaItem name="Instagram" />

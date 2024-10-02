@@ -1,94 +1,42 @@
-import "../../StyleComponents/Header.css";
-import DbButton from "./DbButton.js";
-import Menu from "./Menu.js";
+// import "../../StyleComponents/Header.css";
+// import DbButton from "./DbButton.js";
+// import Menu from "./Menu.js";
+// import { useState, useRef, useEffect  } from "react";
 import logo from "../../logo.svg";
-import { useState, useRef, useEffect  } from "react";
 
 function Header() {
-  const [windonwScrollY, setWindonwScrollY] = useState(0);
+  // const [windonwScrollY, setWindonwScrollY] = useState(0);
 
-  const [windonwScrollYTpr, setWindonwScrollYTpr] = useState(0);
+  // const [windonwScrollYTpr, setWindonwScrollYTpr] = useState(0);
 
-  const [menuState, setMenuState] = useState(null);
+  // const [menuState, setMenuState] = useState(null);
 
-  const Btn = useRef(null);
+  // const Btn = useRef(null);
 
-  window.addEventListener("scroll", () => {
-    setWindonwScrollYTpr(windonwScrollY);
-    setWindonwScrollY(window.scrollY);
-  });
+  // window.addEventListener("scroll", () => {
+  //   setWindonwScrollYTpr(windonwScrollY);
+  //   setWindonwScrollY(window.scrollY);
+  // });
 
-  useEffect(() => {
-    if (menuState) {
-      const menu = document.getElementById("navBar");
+  // useEffect(() => {
+  //   if (menuState) {
+  //     const menu = document.getElementById("navBar");
 
-      function hiddenM() {
-        setMenuState(false);
-        Btn.current.classList.remove("pressBtn");
-        menu.removeEventListener("mouseleave", hiddenM);
-      }
+  //     function hiddenM() {
+  //       setMenuState(false);
+  //       Btn.current.classList.remove("pressBtn");
+  //       menu.removeEventListener("mouseleave", hiddenM);
+  //     }
 
-      menu.addEventListener("mouseleave", hiddenM);
-      return;
-    }
-  }, [menuState]);
+  //     menu.addEventListener("mouseleave", hiddenM);
+  //     return;
+  //   }
+  // }, [menuState]);
 
   return (
-    <header
-      id="webHeader"
-      className={
-        windonwScrollY > 0
-          ? windonwScrollY < windonwScrollYTpr
-            ? "FixedHeader"
-            : "upSideHeader"
-          : "none"
-      }
-    >
-      <section id="left">
+    <header>
+      <section>
         <img src={logo} alt="Logo" width="60px" />
-      </section>
-      <section id="right">
-        {
-          //botão de abrir o menu
-        }
-        <button
-          className="hanbBtn"
-          type="button"
-          ref={Btn}
-          onClick={(e) => {
-            e.preventDefault();
-            Btn.current.classList.add("pressBtn");
-            setMenuState(true);
-          }}
-        >
-          <i className="bi bi-list"></i>
-        </button>
-        <div
-          id="navBar"
-          className={menuState ? "slideToLeft" : "slideReverse hiddenM"}
-        >
-          {
-            //botão de fechar o menu
-          }
-          <button
-            className="xBtn"
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              Btn.current.classList.remove("pressBtn");
-              setMenuState(false);
-            }}
-          >
-            X
-          </button>
-          <Menu />
-          <DbButton
-            link1={"?menu=SingIn&page=2"}
-            output1={"Sing In"}
-            link2={"?menu=Register&page=2"}
-            output2={"Reister"}
-          />
-        </div>
       </section>
     </header>
   );

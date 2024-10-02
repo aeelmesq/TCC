@@ -1,22 +1,29 @@
 import Bloco from './bloco';
 import RedesSociaisList from './redesSociais';
-import '../../StyleComponents/Footer.css';
+import { Box, Grid, Image, Divider } from '@chakra-ui/react';
 import logo from '../../logo.svg';
-
 
 export default function Footer() {
   return (
-    <>
-      <section id='bfLeft'>
-        <img src={logo} alt="Logo" id="logo" />
-      </section>
-      <section id='bfRight'>
-        <Bloco />
-      </section>
-      <section id='bfMiddle'>
-        <RedesSociaisList />
-        <hr />
-      </section>
-    </>
+    <Box as="footer" bg="gray.800" color="white" p={6}>
+      <Grid
+        gap={2}
+        gridTemplateColumns='1fr 3fr'
+        direction={{ base: 'column', md: 'row' }}
+        justify="space-between"
+        align="flex-start"
+      >
+        <Box id='bfLeft' m="auto">
+          <Image src={logo} alt="Logo" id="logo" boxSize="150px" />
+        </Box>
+        <Box id='bfRight'>
+          <Bloco />
+        </Box>
+        <Box id='bfMiddle' gridRow={2} gridColumn="span 2">
+          <RedesSociaisList />
+          <Divider borderColor="gray.600" my={4} />
+        </Box>
+      </Grid>
+    </Box>
   );
 }

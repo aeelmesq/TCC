@@ -1,3 +1,5 @@
+import { Box, Heading, UnorderedList, ListItem, Link } from '@chakra-ui/react';
+
 const linkBlock1 = [
   { name: 'Mercado' },
   { name: 'Investimentos' },
@@ -35,30 +37,43 @@ const linkBlock5 = [
 ];
 
 function ListItens({ block }) {
-  return block.map((link) => (
-      <a href={link.name}>
-        <li key={link.name}>{link.name}</li>
-      </a>
-  ));
+  return (
+    <>
+      {block.map((link) => (
+        <ListItem key={link.name} mb={1}>
+          <Link
+            href={`/${link.name}`}
+            color="black.400"
+            _hover={{ textDecoration: 'underline', color: 'black.300' }}
+            style={{listStyle: "none"}}
+          >
+            {link.name}
+          </Link>
+        </ListItem>
+      ))}
+    </>
+  );
 }
 
 function List({ title, nameBlock }) {
-  return <>
-    <ul>
-      <h1>{title}</h1>
-      <ListItens block={nameBlock} />
-    </ul>
-  </>
+  return (
+    <Box mb={6} mx={8}>
+      <Heading size="md" mb={2} color="white">{title}</Heading>
+      <UnorderedList spacing={1}>
+        <ListItens block={nameBlock} />
+      </UnorderedList>
+    </Box>
+  );
 }
 
 export default function Bloco() {
   return (
-    <div>
+    <Box display="flex">
       <List title="Economia" nameBlock={linkBlock1} />
       <List title="Política" nameBlock={linkBlock2} />
       <List title="Saúde" nameBlock={linkBlock3} />
       <List title="Tecnologia" nameBlock={linkBlock4} />
       <List title="Mais" nameBlock={linkBlock5} />
-    </div>
+    </Box>
   );
 }

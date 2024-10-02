@@ -3,8 +3,8 @@ import Footer from './Footer';
 export default function FooterTemplate() {
   return (
     <footer>
-      <i id="tLeft"></i>
-      <i id="tRight"></i>
+      <i></i>
+      <i></i>
 
       <Footer />
     </footer>

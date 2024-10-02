@@ -2,7 +2,7 @@ import { getUlrParam } from "../utilits.js";
 import Home from "./Home/Home";
 import "../../StyleComponents/Pages.css";
 import ForYou from "./ForYou/ForYou.js";
-import BtnScrollUp from "../BtnScrollUp/BtnScrollUp.js";
+import BtnScrollUp from "../../Others/BtnScrollUp/BtnScrollUp.js";
 import Login from "./Login/Login.js";
 import Modal from "../Modal/Modal.js";
 

@@ -1,5 +1,5 @@
-import Recomendacoes from "./components/Recomendacoes/defautBlock";
-import "../../../StyleComponents/ForYou.css";
+import Recomendacoes from "../../../Pages/ForYou/components/Recomendacoes/defautBlock";
+import "../../../../StyleComponents/ForYou.css";
 
 export default function ForYou() {
   return (

@@ -1,31 +1,17 @@
-import pages from "../../consts/Pages.js";
-import { getUlrParam } from "../utilits.js";
+import { NavLink } from "react-router-dom";
 
-const select = getUlrParam("menu") ? getUlrParam("menu") : "Home";
-
-function MenuItem({ link, output, index }) {
+function MenuItem({ link, output }) {
   return (
     <>
-      <li className="MenuItem">
-        <a
-          href={"?menu=" + link}
-          key={index}
-          className={link === select ? "on" : "of"}
-        >
-          {output}
-        </a>
-      </li>
+      <li className="MenuItem"></li>
     </>
   );
 }
 
 function Menu() {
-  let menuItens = pages.map((page, index) => {
-    return <MenuItem link={page.menu} output={page.title} index={index} />;
-  });
   return (
     <>
-      <ul className="menu">{menuItens}</ul>
+      <ul className="menu"></ul>
     </>
   );
 }

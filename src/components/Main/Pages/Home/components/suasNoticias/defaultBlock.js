@@ -1,16 +1,16 @@
-import BlocoPrincipal from './blocoPrincipal';
-import BlocoRight from './blocoRight';
-import API_NEWS from '../../../../../API/mediaStack';
+import BlocoPrincipal from "./blocoPrincipal";
+import BlocoRight from "./blocoRight";
+import API_NEWS from "../../../../../../API/mediaStack";
 
 function noticiaPainel() {
-  const {noticias} = API_NEWS()
+  const { noticias } = API_NEWS();
 
   if (!Array.isArray(noticias) || noticias.length === 0) {
-    return []
+    return [];
   }
-  const data = noticias.filter((noticia) => noticia.url !== null )
+  const data = noticias.filter((noticia) => noticia.url !== null);
 
-  return data
+  return data;
 }
 
 export default function SuasNoticias({ title, style }) {

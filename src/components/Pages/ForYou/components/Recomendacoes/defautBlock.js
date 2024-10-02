@@ -1,4 +1,4 @@
-import { noticias } from "../../../Home/data";
+import { noticias } from "../../../../Main/Pages/Home/data";
 import TableNews from "./TableNews";
 
 export default function Recomendacoes() {

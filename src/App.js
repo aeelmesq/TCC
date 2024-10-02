@@ -2,28 +2,17 @@ import "./style.css";
 import Header from "./components/Header/Header.js";
 import SearchBar from "./components/Header/SearchBar/SearchBar.js";
 import FooterTemplate from "./components/Footer/footerTemplate.js";
-import RenderPage from "./components/Pages/RenderPage.js";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { getUlrParam } from "./components/utilits.js";
-import Home from "./components/Pages/Home/Home.js";
-import ForYou from "./components/Pages/ForYou/ForYou.js";
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Home />,
-  },
-  {
-    path: '/forYou',
-    element: <ForYou />,
-  }
-])
 
 // Importação Grid
-import { Grid, GridItem } from '@chakra-ui/react'
+import { Grid, GridItem } from "@chakra-ui/react";
 
+//import RenderPage from "./components/Pages/RenderPage.js";
+import router from "./components/paths/router.js";
+import { Link, RouterProvider } from "react-router-dom";
 
-function FullPage() {
+import Container from "./components/Others/Container/DefaultBlock.js";
+
+/*function FullPage() {
   const page = getUlrParam("page");
 
   switch (page) {
@@ -56,12 +45,14 @@ function FullPage() {
         </>
       );
   }
-}
+}*/
 
 function App() {
   return (
     <>
-      <RouterProvider router={router}>
+      <Container>
+        <RouterProvider router={router} />
+      </Container>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import img1 from "../../../img/foto-noticia.jpg";
+import img1 from "../../../../img/foto-noticia.jpg";
 
 export const noticias = [
   {

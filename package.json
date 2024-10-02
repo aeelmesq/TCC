@@ -4,6 +4,9 @@
   "homepage": "https://aeelmesq.github.io/ALT",
   "private": true,
   "dependencies": {
+    "@chakra-ui/react": "^2.9.1",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "@tanstack/react-query": "^5.53.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -13,6 +16,7 @@
     "create-app": "^2.1.0",
     "create-react-app": "^1.5.2",
     "curl": "^0.1.4",
+    "framer-motion": "^11.9.0",
     "git": "^0.1.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

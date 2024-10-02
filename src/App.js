@@ -19,6 +19,10 @@ const router = createBrowserRouter([
   }
 ])
 
+// Importação Grid
+import { Grid, GridItem } from '@chakra-ui/react'
+
+
 function FullPage() {
   const page = getUlrParam("page");
 

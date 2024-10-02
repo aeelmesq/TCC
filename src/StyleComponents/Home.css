@@ -23,6 +23,9 @@
   display: flex;
   flex-direction: column;
 }
+.pNoticia > a > h2 {
+  font-size: 14pt;
+}
 
 .sNoticias {
   width: 100%;
@@ -38,7 +41,10 @@
   background-color: white;
   box-shadow: var(--default_Shadow);
   width: auto;
-  padding: 30px;
+  padding: 25px;
+}
+.sNoticias ul li div a h2 {
+  font-size: 14pt;
 }
 
 .principalBlock {

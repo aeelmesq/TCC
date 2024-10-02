@@ -1,9 +1,16 @@
 import { NavLink } from "react-router-dom";
 
-function MenuItem({ link, output }) {
+function MenuItem({ link, label }) {
   return (
     <>
-      <li className="MenuItem"></li>
+      <li className="MenuItem">
+        <NavLink
+          to={link}
+          className={({ isActive }) => (isActive ? "on" : "of")}
+        >
+          {label}
+        </NavLink>
+      </li>
     </>
   );
 }
@@ -11,7 +18,10 @@ function MenuItem({ link, output }) {
 function Menu() {
   return (
     <>
-      <ul className="menu"></ul>
+      <ul className="menu">
+        <MenuItem link={"ALT/"} label={"Home"} />
+        <MenuItem link={"/forYou"} label={"Para você"} />
+      </ul>
     </>
   );
 }

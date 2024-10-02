@@ -66,6 +66,15 @@
     padding: 7px;
     border-radius: 10px;
 }
+.menu li a.on {
+    animation: Press linear 0.2s;
+}
+
+
+.menu li a.on {
+    background-color: #34143c;
+}
+
 .menu li a {
     color: white;
     transition: 0.4s;
@@ -73,9 +82,7 @@
 .menu li a:hover{
     background-color: #34143c;
     color: rgba(256, 256, 256, 0.6);
-}
-.on {
-    background-color: #34143c;
+    position: relative;
 }
 .FixedHeader {
     position: fixed;

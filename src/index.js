@@ -4,8 +4,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
-//import { createBrowserRouter } from "react-router-dom";
+import router from "./components/paths/router";
+import { RouterProvider } from "react-router-dom";
 //mudar sistema de paginação depois da finalização das páginas principais
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -14,7 +14,7 @@ const queryCient = new QueryClient();
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryCient}>
-      <App />
+      <RouterProvider router={router} />
     </QueryClientProvider>
   </React.StrictMode>
 );

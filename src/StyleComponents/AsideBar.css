@@ -1,0 +1,17 @@
+@import url("./presets/colors.css");
+
+.AsideBar {
+    position: fixed;
+    height: 100dvh;
+    width: 50px;
+    z-index: 19;
+    overflow: hidden;
+    transition: 0.5s;
+    background-color: var(--main_color);
+    top: 0;
+    left: 0;
+}
+
+.AsideBar:hover {
+    width: 140px;
+}

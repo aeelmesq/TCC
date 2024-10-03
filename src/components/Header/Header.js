@@ -1,8 +1,7 @@
 import "../../StyleComponents/Header.css";
 import DbButton from "./DbButton.js";
-import Menu from "./Menu.js";
 import logo from "../../logo.svg";
-import { useState, useRef, useEffect  } from "react";
+import { useState, useRef, useEffect } from "react";
 
 function Header() {
   const [windonwScrollY, setWindonwScrollY] = useState(0);
@@ -81,7 +80,6 @@ function Header() {
           >
             X
           </button>
-          <Menu />
           <DbButton
             link1={"?menu=SingIn&page=2"}
             output1={"Sing In"}

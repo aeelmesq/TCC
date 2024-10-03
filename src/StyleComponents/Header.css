@@ -29,8 +29,9 @@
 }
 
 #left {
-    width: 12%;
+    width: 70%;
     display: flex;
+    justify-content: center;
     float: left;
     height: 100%;
     align-items: center;
@@ -39,7 +40,7 @@
 
 /*estilos do menu*/
 #right {
-    width: 96%;
+    width: 30%;
     display: flex;
     float: right;
     align-items: center;
@@ -66,10 +67,6 @@
     padding: 7px;
     border-radius: 10px;
 }
-.menu li a.on {
-    animation: Press linear 0.2s;
-}
-
 
 .menu li a.on {
     background-color: #34143c;

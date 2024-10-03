@@ -1,5 +1,6 @@
 import { noticias } from "../../../../Main/Pages/Home/data";
 import TableNews from "./TableNews";
+import "../../../../../StyleComponents/Pages.css";
 
 export default function Recomendacoes() {
   return (

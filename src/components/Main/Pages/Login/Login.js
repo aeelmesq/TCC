@@ -1,40 +1,17 @@
-import logo from "../../../img/logo512.png";
-import "../../../StyleComponents/LoginPage.css";
-import SingIn from "./SingIn/SingIn";
-import Register from "./Register/Register";
+import logo from "../../../../img/logo512.png";
+import "../../../../StyleComponents/LoginPage.css";
+import { Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 export default function Login({ renderScreen }) {
-  function RenderForm() {
-    switch (renderScreen) {
-      case "SingIn":
-        return (
-          <>
-            <SingIn />
-          </>
-        );
-      case "Register":
-        return (
-          <>
-            <Register />
-          </>
-        );
-      default:
-        return (
-          <>
-            <p>404 not found</p>
-          </>
-        );
-    }
-  }
-
   return (
     <main id="LoginPage">
       <header id="leftBar">
         <div id="backBtn">
-          <a href="?menu=Home&page=1">
+          <Link to="../ALT/">
             <i className="bi bi-caret-left-fill"></i>
             Voltar
-          </a>
+          </Link>
         </div>
         <div id="LogoMarca">
           <img src={logo} alt="logo" width="80px" />
@@ -43,7 +20,7 @@ export default function Login({ renderScreen }) {
       </header>
       <section id="mainSection">
         <div id="mainBlock">
-          <RenderForm />
+          <Outlet />
         </div>
       </section>
     </main>

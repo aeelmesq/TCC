@@ -1,4 +1,4 @@
-function BlockType1({ left, right }) {
+/*function BlockType1({ left, right }) {
   return (
     <>
       <section className="block">
@@ -10,4 +10,4 @@ function BlockType1({ left, right }) {
   );
 }
 
-export default BlockType1;
+export default BlockType1;*/

@@ -1,13 +1,16 @@
+import { Menu } from "../AsideBar/Menu";
+import { Link } from "react-router-dom";
+
 function DbButton({ link1, output1, link2, output2 }) {
   return (
-    <ul className="DbBtn">
-      <li className="btn1">
-        <a href={link1}>{output1}</a>
-      </li>
-      <li className="btn2">
-        <a href={link2}>{output2}</a>
-      </li>
-    </ul>
+    <Menu style={"DbBtn"}>
+      <ul className="btn1">
+        <Link to={link1}>{output1}</Link>
+      </ul>
+      <ul className="btn2">
+        <Link to={link2}>{output2}</Link>
+      </ul>
+    </Menu>
   );
 }
 

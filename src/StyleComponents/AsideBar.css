@@ -7,11 +7,57 @@
     z-index: 19;
     overflow: hidden;
     transition: 0.5s;
-    background-color: var(--main_color);
+    background-color: white;
+    border-right: 2px solid var(--main_color);
+    padding-top: 70px;
     top: 0;
     left: 0;
 }
 
+.AsideBar > ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 180px;
+} 
+
+.AsideBar > ul > li {
+    width: 100%;
+}
+
+.AsideBar > ul > li > a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 13pt;
+    border-left: 3px solid transparent;
+    height: 17px;
+    padding: 10px;
+    transition: 0.5s;
+    text-decoration: none;
+    color: black;
+}
+
+.AsideBar > ul > li > a > i {
+    font-size: 15pt;
+    margin-right: 20px;
+    color: var(--main_color);
+}
+
+.AsideBar > ul > li > a:hover {
+    border-left-color: var(--main_color);
+    padding-left: 13px;
+}
+
+.AsideBar > ul > li > a.on {
+    box-sizing:content-box;
+    cursor: default;
+    padding: 12px 10px 12px 12px;
+    box-shadow: 0px 0px 20px var(--main_color);
+    outline: 1px solid var(--main_color);
+    border-left-color: transparent;
+}
+
 .AsideBar:hover {
-    width: 140px;
+    width: 160px;
 }

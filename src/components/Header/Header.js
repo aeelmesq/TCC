@@ -81,9 +81,9 @@ function Header() {
             X
           </button>
           <DbButton
-            link1={"?menu=SingIn&page=2"}
+            link1={"./loginscreen/singin"}
             output1={"Sing In"}
-            link2={"?menu=Register&page=2"}
+            link2={"./loginscreen/register"}
             output2={"Reister"}
           />
         </div>

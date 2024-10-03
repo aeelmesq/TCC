@@ -1,30 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState, useCallback } from "react";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 const API_NEWS = () => {
   const [noticias, setNoticias] = useState([]);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(null);
 
-  const API_KEY = '822e1276902c165085dad659017b0a79'
-  const API_URL = `https://api.mediastack.com/v1/news?access_key=${API_KEY}&countries=br&sort=popularity`
+  const API_KEY = "822e1276902c165085dad659017b0a79";
+  const API_URL = `https://api.mediastack.com/v1/news?access_key=${API_KEY}&countries=br&sort=popularity`;
+  const location = useLocation();
 
-  useEffect(() => {
+  const API_REQUEST = useCallback(() => {
     const fetchNoticias = async () => {
       try {
-        const response = await axios.get(API_URL)
+        const response = await axios.get(API_URL);
         setNoticias(response.data.data);
       } catch (err) {
-        setErro('Erro ao carregar notícias.' . err.message);
+        setErro("Erro ao carregar notícias." + err);
       } finally {
         setCarregando(false);
       }
     };
 
-    fetchNoticias();
-  }, []);
+    return () => fetchNoticias();
+  }, [API_URL]);
 
-  return {noticias, carregando, erro};
+  useEffect(() => API_REQUEST(), [API_REQUEST, location]);
+
+  return { noticias, carregando, erro };
   // return (
   //   <div>
   //     <h1>Últimas Notícias</h1>

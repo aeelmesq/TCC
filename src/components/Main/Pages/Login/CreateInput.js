@@ -1,4 +1,6 @@
-export default function CreateInput({
+import { memo } from "react";
+
+function CreateInput({
   title,
   Name,
   ofType,
@@ -27,3 +29,5 @@ export default function CreateInput({
     </>
   );
 }
+
+export default memo(CreateInput);

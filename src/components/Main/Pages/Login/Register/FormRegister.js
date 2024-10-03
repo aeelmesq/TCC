@@ -2,26 +2,27 @@ import { useState } from "react";
 import { clickEye } from "../../../../utilits";
 import CreateInput from "../CreateInput";
 import WarningAlert from "../WarningAlert";
+import { Link } from "react-router-dom";
 
 export default function FormRegister() {
   const [passType, setPassType] = useState("password");
   const [confPassType, setConfPassType] = useState("password");
   const [registerStage, setRegisterStage] = useState(1);
 
-  //State que contém as infos do form
+  //States que contém as infos do form
+  const [formErrors, setFomErrors] = useState({
+    Name: "",
+    Email: "",
+    password: "",
+    comfimPassword: "",
+    terms: "",
+  });
   const [formInfos, setFormInfos] = useState({
     Name: "",
     Email: "",
     terms: false,
     password: "",
     comfimPassword: "",
-    Errors: {
-      Name: "",
-      Email: "",
-      password: "",
-      comfimPassword: "",
-      terms: "",
-    },
   });
 
   function handleSubmmit() {
@@ -37,22 +38,17 @@ export default function FormRegister() {
         handleSubmmit();
         return;
       }
-      setFormInfos((prevInfos) => ({
+      setFomErrors((prevInfos) => ({
         ...prevInfos,
-        Errors: {
-          ...prevInfos.Errors,
-          password: "",
-          comfimPassword: "Confirme sua senha!",
-        },
+        password: "",
+        comfimPassword: "Confirme sua senha!",
       }));
       return;
     }
-    setFormInfos((prevInfos) => ({
+    setFomErrors((prevInfos) => ({
       ...prevInfos,
-      Errors: {
-        ...prevInfos.Errors,
-        password: "A senha precisa ter 8 ou mais caracters!",
-      },
+      password: "A senha precisa ter 8 ou mais caracters!",
+      comfimPassword: "",
     }));
   }
 
@@ -64,54 +60,44 @@ export default function FormRegister() {
       if (formInfos.Email.length > 0) {
         if (mailSplit.includes("@") && mailSplit.includes(".")) {
           if (formInfos.terms) {
-            setFormInfos((prevInfos) => ({
+            setFomErrors((prevInfos) => ({
               ...prevInfos,
-              Errors: { ...prevInfos.Errors, Name: "", Email: "", terms: "" },
+              Email: "",
+              Name: "",
+              terms: "",
             }));
             setRegisterStage(2);
             return;
           }
-          setFormInfos((prevInfos) => ({
+          setFomErrors((prevInfos) => ({
             ...prevInfos,
-            Errors: {
-              ...prevInfos.Errors,
-              Name: "",
-              Email: "",
-              terms: "É necessario concordar com os termos",
-            },
+            Email: "",
+            Name: "",
+            terms: "É necessario concordar com os termos",
           }));
           return;
         }
-        setFormInfos((prevInfos) => ({
+        setFomErrors((prevInfos) => ({
           ...prevInfos,
-          Errors: {
-            ...prevInfos.Errors,
-            Name: "",
-            Email: "Email invalido",
-            terms: "",
-          },
+          Email: "Email invalido",
+          Name: "",
+          terms: "",
         }));
         return;
       }
-      setFormInfos((prevInfos) => ({
+      setFomErrors((prevInfos) => ({
         ...prevInfos,
-        Errors: {
-          ...prevInfos.Errors,
-          Name: "",
-          Email: "Digite o email",
-          terms: "",
-        },
+        Email: "Digite o email",
+        Name: "",
+        terms: "",
       }));
       return;
     }
-    setFormInfos((prevInfos) => ({
+    setFomErrors((prevInfos) => ({
       ...prevInfos,
-      Errors: {
-        ...prevInfos.Errors,
-        Name: "Digite o nome",
-        Email: "",
-        terms: "",
-      },
+      Email: "",
+      Name: "Digite o nome",
+      terms: "",
     }));
   }
 
@@ -136,9 +122,7 @@ export default function FormRegister() {
             firstFocus={true}
           />
           {
-            formInfos.Errors.Name && (
-              <WarningAlert alert={formInfos.Errors.Name} />
-            )
+            formErrors.Name && <WarningAlert alert={formErrors.Name} />
             //campo de email
           }
           <CreateInput
@@ -153,9 +137,7 @@ export default function FormRegister() {
             initValue={formInfos.Email}
             icon={"bi bi-envelope-at"}
           />
-          {formInfos.Errors.Email && (
-            <WarningAlert alert={formInfos.Errors.Email} />
-          )}
+          {formErrors.Email && <WarningAlert alert={formErrors.Email} />}
           <article className="FormDiv">
             <input
               type="checkbox"
@@ -173,14 +155,12 @@ export default function FormRegister() {
             </label>
           </article>
           {
-            formInfos.Errors.terms && (
-              <WarningAlert alert={formInfos.Errors.terms} />
-            )
+            formErrors.terms && <WarningAlert alert={formErrors.terms} />
             //botão de continuar
           }
           <article className="FormDiv">
             <p>
-              já possue uma <a href="?menu=SingIn&page=2">conta?</a>
+              já possue uma <Link to="../singin">Conta ?</Link>
             </p>
           </article>
           <article className="FormDiv contCenter">
@@ -220,9 +200,7 @@ export default function FormRegister() {
           />
           {
             //alerta de invalit password
-            formInfos.Errors.password && (
-              <WarningAlert alert={formInfos.Errors.password} />
-            )
+            formErrors.password && <WarningAlert alert={formErrors.password} />
             //Input de confirmação de senha
           }
           <CreateInput
@@ -242,8 +220,8 @@ export default function FormRegister() {
               })
             }
           />
-          {formInfos.Errors.comfimPassword && (
-            <WarningAlert alert={formInfos.Errors.comfimPassword} />
+          {formErrors.comfimPassword && (
+            <WarningAlert alert={formErrors.comfimPassword} />
           )}
           <article className="FormDiv">
             <p>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { clickEye } from "../../../../utilits";
+import { Link } from "react-router-dom";
 import CreateInput from "../CreateInput";
 
 export default function FormSingIn() {
@@ -46,7 +47,7 @@ export default function FormSingIn() {
         //link para página register
       }
       <article className="FormDiv">
-        <a href="?menu=Register&page=2">Criar conta</a>
+        <Link to="../register"> Criar Conta </Link>
       </article>
       <article className="FormDiv contCenter">
         <hr />

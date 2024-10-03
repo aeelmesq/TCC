@@ -1,5 +1,5 @@
 import { Menu, MenuItem } from "./Menu";
-import { useEffect, useCallback } from "react";
+import { useEffect } from "react";
 import "../../StyleComponents/AsideBar.css";
 import { useLocation } from "react-router-dom";
 
@@ -11,7 +11,7 @@ export default function AsideBar() {
   return (
     <>
       <Menu style={"AsideBar"}>
-        <MenuItem path={"ALT/"} onActive={"on"} onPending={"of"}>
+        <MenuItem path={"ALT/"} onActive={"on"} onPending={"on"}>
           <i class="bi bi-house-door-fill"></i>
           Home
         </MenuItem>

@@ -5,6 +5,9 @@ import reportWebVitals from "./reportWebVitals";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import router from "./components/paths/router";
 import { RouterProvider } from "react-router-dom";
+
+import userProvider from "./Providers/userProvider";
+
 //mudar sistema de paginação depois da finalização das páginas principais
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -13,7 +16,9 @@ const queryCient = new QueryClient();
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryCient}>
-      <RouterProvider router={router} />
+      <userProvider>
+        <RouterProvider router={router} />
+      </userProvider>
     </QueryClientProvider>
   </React.StrictMode>
 );

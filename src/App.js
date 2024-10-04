@@ -5,7 +5,10 @@ import "./style.css";
 //import RenderPage from "./components/Pages/RenderPage.js";
 import { Outlet } from "react-router-dom";
 
+import useUser from "./hooks/useUser.js";
+
 import Container from "./components/Others/Container/DefaultBlock.js";
+import { useEffect } from "react";
 
 /*function FullPage() {
   const page = getUlrParam("page");
@@ -43,6 +46,10 @@ import Container from "./components/Others/Container/DefaultBlock.js";
 }*/
 
 function App() {
+  const user = useUser();
+
+  useEffect(() => console.log(user), [user]);
+
   return (
     <>
       <Container>

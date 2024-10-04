@@ -1,8 +1,17 @@
 import { NavLink } from "react-router-dom";
+import menu from "../../Contexts/menuContext";
+import { useContext } from "react";
 
-export function MenuItem({ path, onActive, onPending, ...components }) {
+export function MenuItem({ path, onActive, pos, onPending, ...components }) {
+  const { active, setActive } = useContext(menu);
+
   return (
-    <li>
+    <li
+      onClick={(e) => {
+        e.preventDefault();
+        setActive(pos);
+      }}
+    >
       <NavLink
         to={path}
         className={({ isActive, isPending }) =>

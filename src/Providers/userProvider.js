@@ -9,10 +9,8 @@ export default function UserProvider({ children }) {
     age: Number(),
   });
 
-  const [theme, setTheme] = useState("light");
-
   return (
-    <userContext.Provider value={{ user, setUser, theme, setTheme }}>
+    <userContext.Provider value={{ user, setUser }}>
       {children}
     </userContext.Provider>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const API_NEWS = () => {
@@ -15,14 +15,14 @@ const API_NEWS = () => {
         const response = await axios.get(API_URL);
         setNoticias(response.data.data);
       } catch (err) {
-        setErro("Erro ao carregar notícias.");
+        setErro("Erro ao carregar notícias.".err.message);
       } finally {
         setCarregando(false);
       }
     };
 
     fetchNoticias();
-  }, [API_URL]);
+  }, []);
 
   return { noticias, carregando, erro };
   // return (

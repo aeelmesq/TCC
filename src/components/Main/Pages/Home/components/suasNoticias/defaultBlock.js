@@ -3,7 +3,9 @@ import BlocoRight from "./blocoRight";
 import API_NEWS from "../../../../../../API/mediaStack";
 
 function noticiaPainel() {
-  const { noticias } = API_NEWS();
+  const { noticias, erro } = API_NEWS();
+
+  console.log(erro);
 
   if (!Array.isArray(noticias) || noticias.length === 0) {
     return [];

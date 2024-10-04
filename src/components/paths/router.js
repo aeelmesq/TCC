@@ -1,17 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../Main/Pages/Home/Home.js";
 import ForYou from "../Main/Pages/ForYou/ForYou.js";
-import App from "../../App.js";
 import Login from "../Main/Pages/Login/Login.js";
 import SingIn from "../Main/Pages/Login/SingIn/SingIn.js";
 import Register from "../Main/Pages/Login/Register/Register.js";
+import Main from "../Main/index.js";
 
 const ComingSoon = () => <p>ComingSoon</p>;
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Main />,
     children: [
       {
         path: "ALT/",

@@ -3,12 +3,10 @@ import "./style.css";
 // Importação Grid
 
 //import RenderPage from "./components/Pages/RenderPage.js";
-import { Outlet } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
+import router from "./components/paths/router.js";
 
-import useUser from "./hooks/useUser.js";
-
-import Container from "./components/Others/Container/DefaultBlock.js";
-import { useEffect } from "react";
+import UserProvider from "./Providers/userProvider.js";
 
 /*function FullPage() {
   const page = getUlrParam("page");
@@ -46,15 +44,11 @@ import { useEffect } from "react";
 }*/
 
 function App() {
-  const user = useUser();
-
-  useEffect(() => console.log(user), [user]);
-
   return (
     <>
-      <Container>
-        <Outlet />
-      </Container>
+      <UserProvider>
+        <RouterProvider router={router} />
+      </UserProvider>
     </>
   );
 }

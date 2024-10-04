@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import userContext from "../Contexts/userContext";
 
 export default function UserProvider({ children }) {
@@ -11,5 +11,9 @@ export default function UserProvider({ children }) {
 
   const [theme, setTheme] = useState("light");
 
-  return <userContext.Provider value={theme}>{children}</userContext.Provider>;
+  return (
+    <userContext.Provider value={{ user, setUser, theme, setTheme }}>
+      {children}
+    </userContext.Provider>
+  );
 }

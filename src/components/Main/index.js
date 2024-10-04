@@ -1,3 +1,12 @@
+import Container from "../Others/Container/DefaultBlock";
+import { Outlet } from "react-router-dom";
+
 export default function Main() {
-  return <h1>Teste</h1>
+  return (
+    <>
+      <Container>
+        <Outlet />
+      </Container>
+    </>
+  );
 }

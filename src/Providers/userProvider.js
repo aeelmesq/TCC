@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import userContext from "../Contexts/userContext";
 
 export default function UserProvider({ children }) {
@@ -6,13 +6,16 @@ export default function UserProvider({ children }) {
     id: Number(),
     Name: "",
     email: "",
-    age: Number(),
   });
 
-  const [themem, setTheme] = useState("black");
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   return (
-    <userContext.Provider value={{ user, setUser, themem, setTheme }}>
+    <userContext.Provider value={{ user, setUser, theme, setTheme }}>
       {children}
     </userContext.Provider>
   );

@@ -2,6 +2,7 @@ import "../../StyleComponents/Header.css";
 import DbButton from "./DbButton.js";
 import logo from "../../logo.svg";
 import { useState, useRef, useEffect } from "react";
+import useUser from "../../hooks/useUser.js";
 
 function Header() {
   const [windonwScrollY, setWindonwScrollY] = useState(0);
@@ -9,6 +10,8 @@ function Header() {
   const [windonwScrollYTpr, setWindonwScrollYTpr] = useState(0);
 
   const [menuState, setMenuState] = useState(null);
+
+  const { user } = useUser();
 
   const Btn = useRef(null);
 
@@ -80,12 +83,17 @@ function Header() {
           >
             X
           </button>
-          <DbButton
-            link1={"./loginscreen/singin"}
-            output1={"Sing In"}
-            link2={"./loginscreen/register"}
-            output2={"Reister"}
-          />
+
+          {user.id ? (
+            <div>{user.Name}</div>
+          ) : (
+            <DbButton
+              link1={"./loginscreen/singin"}
+              output1={"Sing In"}
+              link2={"./loginscreen/register"}
+              output2={"Reister"}
+            />
+          )}
         </div>
       </section>
     </header>

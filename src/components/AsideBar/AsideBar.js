@@ -1,5 +1,6 @@
-import { Menu, MenuItem } from "./Menu";
-import { useEffect, useState } from "react";
+import Menu from "./Menu";
+import MenuItem from "./MenuItem";
+import { useCallback, useEffect, useState } from "react";
 import "../../StyleComponents/AsideBar.css";
 import menu from "../../Contexts/menuContext";
 import { useLocation } from "react-router-dom";
@@ -10,7 +11,15 @@ export default function AsideBar() {
 
   const [active, setActive] = useState(1);
 
-  const { theme } = useUser();
+  const { theme, setTheme } = useUser();
+
+  const handleTheme = useCallback(() => {
+    if (theme === "light") {
+      setTheme("dark");
+      return;
+    }
+    setTheme("light");
+  }, [theme, setTheme]);
 
   useEffect(() => window.scrollTo(0, 0), [location]);
 
@@ -52,6 +61,14 @@ export default function AsideBar() {
             <i class="bi bi-globe-americas"></i>
             <span>Brasil</span>
           </MenuItem>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              handleTheme();
+            }}
+          >
+            <i class="bi bi-circle-half"></i>
+          </button>
         </Menu>
       </menu.Provider>
     </>

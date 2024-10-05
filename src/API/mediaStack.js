@@ -6,7 +6,10 @@ const API_NEWS = () => {
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(null);
 
-  const API_KEY = "822e1276902c165085dad659017b0a79";
+  //822e1276902c165085dad659017b0a79
+  //3b215986029f14e5ce313f307297581a
+
+  const API_KEY = "gkhgk89ue98s7yds7ye";
   const API_URL = `https://api.mediastack.com/v1/news?access_key=${API_KEY}&countries=br&sort=popularity`;
 
   useEffect(() => {
@@ -15,7 +18,7 @@ const API_NEWS = () => {
         const response = await axios.get(API_URL);
         setNoticias(response.data.data);
       } catch (err) {
-        setErro("Erro ao carregar notícias.".err.message);
+        throw new Error(`Code error ${err["message"]}`);
       } finally {
         setCarregando(false);
       }

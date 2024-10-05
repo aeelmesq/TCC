@@ -1,4 +1,4 @@
-import { Menu } from "../AsideBar/Menu";
+import Menu from "../AsideBar/Menu";
 import { Link } from "react-router-dom";
 
 function DbButton({ link1, output1, link2, output2 }) {

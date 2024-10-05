@@ -105,6 +105,7 @@ body::-webkit-scrollbar {
 .modalHead button:hover {
   background-color: red;
 }
+
 @media screen and (max-width: 780px) {
   .container {
     width: 100%;

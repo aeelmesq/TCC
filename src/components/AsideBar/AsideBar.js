@@ -3,18 +3,21 @@ import { useEffect, useState } from "react";
 import "../../StyleComponents/AsideBar.css";
 import menu from "../../Contexts/menuContext";
 import { useLocation } from "react-router-dom";
+import useUser from "../../hooks/useUser";
 
 export default function AsideBar() {
   const location = useLocation();
 
   const [active, setActive] = useState(1);
 
-  useEffect(() => window.scrollTo(0, 0), [window, location]);
+  const { theme } = useUser();
+
+  useEffect(() => window.scrollTo(0, 0), [location]);
 
   return (
     <>
       <menu.Provider value={{ active, setActive }}>
-        <Menu style={"AsideBar"}>
+        <Menu style={`AsideBar ${theme}`}>
           <MenuItem path={"ALT/"} pos={1} onActive={"on"} onPending={"on"}>
             <i className={`bi bi-house-door${active === 1 ? "-fill" : ""}`}></i>
             <span>Home</span>

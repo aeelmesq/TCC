@@ -1,7 +1,7 @@
 import "../../StyleComponents/Header.css";
 import DbButton from "./DbButton.js";
 import logo from "../../logo.svg";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import useUser from "../../hooks/useUser.js";
 
 function Header() {
@@ -15,10 +15,16 @@ function Header() {
 
   const Btn = useRef(null);
 
-  window.addEventListener("scroll", () => {
-    setWindonwScrollYTpr(windonwScrollY);
-    setWindonwScrollY(window.scrollY);
-  });
+  const addEventScroll = useCallback(() => {
+    let handleEventScroll = () => {
+      setWindonwScrollYTpr(windonwScrollY);
+      setWindonwScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleEventScroll);
+  }, [windonwScrollY]);
+
+  useEffect(() => addEventScroll, [addEventScroll]);
 
   useEffect(() => {
     if (menuState) {
@@ -31,7 +37,6 @@ function Header() {
       }
 
       menu.addEventListener("mouseleave", hiddenM);
-      return;
     }
   }, [menuState]);
 

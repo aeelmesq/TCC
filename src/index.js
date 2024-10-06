@@ -4,6 +4,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import App from "./App";
+import { ChakraProvider } from "@chakra-ui/react";
 
 //mudar sistema de paginação depois da finalização das páginas principais
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -13,7 +14,12 @@ const queryCient = new QueryClient();
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryCient}>
-      <App />
+      <ChakraProvider
+        resetCSS={false}
+        theme={{ fontFamily: "Arial, Helvetica, sans-serif" }}
+      >
+        <App />
+      </ChakraProvider>
     </QueryClientProvider>
   </React.StrictMode>
 );

@@ -7,6 +7,10 @@
  row-gap: 15px;
  column-gap: 13px;
  align-items: start;
+
+ & * {
+    color: black;
+ }
 }
 
 .grid-2 > header {

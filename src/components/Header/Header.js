@@ -2,7 +2,9 @@ import "../../StyleComponents/Header.css";
 import DbButton from "./DbButton.js";
 import logo from "../../logo.svg";
 import { useState, useRef, useEffect, useCallback } from "react";
+import Avatar from "./Avatar.js";
 import useUser from "../../hooks/useUser.js";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [windonwScrollY, setWindonwScrollY] = useState(0);
@@ -90,7 +92,9 @@ function Header() {
           </button>
 
           {user.id ? (
-            <div>{user.Name}</div>
+            <Link to="/user">
+              <Avatar size="47px" margin="0 25px 0 0" />
+            </Link>
           ) : (
             <DbButton
               link1={"./loginscreen/singin"}

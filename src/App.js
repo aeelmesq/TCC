@@ -3,8 +3,7 @@ import "./style.css";
 // Importação Grid
 
 //import RenderPage from "./components/Pages/RenderPage.js";
-import { RouterProvider } from "react-router-dom";
-import router from "./components/paths/router.js";
+import { Outlet } from "react-router-dom";
 
 import UserProvider from "./Providers/userProvider.js";
 
@@ -47,7 +46,7 @@ function App() {
   return (
     <>
       <UserProvider>
-        <RouterProvider router={router} />
+        <Outlet />
       </UserProvider>
     </>
   );

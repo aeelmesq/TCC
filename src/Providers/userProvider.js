@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import userContext from "../Contexts/userContext";
+import defaultAvatar from "../img/perfil.jpg";
 
 export default function UserProvider({ children }) {
   const [user, setUser] = useState({
     id: Number(),
     Name: "",
     email: "",
+    avatar: defaultAvatar,
   });
 
   const [theme, setTheme] = useState("light");

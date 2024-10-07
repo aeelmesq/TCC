@@ -1,16 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { clickEye } from "../../../../utilits";
 import { Link } from "react-router-dom";
 import CreateInput from "../CreateInput";
 
 export default function FormSingIn() {
   const [inputType, setInputType] = useState("password");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  useEffect(() => {
-    console.log(email);
-  }, [email]);
+  const [loginInfos, setLoginInfos] = useState({
+    Email: "",
+    password: "",
+  });
+
+  function handleForm(key, value) {
+    setLoginInfos((prevInfos) => ({ ...prevInfos, [key]: value }));
+  }
 
   return (
     <form>
@@ -21,8 +24,11 @@ export default function FormSingIn() {
         title={"Email"}
         name={"userEmail"}
         ofType={"email"}
-        setValue={(e) => setEmail(e.target.value)}
-        initValue={email}
+        setValue={(e) => {
+          e.preventDefault();
+          handleForm("Email", e.target.value);
+        }}
+        initValue={loginInfos.Email}
         icon={"bi bi-envelope-at"}
         firstFocus={true}
       />
@@ -33,15 +39,18 @@ export default function FormSingIn() {
         title={"Senha"}
         name={"userPass"}
         ofType={inputType}
-        setValue={(e) => setPassword(e.target.value)}
-        initValue={password}
+        setValue={(e) => {
+          e.preventDefault();
+          handleForm("password", e.target.value);
+        }}
+        initValue={loginInfos.password}
         icon={"bi bi-eye-slash-fill"}
         firstFocus={false}
-        clickIcon={(e) =>
+        clickIcon={(e) => {
           clickEye(e, {
             state: { value: inputType, setValue: setInputType },
-          })
-        }
+          });
+        }}
       />
       {
         //link para página register
@@ -66,7 +75,7 @@ export default function FormSingIn() {
         //botão de login
       }
       <article className="FormDiv contCenter">
-        <button type="submmit" id="submmitBtn">
+        <button type="button" id="submmitBtn">
           <i class="bi bi-door-closed"></i>
           Logar
         </button>

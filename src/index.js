@@ -3,8 +3,9 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import App from "./App";
 import { ChakraProvider } from "@chakra-ui/react";
+import { RouterProvider } from "react-router-dom";
+import router from "./components/paths/router";
 
 //mudar sistema de paginação depois da finalização das páginas principais
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -18,7 +19,7 @@ root.render(
         resetCSS={false}
         theme={{ fontFamily: "Arial, Helvetica, sans-serif" }}
       >
-        <App />
+        <RouterProvider router={router} />
       </ChakraProvider>
     </QueryClientProvider>
   </React.StrictMode>

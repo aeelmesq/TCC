@@ -6,52 +6,63 @@ import SingIn from "../Main/Pages/Login/SingIn/SingIn.js";
 import Register from "../Main/Pages/Login/Register/Register.js";
 import Main from "../Main/index.js";
 import ErrorPage from "../Main/Pages/ErrorPage.js/ErrorPage.js";
+import App from "../../App.js";
 
 const ComingSoon = () => <p>ComingSoon</p>;
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main />,
+    element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "ALT/",
-        element: <Home />,
+        path: "/",
+        element: <Main />,
+        children: [
+          {
+            path: "ALT/",
+            element: <Home />,
+          },
+          {
+            path: "/forYou",
+            element: <ForYou />,
+          },
+          {
+            path: "/preferencias",
+            element: <ComingSoon />,
+          },
+          {
+            path: "/penapolis",
+            element: <ComingSoon />,
+          },
+          {
+            path: "/regiao",
+            element: <ComingSoon />,
+          },
+          {
+            path: "/brasil",
+            element: <ComingSoon />,
+          },
+          {
+            path: "/user",
+            element: <ComingSoon />,
+          },
+        ],
       },
       {
-        path: "/forYou",
-        element: <ForYou />,
-      },
-      {
-        path: "/preferencias",
-        element: <ComingSoon />,
-      },
-      {
-        path: "/penapolis",
-        element: <ComingSoon />,
-      },
-      {
-        path: "/regiao",
-        element: <ComingSoon />,
-      },
-      {
-        path: "/brasil",
-        element: <ComingSoon />,
-      },
-    ],
-  },
-  {
-    path: "/loginscreen",
-    element: <Login />,
-    children: [
-      {
-        path: "singin/",
-        element: <SingIn />,
-      },
-      {
-        path: "register/",
-        element: <Register />,
+        path: "/loginscreen",
+        element: <Login />,
+        children: [
+          {
+            path: "singin/",
+            element: <SingIn />,
+          },
+          {
+            path: "register/",
+            element: <Register />,
+          },
+        ],
       },
     ],
   },

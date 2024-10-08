@@ -108,6 +108,11 @@
         width: 100dvw;
     }
 
+    .AsideBar > ul > button {
+        display: none;
+        visibility: hidden;
+    }
+
     .AsideBar > ul {
         display: grid;
         width: 90%;

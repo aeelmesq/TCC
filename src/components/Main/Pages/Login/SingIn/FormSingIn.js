@@ -1,12 +1,14 @@
 import { useCallback, useState } from "react";
 import { clickEye } from "../../../../utilits";
-import { Link, replace } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CreateInput from "../CreateInput";
 import useUser from "../../../../../hooks/useUser";
 import WarningAlert from "../WarningAlert";
 
 export default function FormSingIn() {
   const { setUser } = useUser();
+
+  const navigate = useNavigate();
 
   const [inputType, setInputType] = useState("password");
 
@@ -52,8 +54,7 @@ export default function FormSingIn() {
             id: 1,
           }));
 
-          replace("../../ALT");
-
+          navigate("/ALT/");
           return;
         }
         handleErrorMessage("password", "Digite a senha");

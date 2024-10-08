@@ -1,6 +1,6 @@
 import { formatarSite } from "../../../../utilits";
 
-export default function Lide({ title, img, fonte, link }) {
+export default function Lide({ title, img, fonte, link, key }) {
   return (
     <>
       <div className="slide">

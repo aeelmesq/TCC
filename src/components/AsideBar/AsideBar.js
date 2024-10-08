@@ -58,7 +58,7 @@ export default function AsideBar() {
             <span>Região</span>
           </MenuItem>
           <MenuItem path={"/brasil"} pos={6} onActive={"on"} onPending={"of"}>
-            <i class="bi bi-globe-americas"></i>
+            <i className="bi bi-globe-americas"></i>
             <span>Brasil</span>
           </MenuItem>
           <button
@@ -67,7 +67,7 @@ export default function AsideBar() {
               handleTheme();
             }}
           >
-            <i class="bi bi-circle-half"></i>
+            <i className="bi bi-circle-half"></i>
           </button>
         </Menu>
       </menu.Provider>

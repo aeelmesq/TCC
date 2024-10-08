@@ -49,6 +49,10 @@ footer {
 #bfRight > div {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+
+  & * {
+    color: white;
+  }
 }
 #bfRight > div > ul > a {
   text-decoration: none;

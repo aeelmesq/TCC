@@ -19,9 +19,8 @@ body::-webkit-scrollbar {
 
 .container {
   display: grid;
-  grid-template-columns: minmax(calc(100% - 15dvw), calc(100% - 35dvw));
-  justify-content: center;
-  height: 100%;
+  grid-template-columns: calc(100dvw - 65px);
+  justify-content: right;
 }
 .DbBtn > ul {
   display: flex;

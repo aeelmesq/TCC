@@ -47,6 +47,7 @@ function App() {
     <>
       <UserProvider>
         <Outlet />
+        {/* Placeholder das páginas */}
       </UserProvider>
     </>
   );

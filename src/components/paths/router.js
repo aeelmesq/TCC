@@ -10,6 +10,7 @@ import App from "../../App.js";
 
 const ComingSoon = () => <p>ComingSoon</p>;
 
+// Constante que contém as Rotas do site
 const router = createBrowserRouter([
   {
     path: "/",

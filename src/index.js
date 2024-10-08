@@ -7,7 +7,6 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { RouterProvider } from "react-router-dom";
 import router from "./components/paths/router";
 
-//mudar sistema de paginação depois da finalização das páginas principais
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const queryCient = new QueryClient();

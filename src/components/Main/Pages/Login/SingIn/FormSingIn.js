@@ -1,19 +1,69 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { clickEye } from "../../../../utilits";
-import { Link } from "react-router-dom";
+import { Link, replace } from "react-router-dom";
 import CreateInput from "../CreateInput";
+import useUser from "../../../../../hooks/useUser";
+import WarningAlert from "../WarningAlert";
 
 export default function FormSingIn() {
+  const { setUser } = useUser();
+
   const [inputType, setInputType] = useState("password");
+
+  const [loginErrors, setLoginErrors] = useState({
+    Email: "",
+    password: "",
+  });
 
   const [loginInfos, setLoginInfos] = useState({
     Email: "",
     password: "",
   });
 
-  function handleForm(key, value) {
-    setLoginInfos((prevInfos) => ({ ...prevInfos, [key]: value }));
-  }
+  // Função para manipular o state de Erros de login
+  const handleErrorMessage = useCallback(
+    (key, value) => {
+      setLoginErrors((prevInfos) => ({
+        Email: "",
+        password: "",
+        [key]: value,
+      }));
+    },
+    [setLoginErrors]
+  );
+
+  // Função para manipular o state de Login
+  const handleForm = useCallback(
+    (key, value) => {
+      setLoginInfos((prevInfos) => ({ ...prevInfos, [key]: value }));
+    },
+    [setLoginInfos]
+  );
+
+  // Função de manipulação do submit
+  const handleSubmit = useCallback(() => {
+    var EmailSplit = loginInfos.Email.split("");
+    if (loginInfos.Email.length != 0) {
+      if (EmailSplit.includes("@") && EmailSplit.includes(".")) {
+        if (loginInfos.password.length >= 8) {
+          setUser((prevInfos) => ({
+            ...prevInfos,
+            Email: loginInfos.Email,
+            id: 1,
+          }));
+
+          replace("../../ALT");
+
+          return;
+        }
+        handleErrorMessage("password", "Digite a senha");
+        return;
+      }
+      handleErrorMessage("Email", "Email invalido");
+      return;
+    }
+    handleErrorMessage("Email", "Digite o Email");
+  }, [loginInfos, handleErrorMessage, setUser]);
 
   return (
     <form>
@@ -33,6 +83,7 @@ export default function FormSingIn() {
         firstFocus={true}
       />
       {
+        loginErrors.Email && <WarningAlert alert={loginErrors.Email} />
         //campo de senha
       }
       <CreateInput
@@ -53,6 +104,7 @@ export default function FormSingIn() {
         }}
       />
       {
+        loginErrors.password && <WarningAlert alert={loginErrors.password} />
         //link para página register
       }
       <article className="FormDiv">
@@ -75,7 +127,14 @@ export default function FormSingIn() {
         //botão de login
       }
       <article className="FormDiv contCenter">
-        <button type="button" id="submmitBtn">
+        <button
+          type="button"
+          id="submmitBtn"
+          onClick={(e) => {
+            e.preventDefault();
+            handleSubmit();
+          }}
+        >
           <i class="bi bi-door-closed"></i>
           Logar
         </button>

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import userContext from "../Contexts/userContext";
 import defaultAvatar from "../img/perfil.jpg";
 
+// Provider de informações do usuário
 export default function UserProvider({ children }) {
   const [user, setUser] = useState({
     id: Number(),

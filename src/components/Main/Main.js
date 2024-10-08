@@ -1,3 +1,11 @@
+function Background() {
+  
+}
+
 export default function Main() {
-  return <h1>Teste</h1>
+  return (
+    <Background>
+      <h1>teste</h1>
+    </Background>
+  )
 }

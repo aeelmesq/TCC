@@ -8,6 +8,20 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 //Chakra UI
 import { ChakraProvider } from '@chakra-ui/react'
 
+//Tema do Chakra UI
+import { extendTheme } from "@chakra-ui/react"
+//Chama `extendTheme` e passa os valores customizados
+const theme = extendTheme({
+  colors: {
+    brand: {
+      100: "#f7fafc",
+      // ...
+      900: "#1a202c",
+    },
+  },
+})
+
+
 //import { createBrowserRouter } from "react-router-dom";
 //mudar sistema de paginação depois da finalização das páginas principais
 const root = ReactDOM.createRoot(document.getElementById("root"));

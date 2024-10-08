@@ -58,7 +58,7 @@ function FullPage() {
                 "footer"`,
         md: `"header header"
              "nav main"
-             "nav footer"`,
+             "footer footer"`,
       }}
       gridTemplateRows={{ base: 'auto', md: '50px 1fr 30px' }}
       gridTemplateColumns={{ base: '1fr', md: '150px 1fr' }}
@@ -67,7 +67,7 @@ function FullPage() {
       color='blackAlpha.700'
       fontWeight='bold'
     >
-      <GridItem pl={2} bg='gray.500' area='header' display="flex" alignItems="center" justifyContent="center">
+      <GridItem pl={2} bg='gray.800' area='header' display="flex" alignItems="center" justifyContent="center">
         <Header />
       </GridItem>
       <GridItem pl={2} bg='pink.300' area='nav'>

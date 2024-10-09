@@ -12,8 +12,6 @@ export default function GrayCont({ children }) {
       gridTemplateColumns={"87%"}
       justifyContent={"center"}
       borderRadius={"10px"}
-      position={"relative"}
-      right={"calc(10% - 30px)"}
     >
       {children}
     </Grid>

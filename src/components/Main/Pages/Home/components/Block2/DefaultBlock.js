@@ -10,7 +10,9 @@ export default function Block2() {
         gridAutoColumns={"calc(100% - 10px)"}
         columnGap={"10px"}
         justifyContent={"center"}
-        width={"100%"}
+        width={"100dvw"}
+        position={"relative"}
+        right={"calc(10% - 30px)"}
       >
         <InfoBlock>
           <Heading color={"white"} fontSize={"19pt"}>

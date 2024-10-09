@@ -68,6 +68,8 @@ export default function Block1() {
         gridAutoColumns={"calc(100% - 10px)"}
         columnGap={"10px"}
         justifyContent={"center"}
+        position={"relative"}
+        right={"calc(10% - 30px)"}
       >
         <Flex
           h={"500px"}

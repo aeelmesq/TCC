@@ -24,7 +24,7 @@ body::-webkit-scrollbar {
 
 .container {
   display: grid;
-  grid-template-columns: calc(100dvw - 65px);
+  grid-template-columns: calc(100dvw - 60px);
   justify-content: right;
 }
 .DbBtn > ul {

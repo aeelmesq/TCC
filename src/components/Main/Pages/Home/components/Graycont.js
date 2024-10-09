@@ -6,10 +6,11 @@ export default function GrayCont({ children }) {
       bgColor={"#F5F5F5"}
       m={"auto"}
       h={"auto"}
-      w={"97%"}
-      p={"20px"}
+      w={"93%"}
+      p={"30px"}
       rowGap={"15px"}
-      gridTemplateColumns={"87%"}
+      columnGap={"45px"}
+      gridTemplateColumns={"calc(100% - 90px)"}
       justifyContent={"center"}
       borderRadius={"10px"}
     >

@@ -5,11 +5,12 @@ export default function ImgBlock({ src, alt }) {
     <>
       <Flex
         h={"700px"}
-        overflow={"hidden"}
         alignItems={"center"}
+        justifyContent={"center"}
         bgColor={"black"}
+        overflowY={"hidden"}
       >
-        <Img src={src} alt={alt} w={"100%"} objectFit={"cover"} h={"700px"} />
+        <Img src={src} alt={alt} w={"100%"} objectFit={"cover"} />
       </Flex>
     </>
   );

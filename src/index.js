@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 //Chakra UI
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, color } from '@chakra-ui/react'
 
 //Tema do Chakra UI
 import { extendTheme } from "@chakra-ui/react"
@@ -21,6 +21,11 @@ const theme = extendTheme({
       500: "#000053",
     },
   },
+  components: {
+    Text: {
+      color: "#000053",
+    }
+  }
 })
 
 

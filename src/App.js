@@ -63,7 +63,6 @@ function FullPage() {
       gridTemplateRows={{ base: 'auto', md: '50px 1fr 30px' }}
       gridTemplateColumns={{ base: '1fr', md: '150px 1fr' }}
       height="100vh"
-      gap={1}
       color='blackAlpha.700'
       fontWeight='bold'
     >

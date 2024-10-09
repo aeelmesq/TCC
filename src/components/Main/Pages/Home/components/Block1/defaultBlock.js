@@ -63,13 +63,14 @@ export default function Block1() {
 
   return (
     <>
-      <Heading fontSize={"19pt"}>Destaques</Heading>
+      <Heading fontSize={"19pt"} textAlign={"center"}>
+        Destaques
+      </Heading>
       <Grid
         gridAutoColumns={"calc(100% - 10px)"}
         columnGap={"10px"}
         justifyContent={"center"}
-        position={"relative"}
-        right={"calc(10% - 30px)"}
+        w={"100%"}
       >
         <Flex
           h={"500px"}

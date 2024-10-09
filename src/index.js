@@ -13,10 +13,12 @@ import { extendTheme } from "@chakra-ui/react"
 //Chama `extendTheme` e passa os valores customizados
 const theme = extendTheme({
   colors: {
-    brand: {
-      100: "#f7fafc",
-      // ...
-      900: "#1a202c",
+    blue: {
+      100: "#4525d2",
+      200: "#331cb2",
+      300: "#221293",
+      400: "#110973",
+      500: "#000053",
     },
   },
 })
@@ -29,7 +31,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 const queryCient = new QueryClient();
 
 root.render(
-  <ChakraProvider>
+  <ChakraProvider theme={theme}>
       <React.StrictMode>
         <QueryClientProvider client={queryCient}>
           <App />

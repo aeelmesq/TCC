@@ -63,6 +63,7 @@ export default function Block1() {
 
   return (
     <>
+      <Heading fontSize={"19pt"}>Destaques</Heading>
       <Grid
         gridAutoColumns={"calc(100% - 10px)"}
         columnGap={"10px"}
@@ -86,13 +87,14 @@ export default function Block1() {
                   flex={"none"}
                   key={index + "img"}
                   className="imageSlider"
+                  transition={"0.5s"}
                 />
               </>
             );
           })}
         </Flex>
         <Flex
-          h={"80px"}
+          h={"75px"}
           bgColor={"darkblue"}
           boxShadow={"1px 0px 4px black"}
           w={"92%"}

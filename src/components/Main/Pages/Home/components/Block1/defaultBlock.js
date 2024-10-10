@@ -63,8 +63,8 @@ export default function Block1() {
 
   return (
     <>
-      <Heading fontSize={"25pt"} textAlign={"center"} color={"#4525D2"}>
-        Destaques
+      <Heading fontSize={"25pt"} textAlign={"center"} color={"#000053"}>
+        SUAS NOTÍCIAS
       </Heading>
       <Grid
         gridAutoColumns={"calc(100% - 10px)"}

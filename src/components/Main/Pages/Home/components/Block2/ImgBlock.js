@@ -4,7 +4,7 @@ export default function ImgBlock({ src, alt }) {
   return (
     <>
       <Flex
-        h={"700px"}
+        h={"600px"}
         alignItems={"center"}
         justifyContent={"center"}
         bgColor={"black"}

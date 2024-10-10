@@ -16,7 +16,7 @@ export default function Block3() {
         gridTemplateColumns={"33% 33% 33%"}
         columnGap={"20px"}
         mt={"15px"}
-        w={"100%"}
+        w={"calc(100% - 50px)"}
         justifyContent={"center"}
       >
         <GridItem textAlign={"center"}>

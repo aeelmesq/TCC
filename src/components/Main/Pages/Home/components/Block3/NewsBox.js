@@ -1,4 +1,4 @@
-import { Box, Grid } from "@chakra-ui/react";
+import { Box, Grid, GridItem } from "@chakra-ui/react";
 
 export default function NewsBox() {
   return (
@@ -6,21 +6,22 @@ export default function NewsBox() {
       <Grid
         w={"100%"}
         bgColor={"#221293"}
-        gridTemplateColumns={"repeat(3, 1fr)"}
+        gridTemplateColumns={"repeat(3, auto)"}
         gridTemplateRows={"200px"}
         justifyItems={"center"}
+        p={"25px"}
         h={"600px"}
         borderRadius={"10px"}
       >
-        <Box bgColor={"white"}></Box>
-        <Box bgColor={"white"}></Box>
-        <Box bgColor={"white"}></Box>
-        <Box bgColor={"white"}></Box>
-        <Box bgColor={"white"}></Box>
-        <Box bgColor={"white"}></Box>
-        <Box bgColor={"white"}></Box>
-        <Box bgColor={"white"}></Box>
-        <Box bgColor={"white"}></Box>
+        <GridItem bgColor={"white"} w={"98%"}></GridItem>
+        <GridItem bgColor={"white"} w={"98%"}></GridItem>
+        <GridItem bgColor={"white"} w={"98%"}></GridItem>
+        <GridItem bgColor={"white"} w={"98%"}></GridItem>
+        <GridItem bgColor={"white"} w={"98%"}></GridItem>
+        <GridItem bgColor={"white"} w={"98%"}></GridItem>
+        <GridItem bgColor={"white"} w={"98%"}></GridItem>
+        <GridItem bgColor={"white"} w={"98%"}></GridItem>
+        <GridItem bgColor={"white"} w={"98%"}></GridItem>
       </Grid>
     </>
   );

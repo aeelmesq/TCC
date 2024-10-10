@@ -5,8 +5,8 @@ import video from "../../video/bg_main_home.mp4";
 function Enter() {
   function Background() {
     return (
-      <Box w="100%" pos="absolute" filter='auto' brightness="20%" left={0} right={0} zIndex="100">
-        <video autoPlay muted loop >
+      <Box w="100%" h="calc(100vh - 50px)" pos="absolute" filter='auto' brightness="20%" left={0} right={0} zIndex="100" display="block" overflow="hidden">
+        <video autoPlay muted loop w="100%" height="100%">
           <source  src={video} type="video/mp4" />
         </video>
       </Box>

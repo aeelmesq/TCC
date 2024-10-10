@@ -73,7 +73,7 @@ export default function Block1() {
         w={"100%"}
       >
         <Flex
-          h={"500px"}
+          h={"550px"}
           bgColor={"black"}
           overflowX={"scroll"}
           overflowY={"hidden"}

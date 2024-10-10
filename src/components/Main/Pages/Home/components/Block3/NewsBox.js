@@ -6,19 +6,21 @@ export default function NewsBox() {
       <Grid
         w={"100%"}
         bgColor={"#221293"}
-        gridTemplateColumns={"repeat(3 1fr)"}
-        h={"500px"}
+        gridTemplateColumns={"repeat(3, 1fr)"}
+        gridTemplateRows={"200px"}
+        justifyItems={"center"}
+        h={"600px"}
         borderRadius={"10px"}
       >
-        <Box></Box>
-        <Box></Box>
-        <Box></Box>
-        <Box></Box>
-        <Box></Box>
-        <Box></Box>
-        <Box></Box>
-        <Box></Box>
-        <Box></Box>
+        <Box bgColor={"white"}></Box>
+        <Box bgColor={"white"}></Box>
+        <Box bgColor={"white"}></Box>
+        <Box bgColor={"white"}></Box>
+        <Box bgColor={"white"}></Box>
+        <Box bgColor={"white"}></Box>
+        <Box bgColor={"white"}></Box>
+        <Box bgColor={"white"}></Box>
+        <Box bgColor={"white"}></Box>
       </Grid>
     </>
   );

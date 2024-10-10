@@ -1,4 +1,4 @@
-import { Box, Highlight, Heading, Text } from "@chakra-ui/react";
+import { Box, Highlight, Heading, Text, Button } from "@chakra-ui/react";
 import video from "../../video/bg_main_home.mp4";
 
 
@@ -15,16 +15,17 @@ function Enter() {
   return (
     <>
       <Background />
-      <Box w="auto" pos="absolute" bottom="50%" left="3%" zIndex="101">
-      <Heading lineHeight='tall' fontSize="6xl" color="white">
-        <Highlight
-          query={['você', "mundo"]}
-          styles={{ color: "blue.100" }}
-        >
-          Notícias que conectam você ao mundo.
-        </Highlight>
-        <Text fontSize="lg" textStyle="light">Receba notícias e informações para acelerar seu crescimento pessoal</Text>
-      </Heading>
+      <Box w="auto" pos="absolute" bottom="45%" left="8%" zIndex="101">
+        <Heading lineHeight='tall' fontSize="6xl" color="white">
+          <Highlight
+            query={['você', "mundo"]}
+            styles={{ color: "blue.100" }}
+          >
+            Notícias que conectam você ao mundo.
+          </Highlight>
+          <Text fontSize="lg" fontWeight="lighter">Receba notícias e informações para acelerar seu crescimento pessoal</Text>
+        </Heading>
+        <Button colorScheme="yellow" size="lg" mt="10px">Faça já seu login</Button>
       </Box>
 
     </>

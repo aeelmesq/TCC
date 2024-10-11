@@ -97,7 +97,7 @@ export default function Block1() {
         </Flex>
         <Flex
           h={"75px"}
-          bgColor={"#4525D2"}
+          bgColor={"#1A293E"}
           boxShadow={"1px 0px 4px black"}
           w={"92%"}
           borderTop={"1px solid black"}

@@ -8,10 +8,10 @@ export default function NewsBox() {
         bgColor={"#1A293E"}
         gridTemplateColumns={"repeat(3, 1fr)"}
         gridTemplateRows={"200px"}
+        alignItems={"center"}
         justifyItems={"center"}
-        gridGap={"15px"}
         h={"670px"}
-        borderRadius={"10px"}
+        borderRadius={"7px"}
       >
         <GridItem
           display={"flex"}
@@ -19,7 +19,7 @@ export default function NewsBox() {
           justifyContent={"center"}
           w={"100%"}
         >
-          <Box bgColor={"white"} w={"90%"} h={"150px"} m={"auto"}></Box>
+          <Box bgColor={"white"} w={"90%"} h={"140px"} m={"auto"}></Box>
         </GridItem>
         <GridItem
           display={"flex"}
@@ -27,7 +27,7 @@ export default function NewsBox() {
           justifyContent={"center"}
           w={"100%"}
         >
-          <Box bgColor={"white"} w={"90%"} h={"150px"} m={"auto"}></Box>
+          <Box bgColor={"white"} w={"90%"} h={"140px"} m={"auto"}></Box>
         </GridItem>
         <GridItem
           display={"flex"}
@@ -35,7 +35,7 @@ export default function NewsBox() {
           justifyContent={"center"}
           w={"100%"}
         >
-          <Box bgColor={"white"} w={"90%"} h={"150px"} m={"auto"}></Box>
+          <Box bgColor={"white"} w={"90%"} h={"140px"} m={"auto"}></Box>
         </GridItem>
         <GridItem
           display={"flex"}
@@ -43,7 +43,7 @@ export default function NewsBox() {
           justifyContent={"center"}
           w={"100%"}
         >
-          <Box bgColor={"white"} w={"90%"} h={"150px"} m={"auto"}></Box>
+          <Box bgColor={"white"} w={"90%"} h={"140px"} m={"auto"}></Box>
         </GridItem>
         <GridItem
           display={"flex"}
@@ -51,7 +51,7 @@ export default function NewsBox() {
           justifyContent={"center"}
           w={"100%"}
         >
-          <Box bgColor={"white"} w={"90%"} h={"150px"} m={"auto"}></Box>
+          <Box bgColor={"white"} w={"90%"} h={"140px"} m={"auto"}></Box>
         </GridItem>
         <GridItem
           display={"flex"}
@@ -59,7 +59,7 @@ export default function NewsBox() {
           justifyContent={"center"}
           w={"100%"}
         >
-          <Box bgColor={"white"} w={"90%"} h={"150px"} m={"auto"}></Box>
+          <Box bgColor={"white"} w={"90%"} h={"140px"} m={"auto"}></Box>
         </GridItem>
         <GridItem
           display={"flex"}
@@ -67,7 +67,7 @@ export default function NewsBox() {
           justifyContent={"center"}
           w={"100%"}
         >
-          <Box bgColor={"white"} w={"90%"} h={"150px"} m={"auto"}></Box>
+          <Box bgColor={"white"} w={"90%"} h={"140px"} m={"auto"}></Box>
         </GridItem>
         <GridItem
           display={"flex"}
@@ -75,7 +75,7 @@ export default function NewsBox() {
           justifyContent={"center"}
           w={"100%"}
         >
-          <Box bgColor={"white"} w={"90%"} h={"150px"} m={"auto"}></Box>
+          <Box bgColor={"white"} w={"90%"} h={"140px"} m={"auto"}></Box>
         </GridItem>
         <GridItem
           display={"flex"}
@@ -83,7 +83,7 @@ export default function NewsBox() {
           justifyContent={"center"}
           w={"100%"}
         >
-          <Box bgColor={"white"} w={"90%"} h={"150px"} m={"auto"}></Box>
+          <Box bgColor={"white"} w={"90%"} h={"140px"} m={"auto"}></Box>
         </GridItem>
       </Grid>
     </>

@@ -4,9 +4,9 @@ export default function InfoBlock({ children }) {
   return (
     <>
       <Box
-        bgColor={"#4525D2"}
+        bgColor={"#1A293E"}
         w={"85%"}
-        h={"200px"}
+        minH={"200px"}
         m={"auto"}
         boxShadow={"1px 0px 4px black"}
         position={"relative"}

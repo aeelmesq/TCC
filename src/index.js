@@ -23,7 +23,7 @@ const theme = extendTheme({
   },
   components: {
     Text: {
-      color: "#000053",
+      color: "#000",
     }
   }
 })

@@ -1,34 +1,48 @@
-import { Box, Highlight, Heading, Text, Button } from "@chakra-ui/react";
+import { Box, Highlight, Heading, Text, Button, Image } from "@chakra-ui/react";
 import video from "../../video/bg_main_home.mp4";
 
 
-function Enter() {
-  function Background() {
+function Principal() {
+  function Background({children}) {
     return (
-      <Box w="100%" h="calc(100vh - 50px)" pos="absolute" filter='auto' brightness="20%" left={0} right={0} zIndex="100" display="block" overflow="hidden">
-        <video autoPlay muted loop w="100%" height="100%">
-          <source  src={video} type="video/mp4" />
-        </video>
+      <Box>
+        <Box w="100%" h="calc(100vh - 50px)" filter='auto' brightness="20%" zIndex="100" display="block" overflow="hidden">
+          <video autoPlay muted loop w="100%" height="100%">
+            <source  src={video} type="video/mp4" />
+          </video>
+        </Box>
+        {children}
       </Box>
     )
   }
   return (
     <>
-      <Background />
-      <Box w="auto" pos="absolute" bottom="45%" left="8%" zIndex="101">
-        <Heading lineHeight='tall' fontSize="6xl" color="white">
-          <Highlight
-            query={['você', "mundo"]}
-            styles={{ color: "blue.100" }}
-          >
-            Notícias que conectam você ao mundo.
-          </Highlight>
-          <Text fontSize="lg" fontWeight="lighter">Receba notícias e informações para acelerar seu crescimento pessoal</Text>
-        </Heading>
-        <Button colorScheme="yellow" size="lg" mt="10px">Faça já seu login</Button>
-      </Box>
-
+      <Background>
+        <Box w="auto" pos="absolute" top="350px" left="8%" zIndex="101">
+          <Heading lineHeight='tall' fontSize="6xl" color="white">
+            <Highlight
+              query={['você', "mundo"]}
+              styles={{ color: "blue.100" }}
+            >
+              Notícias que conectam você ao mundo.
+            </Highlight>
+            <Text fontSize="lg" fontWeight="lighter">Receba notícias e informações para acelerar seu crescimento pessoal</Text>
+          </Heading>
+          <Button colorScheme="yellow" size="lg" mt="10px">Faça já seu login</Button>
+        </Box>
+      </Background>
     </>
+  )
+}
+
+function SuasNoticias() {
+  return (
+    <Box textAlign="center">
+      <Text>SUAS NOTÍCIAS</Text>
+      <Box>
+        <Image objectFit="cover" src="https://i.imgur.com/s8aePwb.jpg" />
+      </Box>
+    </Box>
   )
 }
 
@@ -37,7 +51,8 @@ function Enter() {
 export default function Main() {
   return (
     <>
-      <Enter />
+      <Principal />
+      <SuasNoticias/>
     </>
   )
 }

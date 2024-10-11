@@ -57,22 +57,22 @@ function FullPage() {
                 "main"
                 "footer"`,
         md: `"header header"
-             "nav main"
+             "main main"
              "footer footer"`,
       }}
       gridTemplateRows={{ base: 'auto', md: '50px 1fr 30px' }}
-      gridTemplateColumns={{ base: '1fr', md: '150px 1fr' }}
-      height="100vh"
+      gridTemplateColumns={{ base: '1fr', md: '30px auto' }}
+      height="100%"
       color='blackAlpha.700'
       fontWeight='bold'
     >
-      <GridItem pl={2} bg='gray.800' area='header' display="flex" alignItems="center" justifyContent="center">
+      <GridItem bg='gray.800' area='header' display="flex" alignItems="center" justifyContent="center">
         <Header />
       </GridItem>
-      <GridItem pl={2} bg='pink.300' area='nav'>
+      {/* <GridItem bg='pink.300' area='nav'>
         <Nav />
-      </GridItem>
-      <GridItem pl={2} bg='green.300' area='main'>
+      </GridItem> */}
+      <GridItem bg='green.300' area='main'>
         <Main />
       </GridItem>
       <GridItem bg='blue.300' area='footer' display='grid' gridTemplateColumns='1fr' alignItems='center' justifyContent='center'>

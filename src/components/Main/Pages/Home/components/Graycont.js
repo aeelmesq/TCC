@@ -6,7 +6,7 @@ export default function GrayCont({ children }) {
       bgColor={"#F5F5F5"}
       m={"auto"}
       h={"auto"}
-      w={"93%"}
+      w={"95%"}
       p={"30px"}
       rowGap={"15px"}
       columnGap={"45px"}

@@ -7,7 +7,7 @@ export default function Block3() {
       <Heading
         fontSize={"25pt"}
         textAlign={"center"}
-        color={"#000053"}
+        color={"#1A293E"}
         mt={"55px"}
       >
         SEUS INTERESES
@@ -20,13 +20,19 @@ export default function Block3() {
         justifyContent={"center"}
       >
         <GridItem textAlign={"center"}>
-          <Heading>Principais noticías</Heading>
+          <Heading>
+            Principais noticías<i class="bi bi-arrow-down"></i>
+          </Heading>
         </GridItem>
         <GridItem textAlign={"center"}>
-          <Heading>Destaques</Heading>
+          <Heading>
+            Destaques<i class="bi bi-arrow-down"></i>
+          </Heading>
         </GridItem>
         <GridItem textAlign={"center"}>
-          <Heading>Recentes</Heading>
+          <Heading>
+            Recentes<i class="bi bi-arrow-down"></i>
+          </Heading>
         </GridItem>
         <GridItem gridColumn={"span 3"}>
           <NewsBox />

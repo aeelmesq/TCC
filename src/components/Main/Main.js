@@ -39,8 +39,10 @@ function SuasNoticias() {
   return (
     <Box textAlign="center">
       <Text>SUAS NOTÍCIAS</Text>
-      <Box>
-        <Image objectFit="cover" src="https://i.imgur.com/s8aePwb.jpg" />
+      <Box w="60%" h="700px" overflow="hidden" backgroundImage="url('https://i.imgur.com/s8aePwb.jpg')" backgroundPosition="center" backgroundSize="cover">
+        <Box bg="red" zIndex="101" position="absolute">
+          <h1>teste</h1>
+        </Box>
       </Box>
     </Box>
   )

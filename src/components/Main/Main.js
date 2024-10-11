@@ -1,5 +1,13 @@
-import { Box, Highlight, Heading, Text, Button, Image } from "@chakra-ui/react";
+import { Box, Highlight, Heading, Text, Button } from "@chakra-ui/react";
 import video from "../../video/bg_main_home.mp4";
+
+function PrincipalBlock({children}) {
+  return (
+    <Box w="100%" h="100vh">
+      {children}
+    </Box>
+  )
+}
 
 
 function Principal() {
@@ -37,11 +45,11 @@ function Principal() {
 
 function SuasNoticias() {
   return (
-    <Box textAlign="center">
+    <Box textAlign="center" display="grid" justifyItems="center">
       <Text>SUAS NOTÍCIAS</Text>
-      <Box w="60%" h="700px" overflow="hidden" backgroundImage="url('https://i.imgur.com/s8aePwb.jpg')" backgroundPosition="center" backgroundSize="cover">
-        <Box bg="red" zIndex="101" position="absolute">
-          <h1>teste</h1>
+      <Box w="80%" h="700px" overflow="hidden" backgroundImage="url('https://i.imgur.com/s8aePwb.jpg')" backgroundPosition="center" backgroundSize="cover" borderRadius="md" boxShadow="xl">
+        <Box w="60%" h="80px" bg="blue.600" zIndex="101" position="absolute" left="20%" bottom="11%">
+          <Text color="white">Primeira notícia</Text>
         </Box>
       </Box>
     </Box>
@@ -53,8 +61,12 @@ function SuasNoticias() {
 export default function Main() {
   return (
     <>
-      <Principal />
-      <SuasNoticias/>
+      <PrincipalBlock>
+        <Principal />
+      </PrincipalBlock>
+      <PrincipalBlock>
+        <SuasNoticias/>
+      </PrincipalBlock>
     </>
   )
 }

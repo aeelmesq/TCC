@@ -72,7 +72,7 @@ function FullPage() {
       {/* <GridItem bg='pink.300' area='nav'>
         <Nav />
       </GridItem> */}
-      <GridItem bg='green.300' area='main'>
+      <GridItem bg='white' area='main'>
         <Main />
       </GridItem>
       <GridItem bg='blue.300' area='footer' display='grid' gridTemplateColumns='1fr' alignItems='center' justifyContent='center'>

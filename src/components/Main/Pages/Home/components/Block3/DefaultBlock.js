@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, Heading } from "@chakra-ui/react";
+import { Grid, GridItem, Heading } from "@chakra-ui/react";
 import NewsBox from "./NewsBox";
 
 export default function Block3() {

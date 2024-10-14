@@ -1,9 +1,10 @@
-import { Box, Highlight, Heading, Text, Button } from "@chakra-ui/react";
+import { Box, Highlight, Heading, Text, Button, Image, Divider } from "@chakra-ui/react";
 import video from "../../video/bg_main_home.mp4";
 
 function PrincipalBlock({children}) {
   return (
-    <Box w="100%" h="100vh">
+    <Box w="100%" h="100vh" display="grid" alignContent="center">
+      <Box position="absolute" bg="gray.100" w="90%" h="100vh" zIndex="-1"></Box>
       {children}
     </Box>
   )
@@ -13,7 +14,7 @@ function PrincipalBlock({children}) {
 function Principal() {
   function Background({children}) {
     return (
-      <Box>
+      <Box position="absolute">
         <Box w="100%" h="calc(100vh - 50px)" filter='auto' brightness="20%" zIndex="100" display="block" overflow="hidden">
           <video autoPlay muted loop w="100%" height="100%">
             <source  src={video} type="video/mp4" />
@@ -46,11 +47,25 @@ function Principal() {
 function SuasNoticias() {
   return (
     <Box textAlign="center" display="grid" justifyItems="center">
-      <Text>SUAS NOTÍCIAS</Text>
-      <Box w="80%" h="700px" overflow="hidden" backgroundImage="url('https://i.imgur.com/s8aePwb.jpg')" backgroundPosition="center" backgroundSize="cover" borderRadius="md" boxShadow="xl">
-        <Box w="60%" h="80px" bg="blue.600" zIndex="101" position="absolute" left="20%" bottom="11%">
+      <Text mt="-50px" fontSize="3xl">SUAS NOTÍCIAS</Text>
+      <Box w="80%" h="700px" backgroundImage="url('https://i.imgur.com/s8aePwb.jpg')" backgroundPosition="center" backgroundSize="cover" borderRadius="md" boxShadow="xl" mt="30px">
+        <Box w="60%" h="80px" bg="blue.600" position="relative" top="96%" left="21%">
           <Text color="white">Primeira notícia</Text>
         </Box>
+      </Box>
+    </Box>
+  )
+}
+
+function NoticiaSemanal() {
+  return (
+    <Box h="90%" bg="gray.50" display="grid" gridTemplateColumns="2fr 3fr">
+      <Box><Image h="90%" src="https://i.imgur.com/stVOVEX.jpeg" /></Box>
+      <Box>
+        <Text>Notícia Semanal</Text>
+        <span>12h30m</span>
+        <Text>Título da notícia que irá ser apresentada</Text>
+        <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Text>
       </Box>
     </Box>
   )
@@ -66,6 +81,10 @@ export default function Main() {
       </PrincipalBlock>
       <PrincipalBlock>
         <SuasNoticias/>
+      </PrincipalBlock>
+      <Divider />
+      <PrincipalBlock>
+        <NoticiaSemanal/>
       </PrincipalBlock>
     </>
   )

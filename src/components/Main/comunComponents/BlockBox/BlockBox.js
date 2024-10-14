@@ -9,7 +9,9 @@ export default function BlockBox({ children }) {
         boxShadow={"1px 0 5px black"}
         mt={"20px"}
         mb={"20px"}
-        gridAutoColumns={"98%"}
+        pt={"15px"}
+        pb={"15px"}
+        gridAutoColumns={"calc(100% - 30px)"}
         justifyContent={"center"}
         borderRadius={"10px"}
         minH={"300px"}

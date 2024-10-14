@@ -4,9 +4,18 @@ import video from "../../video/bg_main_home.mp4";
 function PrincipalBlock({children}) {
   return (
     <Box w="100%" h="100vh" display="grid" alignContent="center">
-      <Box position="absolute" bg="gray.100" w="90%" h="100vh" zIndex="-1"></Box>
       {children}
     </Box>
+  )
+}
+function BackgroundBlock({children}) {
+  return (
+    <>
+      <Box position="absolute" bg="gray.100" width="98%" h="100vh" left="0" right="0" textAlign="center" margin="0 auto"></Box>
+      <Box position="relative">
+        {children}
+      </Box>
+    </>
   )
 }
 
@@ -46,28 +55,35 @@ function Principal() {
 
 function SuasNoticias() {
   return (
-    <Box textAlign="center" display="grid" justifyItems="center">
-      <Text mt="-50px" fontSize="3xl">SUAS NOTÍCIAS</Text>
-      <Box w="80%" h="700px" backgroundImage="url('https://i.imgur.com/s8aePwb.jpg')" backgroundPosition="center" backgroundSize="cover" borderRadius="md" boxShadow="xl" mt="30px">
-        <Box w="60%" h="80px" bg="blue.600" position="relative" top="96%" left="21%">
-          <Text color="white">Primeira notícia</Text>
+    <BackgroundBlock>
+      <Box textAlign="center" display="grid" justifyItems="center">
+        <Text mt="-75px" fontSize="3xl">SUAS NOTÍCIAS</Text>
+        <Box w="88%" h="700px" backgroundImage="url('https://i.imgur.com/s8aePwb.jpg')" backgroundPosition="center" backgroundSize="cover" borderRadius="md" boxShadow="xl">
+          <Box w="70%" h="80px" bg="blue.600" position="relative" top="96%" left="0" textAlign="start" margin="auto">
+            <Text p="20px" color="white">Primeira notícia</Text>
+          </Box>
         </Box>
       </Box>
-    </Box>
+    </BackgroundBlock>
   )
 }
 
 function NoticiaSemanal() {
+  const textstyle = {
+    fontSize: "30px",
+  }
   return (
-    <Box h="90%" bg="gray.50" display="grid" gridTemplateColumns="2fr 3fr">
-      <Box><Image h="90%" src="https://i.imgur.com/stVOVEX.jpeg" /></Box>
-      <Box>
-        <Text>Notícia Semanal</Text>
-        <span>12h30m</span>
-        <Text>Título da notícia que irá ser apresentada</Text>
-        <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Text>
+    <BackgroundBlock>
+      <Box w="98%" h="90%" bg="blue.600" display="grid" gridTemplateColumns="2fr 3fr" margin="0 auto">
+        <Box><Image h="90%" src="https://i.imgur.com/stVOVEX.jpeg" /></Box>
+        <Box>
+          <Text sx={textstyle}>Notícia Semanal</Text>
+          <span>12h30m</span>
+          <Text>Título da notícia que irá ser apresentada</Text>
+          <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Text>
+        </Box>
       </Box>
-    </Box>
+    </BackgroundBlock>
   )
 }
 
@@ -76,16 +92,18 @@ function NoticiaSemanal() {
 export default function Main() {
   return (
     <>
-      <PrincipalBlock>
-        <Principal />
-      </PrincipalBlock>
-      <PrincipalBlock>
-        <SuasNoticias/>
-      </PrincipalBlock>
-      <Divider />
-      <PrincipalBlock>
-        <NoticiaSemanal/>
-      </PrincipalBlock>
+      <Box position="relative">
+        <Box w="100%" h="calc(100vh - 50px)" display="grid" alignContent="center">
+          <Principal />
+        </Box>
+        <PrincipalBlock>
+          <SuasNoticias/>
+        </PrincipalBlock>
+        <Divider />
+        <PrincipalBlock>
+          <NoticiaSemanal/>
+        </PrincipalBlock>
+      </Box>
     </>
   )
 }

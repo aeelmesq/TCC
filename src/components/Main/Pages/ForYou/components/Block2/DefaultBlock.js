@@ -16,7 +16,7 @@ export default function Block2() {
             borderTop: "1px solid rgb(192, 192, 192)",
           }}
         />
-        <SliderBox>
+        <SliderBox leftButtonPositio={"5vw"} rightButtonPosition={"1vw"}>
           {categorias.map((item, index) => {
             return (
               <SliderCard color={item.color} title={item.title}></SliderCard>

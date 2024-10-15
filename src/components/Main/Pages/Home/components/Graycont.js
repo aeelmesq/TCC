@@ -8,6 +8,7 @@ export default function GrayCont({ children }) {
       h={"auto"}
       w={"93%"}
       p={"30px"}
+      mb={"40px"}
       rowGap={"15px"}
       columnGap={"45px"}
       gridTemplateColumns={"calc(100% - 50px)"}

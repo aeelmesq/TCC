@@ -2,6 +2,7 @@ import Recomendacoes from "../../../Pages/ForYou/components/Recomendacoes/defaut
 import "../../../../StyleComponents/ForYou.css";
 import { Grid, Heading } from "@chakra-ui/react";
 import Block2 from "./components/Block2/DefaultBlock";
+import Block3 from "./components/Block3/DefaultBlock";
 
 export default function ForYou() {
   return (
@@ -10,6 +11,7 @@ export default function ForYou() {
         <Heading fontSize={"22pt"}>PARA VOCÊ</Heading>
         <Recomendacoes />
         <Block2 />
+        <Block3 />
       </Grid>
     </>
   );

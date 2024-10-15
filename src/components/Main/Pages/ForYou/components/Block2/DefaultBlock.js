@@ -1,4 +1,4 @@
-import { Divider, Heading } from "@chakra-ui/react";
+import { Heading, Text } from "@chakra-ui/react";
 import categorias from "../../../../../../consts/Cat";
 import BlockBox from "../../../../comunComponents/BlockBox/BlockBox";
 import SliderBox from "../../../../comunComponents/SliderBox/SliderBox";
@@ -8,12 +8,17 @@ export default function Block2() {
   return (
     <>
       <BlockBox>
-        <Heading w={"100%"}>ASSUNTOS</Heading>
+        <Heading w={"100%"} mb={"3px"}>
+          ASUNTOS
+        </Heading>
+        <Text mb={"3px"} fontSize={"14pt"} color={"#484848"}>
+          Sugestão de Asuntos
+        </Text>
         <hr
           style={{
             height: "0px",
             width: "100%",
-            borderTop: "1px solid rgb(192, 192, 192)",
+            borderTop: "1px solid #484848",
           }}
         />
         <SliderBox leftButtonPositio={"5vw"} rightButtonPosition={"1vw"}>

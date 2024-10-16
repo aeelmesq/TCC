@@ -1,6 +1,7 @@
 // Importação Grid
-import { Box, Grid, GridItem } from '@chakra-ui/react'
+import { Box, Button, Grid, GridItem } from '@chakra-ui/react'
 import { getUlrParam } from "./components/utilits.js"
+import { useEffect, useState } from 'react';
 
 import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
@@ -11,6 +12,47 @@ import Footer from './components/Footer/Footer';
 const page = getUlrParam("page")
 
 function FullPage() {
+  // Botão que volta ao topo
+  function BtnToTop() {
+    const [isVisible, setIsVisible] = useState(false);
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        setIsVisible(window.scrollY > 20);
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
+  
+    const topFunction = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  
+    return (
+      isVisible && (
+        <Button
+          id="btn-top"
+          onClick={topFunction}
+          position="fixed"
+          bottom="20px"
+          right="30px"
+          zIndex={999}
+          bg="blue.500"
+          color="white"
+          padding="15px"
+          borderRadius="10px"
+          fontSize="20px"
+          _hover={{ bg: "blue.400" }}
+        >
+          &#8593;
+        </Button>
+      )
+    );
+  }  
    switch (page) {
      case "1":
        return (
@@ -77,16 +119,19 @@ function FullPage() {
      default:
        document.querySelector("body").style.overflow = "hidden";
        return (
-        <Box
-          height="100vh"
-          color='blackAlpha.700'
-          fontWeight='bold'
-          overflowY="hidden"
-        >
-          <Box bg='gray.100' area='main' scrollSnapAlign="start">
-            <Main />
+        <>
+          <BtnToTop />
+          <Box
+            height="100vh"
+            color='blackAlpha.700'
+            fontWeight='bold'
+            overflowY="hidden"
+          >
+            <Box bg='gray.200' area='main' scrollSnapAlign="start">
+              <Main />
+            </Box>
           </Box>
-        </Box>
+        </>
    );
    }
  }

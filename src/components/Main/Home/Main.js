@@ -73,10 +73,24 @@ function SuasNoticias() {
   return (
     <BackgroundBlock>
       <Box textAlign="center" display="grid" justifyItems="center">
-        <Text mt="-75px" fontSize="3xl">SUAS NOTÍCIAS</Text>
+        <Text color="blackAlpha.800" mt="-75px" fontSize="3xl">SUAS NOTÍCIAS</Text>
         <Box w="70%" h="700px" backgroundImage="url('https://i.imgur.com/s8aePwb.jpg')" backgroundPosition="center" backgroundSize="cover" borderRadius="md" boxShadow="xl">
           <Box w="70%" h="80px" bg="blue.600" position="relative" top="96%" left="0" textAlign="start" margin="auto">
             <Text p="20px" color="white">Primeira notícia</Text>
+          </Box>
+        </Box>
+      </Box>
+    </BackgroundBlock>
+  )
+}
+
+function MessageLucky() {
+  return (
+    <BackgroundBlock>
+      <Box textAlign="center" display="grid" justifyItems="center">
+        <Box w="100%" h="700px" backgroundImage="url('https://i.imgur.com/s8aePwb.jpg')" backgroundPosition="center" backgroundSize="cover" borderRadius="md" boxShadow="xl">
+          <Box w="70%" h="80px" bg="blue.600" position="relative" bottom="8%" left="0" textAlign="start" margin="auto">
+            <Text fontSize="22px" p="25px" color="white">Mensagem de boa sorte ou algo parecido</Text>
           </Box>
         </Box>
       </Box>
@@ -108,6 +122,7 @@ function NoticiaSemanal() {
 
 
 export default function Main() {
+  
   return (
     <Box h="100vh" overflowY="auto" scrollSnapType="y mandatory">
       <ScrollBlock>
@@ -130,9 +145,15 @@ export default function Main() {
       </ScrollBlock>
       <ScrollBlock>
         <NonBackground>
+          <MessageLucky />
+        </NonBackground>
+      </ScrollBlock>
+      <ScrollBlock>
+        <NonBackground>
           <NoticiaSemanal/>
         </NonBackground>
       </ScrollBlock>
+      {/* Falta o CSS */}
       <ScrollBlock>
         <Block5 />
       </ScrollBlock>

@@ -1,7 +1,7 @@
 import { Heading } from "@chakra-ui/react";
 import ContBox from "./ContBox";
 import SliderBox from "../../../comunComponents/SliderBox/SliderBox";
-import categorias from "../../../../../../consts/Cat";
+import categorias from "../../../../../consts/Cat";
 import SliderCard from "../../../comunComponents/SliderBox/SliderCard";
 
 export default function SliderBlock() {

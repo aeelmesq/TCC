@@ -21,7 +21,7 @@ export default function BlockBox({ children }) {
       <Grid
         bgColor={"#D9D9D9"}
         w={"100%"}
-        boxShadow={"1px 0 5px black"}
+        boxShadow={"1px 1px 2px black"}
         mt={"20px"}
         mb={"20px"}
         pt={"15px"}

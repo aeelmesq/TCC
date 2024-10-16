@@ -1,7 +1,7 @@
 import { Flex } from "@chakra-ui/react";
 import ControlButton from "./ControlButton.js";
 import Slider from "./SliderContext.js";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 /*
   Componente de Slider:
@@ -34,8 +34,6 @@ export default function SliderBox({
 }) {
   const maxScrollLeft = useRef();
 
-  const [sliderPosition, setSliderPosition] = useState(0);
-
   const SliderRef = useRef(null);
 
   useEffect(() => {
@@ -46,24 +44,18 @@ export default function SliderBox({
   const handleSlider = useCallback((e, action) => {
     e.preventDefault();
     if (action === "prev") {
-      setSliderPosition(
-        SliderRef.current.scrollLeft - SliderRef.current.offsetWidth / 3
-      );
       SliderRef.current.scrollLeft -= SliderRef.current.offsetWidth / 3;
     } else if (action === "next") {
-      setSliderPosition(
-        SliderRef.current.scrollLeft + SliderRef.current.offsetWidth / 3
-      );
       SliderRef.current.scrollLeft += SliderRef.current.offsetWidth / 3;
     }
   }, []);
 
   return (
     <>
-      <Slider.Provider value={{ handleSlider, SliderRef, setSliderPosition }}>
+      <Slider.Provider value={{ handleSlider, SliderRef }}>
         <Flex
           w={"100%"}
-          h={"600px"}
+          h={"700px"}
           mt={"12px"}
           justifyContent={"center"}
           alignItems={"center"}
@@ -74,7 +66,7 @@ export default function SliderBox({
           <Flex
             w={"100%"}
             position={"relative"}
-            h={"600px"}
+            h={"700px"}
             overflowX={"scroll"}
             overflowY={"hidden"}
             ref={SliderRef}

@@ -5,12 +5,13 @@ export default function ContBox({ children }) {
     <>
       <Grid
         w={"98%"}
-        minH={"600px"}
+        m={"auto"}
+        minH={"700px"}
         bgColor={"#1A293E"}
-        p={"15px"}
+        p={"30px"}
         justifyContent={"center"}
         borderRadius={"7px"}
-        gridTemplateColumns={"calc(100% - 12px)"}
+        gridTemplateColumns={"calc(100% - 50px)"}
       >
         {children}
       </Grid>

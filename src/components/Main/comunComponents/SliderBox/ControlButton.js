@@ -24,6 +24,7 @@ import useSliderBox from "./useSliderBox";
         <ControlButton r={y} action={"next"}>
           ...
         </ControlButton>
+      ...
     </Slider.Provider>
 */
 
@@ -36,7 +37,7 @@ export default function ControlButton({ children, r, l, action }) {
         w={"60px"}
         h={"60px"}
         border={"none"}
-        bgColor={"white"}
+        bgColor={"rgba(255, 255, 255, 0.9)"}
         borderRadius={"100%"}
         color={"black"}
         boxShadow={"0 0 7px black"}

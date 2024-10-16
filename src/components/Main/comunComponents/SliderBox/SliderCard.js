@@ -31,7 +31,7 @@ export default function SliderCard({ children, title, color }) {
         bgColor={"white"}
         w={"calc(100% / 3 - 18px)"}
         m={"0 9px"}
-        h={"580px"}
+        h={"690px"}
         borderRadius={"7px"}
         overflow={"hidden"}
         flex={"none"}

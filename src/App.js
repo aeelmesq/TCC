@@ -4,7 +4,7 @@ import { getUlrParam } from "./components/utilits.js"
 
 import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
-import Main from './components/Main/Main/Main.js';
+import Main from './components/Main/Home/Main.js';
 import Footer from './components/Footer/Footer';
 
 

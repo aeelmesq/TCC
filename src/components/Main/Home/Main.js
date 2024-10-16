@@ -1,7 +1,8 @@
-import { Box, Highlight, Heading, Text, Button, Image } from "@chakra-ui/react";
+import { Box, Highlight, Heading, Text, Button } from "@chakra-ui/react";
 import video from "../../../video/bg_main_home.mp4";
 import Header from "../../Header/Header";
 import Block3 from "./components/Block3/DefaultBlock";
+import Block5 from "./components/Block5/DefaultBlock";
 
 function ScrollBlock({children}) {
   return (
@@ -133,7 +134,7 @@ export default function Main() {
         </NonBackground>
       </ScrollBlock>
       <ScrollBlock>
-
+        <Block5 />
       </ScrollBlock>
     </Box>
   )

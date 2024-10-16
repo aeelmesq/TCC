@@ -1,6 +1,6 @@
 const categorias = [
   {
-    title: "Foteboll",
+    title: "Futebol",
     color: "#32c905",
   },
   {

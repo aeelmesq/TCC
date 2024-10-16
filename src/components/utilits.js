@@ -6,9 +6,10 @@ export function GetIcone({ name, size = [70] }) {
     <img src={getIconeUrl({ name })} alt={name} width={size} height={size} />
   );
 }
+
 export function getUlrParam(Param) {
   let url = new URL(window.location.href),
-    Params = url.searchParams.get(Param);
+  Params = url.searchParams.get(Param);
   return Params;
 }
 

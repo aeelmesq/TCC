@@ -1,6 +1,6 @@
 import BlocoPrincipal from './blocoPrincipal';
 import BlocoRight from './blocoRight';
-import API_NEWS from '../../../../../API/mediaStack';
+import API_NEWS from '../../../../../../API/mediaStack';
 
 function noticiaPainel() {
   const {noticias} = API_NEWS()

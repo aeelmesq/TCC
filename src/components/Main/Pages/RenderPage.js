@@ -1,5 +1,5 @@
-import { getUlrParam } from "../utilits.js";
-import Home from "./Home/Home";
+import { getUlrParam } from "../../utilits.js";
+import Home from "./Home/Home.js";
 import "../../StyleComponents/Pages.css";
 import ForYou from "./ForYou/ForYou.js";
 import BtnScrollUp from "../BtnScrollUp/BtnScrollUp.js";

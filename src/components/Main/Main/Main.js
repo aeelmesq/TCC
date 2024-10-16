@@ -1,9 +1,24 @@
-import { Box, Highlight, Heading, Text, Button, Image, Divider } from "@chakra-ui/react";
-import video from "../../video/bg_main_home.mp4";
+import { Box, Highlight, Heading, Text, Button, Image } from "@chakra-ui/react";
+import video from "../../../video/bg_main_home.mp4";
+import Header from "../../Header/Header";
+import Block3 from "./components/Block3/DefaultBlock";
 
-function PrincipalBlock({children}) {
+function ScrollBlock({children}) {
+  return (
+    <Box h="100vh" scrollSnapAlign="start">{children}</Box>
+  )
+}
+
+function NonBackground({children}) {
   return (
     <Box w="100%" h="100vh" display="grid" alignContent="center">
+      {children}
+    </Box>
+  )
+}
+function WithBackground({children}) {
+  return (
+    <Box bg="blue.600" w="100%" h="100vh" display="grid" alignContent="center">
       {children}
     </Box>
   )
@@ -23,7 +38,7 @@ function BackgroundBlock({children}) {
 function Principal() {
   function Background({children}) {
     return (
-      <Box position="absolute">
+      <Box position="relative">
         <Box w="100%" h="calc(100vh - 50px)" filter='auto' brightness="20%" zIndex="100" display="block" overflow="hidden">
           <video autoPlay muted loop w="100%" height="100%">
             <source  src={video} type="video/mp4" />
@@ -58,7 +73,7 @@ function SuasNoticias() {
     <BackgroundBlock>
       <Box textAlign="center" display="grid" justifyItems="center">
         <Text mt="-75px" fontSize="3xl">SUAS NOTÍCIAS</Text>
-        <Box w="88%" h="700px" backgroundImage="url('https://i.imgur.com/s8aePwb.jpg')" backgroundPosition="center" backgroundSize="cover" borderRadius="md" boxShadow="xl">
+        <Box w="70%" h="700px" backgroundImage="url('https://i.imgur.com/s8aePwb.jpg')" backgroundPosition="center" backgroundSize="cover" borderRadius="md" boxShadow="xl">
           <Box w="70%" h="80px" bg="blue.600" position="relative" top="96%" left="0" textAlign="start" margin="auto">
             <Text p="20px" color="white">Primeira notícia</Text>
           </Box>
@@ -76,8 +91,8 @@ function NoticiaSemanal() {
   }
   return (
     <BackgroundBlock>
-      <Box w="98%" margin="0 auto" display="grid" gridTemplateColumns="1fr 2fr">
-        <Box position="relative" overflow="hidden"><Image position="absolute" left="0" right="0" bottom="-50%" src="https://i.imgur.com/stVOVEX.jpeg" /></Box>
+      <Box w="100%" h="100vh" margin="0 auto" display="grid" gridTemplateColumns="2fr 3fr">
+        <Box position="relative" overflow="hidden" backgroundImage="url(https://i.imgur.com/stVOVEX.jpeg)" backgroundPosition="center" backgroundSize="cover"></Box>
         <Box bg="blue.600" p="60px" display="block" alignContent="center">
           <Text sx={textstyle} fontSize="35px">Notícia Semanal</Text>
           <Text sx={textstyle} fontSize="15px" fontWeight="light">12h30m</Text>
@@ -93,19 +108,33 @@ function NoticiaSemanal() {
 
 export default function Main() {
   return (
-    <>
-      <Box position="relative">
+    <Box h="100vh" overflowY="auto" scrollSnapType="y mandatory">
+      <ScrollBlock>
+        <Box bg='gray.800' area='header' display="flex" alignItems="center" justifyContent="center" scrollSnapAlign="start" h="50px">
+          <Header />
+        </Box>
         <Box w="100%" h="calc(100vh - 50px)" display="grid" alignContent="center">
           <Principal />
         </Box>
-        <PrincipalBlock>
+      </ScrollBlock>
+      <ScrollBlock>
+        <NonBackground>
           <SuasNoticias/>
-        </PrincipalBlock>
-        <Divider />
-        <PrincipalBlock>
+        </NonBackground>
+      </ScrollBlock>
+      <ScrollBlock>
+        <WithBackground>
+          <Block3 />
+        </WithBackground>
+      </ScrollBlock>
+      <ScrollBlock>
+        <NonBackground>
           <NoticiaSemanal/>
-        </PrincipalBlock>
-      </Box>
-    </>
+        </NonBackground>
+      </ScrollBlock>
+      <ScrollBlock>
+
+      </ScrollBlock>
+    </Box>
   )
 }

@@ -1,4 +1,4 @@
-import { formatarSite } from '../../../../utilits';
+import { formatarSite } from '../../../../../utilits';
 
 export default function BlocoInteresses({ data }) {
   const noticias = Array.isArray(data) ? [...data] : [];

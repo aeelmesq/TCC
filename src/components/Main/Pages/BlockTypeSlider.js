@@ -1,4 +1,4 @@
-import categorias from '../../consts/Cat.js';
+import categorias from '../../../consts/Cat.js';
 import { useRef, useState } from 'react';
 
 export default function BlockTypeSlider({ style }) {

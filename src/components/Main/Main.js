@@ -11,7 +11,7 @@ function PrincipalBlock({children}) {
 function BackgroundBlock({children}) {
   return (
     <>
-      <Box position="absolute" bg="gray.100" width="98%" h="100vh" left="0" right="0" textAlign="center" margin="0 auto"></Box>
+      <Box position="absolute" bg="blue.50" width="98%" h="100vh" left="0" right="0" textAlign="center" margin="0 auto"></Box>
       <Box position="relative">
         {children}
       </Box>
@@ -70,17 +70,19 @@ function SuasNoticias() {
 
 function NoticiaSemanal() {
   const textstyle = {
-    fontSize: "30px",
+    color: "white",
+    textAlign: "center",
+    marginBottom: "10px" 
   }
   return (
     <BackgroundBlock>
-      <Box w="98%" h="90%" bg="blue.600" display="grid" gridTemplateColumns="2fr 3fr" margin="0 auto">
-        <Box><Image h="90%" src="https://i.imgur.com/stVOVEX.jpeg" /></Box>
-        <Box>
-          <Text sx={textstyle}>Notícia Semanal</Text>
-          <span>12h30m</span>
-          <Text>Título da notícia que irá ser apresentada</Text>
-          <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Text>
+      <Box w="98%" margin="0 auto" display="grid" gridTemplateColumns="1fr 2fr">
+        <Box position="relative" overflow="hidden"><Image position="absolute" left="0" right="0" bottom="-50%" src="https://i.imgur.com/stVOVEX.jpeg" /></Box>
+        <Box bg="blue.600" p="60px" display="block" alignContent="center">
+          <Text sx={textstyle} fontSize="35px">Notícia Semanal</Text>
+          <Text sx={textstyle} fontSize="15px" fontWeight="light">12h30m</Text>
+          <Text sx={textstyle} fontSize="30px">Título da notícia que irá ser apresentada</Text>
+          <Text sx={textstyle} fontSize="20px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Text>
         </Box>
       </Box>
     </BackgroundBlock>

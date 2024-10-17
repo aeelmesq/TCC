@@ -41,7 +41,7 @@ function Principal() {
     return (
       <Box position="relative">
         <Box w="100%" h="calc(100vh - 50px)" filter='auto' brightness="20%" zIndex="100" display="block" overflow="hidden">
-          <video autoPlay muted loop w="100%" height="100%">
+          <video autoPlay muted loop w="100%" height="100%" objectFit="cover">
             <source  src={video} type="video/mp4" />
           </video>
         </Box>

@@ -74,8 +74,8 @@ export default function SliderBox({
           <Flex
             w={"100%"}
             position={"relative"}
-            h={"600px"}
-            overflowX={"scroll"}
+            h={"650px"}
+            overflowX={"hidden"}
             overflowY={"hidden"}
             ref={SliderRef}
             alignItems={"center"}

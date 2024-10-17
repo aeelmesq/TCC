@@ -1,19 +1,20 @@
-import { Grid } from "@chakra-ui/react";
+import { Box, Grid } from "@chakra-ui/react";
 
 export default function ContBox({ children }) {
   return (
     <>
-      <Grid
-        w={"98%"}
-        minH={"600px"}
+      <Box
+        w={"96%"}
+        minH={"725px"}
         bgColor={"#1A293E"}
         p={"15px"}
         justifyContent={"center"}
+        alignContent="center"
         borderRadius={"7px"}
-        gridTemplateColumns={"calc(100% - 12px)"}
+        margin="auto"
       >
         {children}
-      </Grid>
+      </Box>
     </>
   );
 }

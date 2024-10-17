@@ -31,14 +31,14 @@ export default function SliderCard({ children, title, color }) {
         bgColor={"white"}
         w={"calc(100% / 3 - 18px)"}
         m={"0 9px"}
-        h={"580px"}
+        h={"100%"}
         borderRadius={"7px"}
         overflow={"hidden"}
         flex={"none"}
         boxShadow={"0px 0 5px black"}
       >
-        <Box bgColor={color} h={"35px"} pt={"5px"}>
-          <Heading ml={"7px"}>{title}</Heading>
+        <Box bgColor={color} h={"auto"}>
+          <Heading color="whiteAlpha.900" p={"7px"}>{title}</Heading>
         </Box>
         {children}
       </Box>

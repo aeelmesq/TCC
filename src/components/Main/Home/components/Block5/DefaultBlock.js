@@ -11,16 +11,16 @@ export default function SliderBlock() {
         fontSize={"25pt"}
         textAlign={"center"}
         color={"#000053"}
-        mt={"30px"}
+        padding="50px 0"
       >
         SEUS ASSUNTOS
       </Heading>
       <ContBox>
-        <SliderBox leftButtonPositio={"7vw"} rightButtonPosition={"2vw"}>
+        <SliderBox leftButtonPositio={"2vw"} rightButtonPosition={"2vw"}>
           {categorias.map(({ title, color }, index) => {
             return (
               <>
-                <SliderCard title={title} color={color}></SliderCard>
+                <SliderCard title={title} color={color} index={index}></SliderCard>
               </>
             );
           })}

@@ -1,7 +1,7 @@
 const categorias = [
   {
-    title: "Foteboll",
-    color: "#32c905",
+    title: "Futebol",
+    color: "#32ADE6",
   },
   {
     title: "Saúde",
@@ -9,15 +9,23 @@ const categorias = [
   },
   {
     title: "Tecnologia",
-    color: "#003fee",
+    color: "#1535E0",
   },
   {
     title: "Política",
-    color: "#3a4e86",
+    color: "#929EA7",
   },
   {
-    title: "Jogos",
-    color: "#ee7f00",
+    title: "Ciências Sociais",
+    color: "#A2845E",
   },
+  {
+    title: "Negócios",
+    color: "#34C759"
+  },
+  {
+    title: "Economia",
+    color: "#FFCC00"
+  }
 ];
 export default categorias;

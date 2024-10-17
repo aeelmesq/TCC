@@ -40,7 +40,7 @@ export default function ControlButton({ children, r, l, action }) {
         borderRadius={"100%"}
         color={"black"}
         boxShadow={"0 0 7px black"}
-        position={"absolute"}
+        position={"relative"}
         right={r}
         zIndex={"8"}
         left={l}

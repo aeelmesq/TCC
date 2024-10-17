@@ -1,7 +1,8 @@
-import { Box, Grid, Heading, Text } from "@chakra-ui/react";
+import { Box, Grid, Heading, Link, Text } from "@chakra-ui/react";
 import Card from "./Card";
 import NewsImg from "../NewsImg/NewsImg";
 import ButtonMore from "../ButtomMore/ButtonMore";
+import { formatarSite } from "../../../utilits";
 
 export default function LeftBlock({
   news = {
@@ -25,8 +26,14 @@ export default function LeftBlock({
             <Text>{news.site}</Text>
             <ButtonMore />
           </Grid>
-          <Heading>{news.title}</Heading>
-          <Text>{news.autor}</Text>
+          <Link
+            href={formatarSite(news.site)}
+            textDecor={"none"}
+            _hover={{ textDecor: "underline" }}
+          >
+            <Heading>{news.title}</Heading>
+            <Text>{news.autor}</Text>
+          </Link>
         </Box>
       </Grid>
     </Card>

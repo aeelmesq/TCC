@@ -23,17 +23,17 @@ export default function Block3() {
       >
         <GridItem textAlign={"center"}>
           <Heading>
-            Principais noticías<i class="bi bi-arrow-down"></i>
+            Principais notícias <i class="bi bi-arrow-down"></i>
           </Heading>
         </GridItem>
         <GridItem textAlign={"center"}>
           <Heading>
-            Destaques<i class="bi bi-arrow-down"></i>
+            Destaques <i class="bi bi-arrow-down"></i>
           </Heading>
         </GridItem>
         <GridItem textAlign={"center"}>
           <Heading>
-            Recentes<i class="bi bi-arrow-down"></i>
+            Recentes <i class="bi bi-arrow-down"></i>
           </Heading>
         </GridItem>
         <GridItem gridColumn={"span 3"}>

@@ -1,6 +1,9 @@
 import { Button } from "@chakra-ui/react";
+import useMenuMore from "../../../../hooks/useMenuMore";
 
 export default function ButtonMore() {
+  const { handleMenuState } = useMenuMore();
+
   return (
     <Button
       h={"30px"}
@@ -13,6 +16,7 @@ export default function ButtonMore() {
       borderRadius={"100%"}
       fontSize={"13pt"}
       _hover={{ bgColor: "#E6E6E6" }}
+      onClick={(e) => handleMenuState(e)}
     >
       <i class="bi bi-three-dots"></i>
     </Button>

@@ -3,6 +3,9 @@ import Card from "./Card";
 import NewsImg from "../NewsImg/NewsImg";
 import ButtonMore from "../ButtomMore/ButtonMore";
 import { formatarSite } from "../../../utilits";
+import { NewsTitle } from "../Titles/TitlesPresets";
+import MenuMoreProvider from "../../../../Providers/menuMoreProvider";
+import SelectOptions from "../ButtomMore/SelectOptions";
 
 export default function LeftBlock({
   news = {
@@ -24,14 +27,19 @@ export default function LeftBlock({
         <Box>
           <Grid gridTemplateColumns={"1fr 30px"}>
             <Text>{news.site}</Text>
-            <ButtonMore />
+            <MenuMoreProvider>
+              <Box>
+                <SelectOptions></SelectOptions>
+                <ButtonMore />
+              </Box>
+            </MenuMoreProvider>
           </Grid>
           <Link
             href={formatarSite(news.site)}
             textDecor={"none"}
             _hover={{ textDecor: "underline" }}
           >
-            <Heading>{news.title}</Heading>
+            <NewsTitle>{news.title}</NewsTitle>
             <Text>{news.autor}</Text>
           </Link>
         </Box>

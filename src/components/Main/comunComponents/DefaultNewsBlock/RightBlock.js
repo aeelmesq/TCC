@@ -3,6 +3,8 @@ import Card from "./Card";
 import ButtonMore from "../ButtomMore/ButtonMore";
 import { NewsTitle } from "../Titles/TitlesPresets";
 import { formatarSite } from "../../../utilits";
+import MenuMoreProvider from "../../../../Providers/menuMoreProvider";
+import SelectOptions from "../ButtomMore/SelectOptions";
 
 export default function RightBlock({
   news = {
@@ -24,7 +26,12 @@ export default function RightBlock({
         <Box>
           <Grid gridTemplateColumns={"1fr 30px"} mb={"60px"}>
             <Text>{news.site}</Text>
-            <ButtonMore />
+            <MenuMoreProvider>
+              <Box>
+                <SelectOptions></SelectOptions>
+                <ButtonMore />
+              </Box>
+            </MenuMoreProvider>
           </Grid>
           <Link
             href={formatarSite(news.site)}

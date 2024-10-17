@@ -6,6 +6,7 @@ import { NewsTitle } from "../Titles/TitlesPresets";
 import { formatarSite } from "../../../utilits";
 import MenuMoreProvider from "../../../../Providers/menuMoreProvider";
 import SelectOptions from "../ButtomMore/SelectOptions";
+import OptionItem from "../ButtomMore/OptionItem";
 
 export default function FullBlock({
   news = {
@@ -27,12 +28,24 @@ export default function FullBlock({
         justifyContent={"center"}
       >
         <Box h={"330px"}>
-          <Grid gridTemplateColumns={"1fr 150px"} mr={"7px"} mb={"100px"}>
+          <Grid gridTemplateColumns={"1fr 140px"} mr={"7px"} mb={"100px"}>
             <Text>{news.site}</Text>
             <MenuMoreProvider>
               <Box>
-                <SelectOptions></SelectOptions>
-                <Box ml={"90px"}>
+                <SelectOptions>
+                  <OptionItem>Salvar</OptionItem>
+                  <OptionItem>
+                    <Link
+                      href={formatarSite(news.site)}
+                      textDecor={"none"}
+                      textAlign={"left"}
+                      w={"100%"}
+                    >
+                      Abrir
+                    </Link>
+                  </OptionItem>
+                </SelectOptions>
+                <Box ml={"100px"}>
                   <ButtonMore />
                 </Box>
               </Box>

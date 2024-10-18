@@ -51,10 +51,15 @@ export default function Block3() {
                 </Flex>
                 <Grid
                   h={"calc(100% - 45px)"}
-                  w={"100%"}
+                  w={"calc(100% - 20px)"}
+                  alignItems={"baseline"}
+                  m={"auto"}
                   gridTemplateColumns={"1fr 190px"}
                 >
-                  <Box></Box>
+                  <Box>
+                    <Text>{item.site}</Text>
+                    <Heading>{item.title}</Heading>
+                  </Box>
                   <NewsImg src={item.img} w="190px" />
                 </Grid>
               </GridNewsCard>

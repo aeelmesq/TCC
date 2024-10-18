@@ -1,13 +1,14 @@
 // Importação Grid
-import { Box, Grid, GridItem, Progress } from '@chakra-ui/react'
+import { Box, Button, Grid, GridItem, Progress } from '@chakra-ui/react'
 import { getUlrParam } from "./components/utilits.js"
+
+import "./index.css"
 
 import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
 import Main from './components/Main/Home/Main.js';
 import Footer from './components/Footer/Footer';
 import { useEffect, useState } from 'react';
-
 
 const page = getUlrParam("page")
 
@@ -23,19 +24,42 @@ function ProgressBar() {
     }
     window.addEventListener("scroll", progressBarHandler)
     return () => window.removeEventListener("scroll", progressBarHandler)
-  })
+  }, [])
   return (
-    <Progress colorScheme='blue' value={scroll} />
+    <div
+      className='ProgressBar'
+      style={{
+        transform: `scale(${scroll}, 1)`,
+      }}
+    />
+  )
+}
+
+function BtnToTop() {
+  return (
+    <Button
+      position="fixed"
+      bottom="20px"
+      right="20px"
+      colorScheme='blue'
+      zIndex={9999}
+      boxShadow="dark-lg"
+      borderRadius="50px"
+      width="50px"
+      height="50px"
+      fontSize="25px"
+    >
+      &#8593;</Button>
   )
 }
 
 function FullPage() {
-  useEffect(() => {
-    document.body.style.overflow = page === "default" ? "auto" : "hidden"
-    return () => {
-      document.body.style.overflow = "auto"
-    }
-   }, [page])
+  //  useEffect(() => {
+  //    document.body.style.overflow = page === "default" ? "auto" : "hidden"
+  //    return () => {
+  //      document.body.style.overflow = "auto"
+  //    }
+  //   }, [page])
 
   switch (page) {
     case "1":
@@ -55,7 +79,6 @@ function FullPage() {
           height="100%"
           color='blackAlpha.700'
           fontWeight='bold'
-          scrollSnapType="y mandatory"
           >
           <GridItem bg='gray.800' area='header' display="flex" alignItems="center" justifyContent="center" scrollSnapAlign="start">
             <Header />
@@ -103,15 +126,9 @@ function FullPage() {
        default:
          return (
           <>
-            <Box
-              height="100vh"
-              color='blackAlpha.700'
-              fontWeight='bold'
-              overflowY="hidden"
-              >
-              <Box bg='gray.200' area='main' scrollSnapAlign="start">
-                <Main />
-              </Box>
+            <Box bg='gray.200' area='main'>
+              <BtnToTop />
+              <Main />
             </Box>
           </>
    );

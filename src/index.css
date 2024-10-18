@@ -6,6 +6,15 @@
   padding: 0;
   scroll-behavior: smooth;
 }
+/*Rolagem suave*/
+html {
+  scroll-snap-type: y mandatory
+}
+.SmothScroll {
+  scroll-snap-align: start;
+  height: 100vh;
+}
+
 body {
   font: normal 12pt Arial;
 }
@@ -98,4 +107,17 @@ body {
     width: 100%;
     margin: 0;
   }
+}
+
+.ProgressBar {
+  position: fixed;
+  background: linear-gradient(to left, rgb(108, 37, 223), rgb(153, 9, 84));
+  height: 6px;
+  width: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+  transform: scale(0, 0);
+  border-radius: 8px;
 }

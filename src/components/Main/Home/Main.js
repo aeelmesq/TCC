@@ -4,9 +4,11 @@ import Header from "../../Header/Header";
 import Block3 from "./components/Block3/DefaultBlock";
 import Block5 from "./components/Block5/DefaultBlock";
 
+import "../../../index.css"
+
 function ScrollBlock({children}) {
   return (
-    <Box h="100vh" scrollSnapAlign="start">{children}</Box>
+    <Box className="SmothScroll">{children}</Box>
   )
 }
 
@@ -24,17 +26,6 @@ function WithBackground({children}) {
     </Box>
   )
 }
-function BackgroundBlock({children}) {
-  return (
-    <>
-      <Box position="absolute" bg="blue.50" width="98%" h="100vh" left="0" right="0" textAlign="center" margin="0 auto"></Box>
-      <Box position="relative">
-        {children}
-      </Box>
-    </>
-  )
-}
-
 
 function Principal() {
   function Background({children}) {
@@ -71,30 +62,26 @@ function Principal() {
 
 function SuasNoticias() {
   return (
-    <BackgroundBlock>
-      <Box textAlign="center" display="grid" justifyItems="center">
-        <Text color="blackAlpha.800" mt="-75px" fontSize="3xl">SUAS NOTÍCIAS</Text>
-        <Box w="70%" h="700px" backgroundImage="url('https://i.imgur.com/s8aePwb.jpg')" backgroundPosition="center" backgroundSize="cover" borderRadius="md" boxShadow="xl">
-          <Box w="70%" h="80px" bg="blue.600" position="relative" top="96%" left="0" textAlign="start" margin="auto">
-            <Text p="20px" color="white">Primeira notícia</Text>
-          </Box>
+    <Box textAlign="center" display="grid" justifyItems="center">
+      <Text color="blackAlpha.800" mt="-75px" fontSize="3xl">SUAS NOTÍCIAS</Text>
+      <Box w="70%" h="700px" backgroundImage="url('https://i.imgur.com/s8aePwb.jpg')" backgroundPosition="center" backgroundSize="cover" borderRadius="md" boxShadow="xl">
+        <Box w="70%" h="80px" bg="blue.600" position="relative" top="96%" left="0" textAlign="start" margin="auto">
+          <Text p="20px" color="white">Primeira notícia</Text>
         </Box>
       </Box>
-    </BackgroundBlock>
+    </Box>
   )
 }
 
 function MessageLucky() {
   return (
-    <BackgroundBlock>
-      <Box textAlign="center" display="grid" justifyItems="center">
-        <Box w="100%" h="700px" backgroundImage="url('https://i.imgur.com/s8aePwb.jpg')" backgroundPosition="center" backgroundSize="cover" borderRadius="md" boxShadow="xl">
-          <Box w="70%" h="80px" bg="blue.600" position="relative" bottom="8%" left="0" textAlign="start" margin="auto">
-            <Text fontSize="22px" p="25px" color="white">Mensagem de boa sorte ou algo parecido</Text>
-          </Box>
+    <Box textAlign="center" display="grid" justifyItems="center">
+      <Box w="100%" h="700px" backgroundImage="url('https://i.imgur.com/s8aePwb.jpg')" backgroundPosition="center" backgroundSize="cover" borderRadius="md" boxShadow="xl">
+        <Box w="70%" h="80px" bg="blue.600" position="relative" bottom="8%" left="0" textAlign="start" margin="auto">
+          <Text fontSize="22px" p="25px" color="white">Mensagem de boa sorte ou algo parecido</Text>
         </Box>
       </Box>
-    </BackgroundBlock>
+    </Box>
   )
 }
 
@@ -105,17 +92,15 @@ function NoticiaSemanal() {
     marginBottom: "10px" 
   }
   return (
-    <BackgroundBlock>
-      <Box w="100%" h="100vh" margin="0 auto" display="grid" gridTemplateColumns="2fr 3fr">
-        <Box position="relative" overflow="hidden" backgroundImage="url(https://i.imgur.com/stVOVEX.jpeg)" backgroundPosition="center" backgroundSize="cover"></Box>
-        <Box bg="blue.600" p="60px" display="block" alignContent="center">
-          <Text sx={textstyle} fontSize="35px">Notícia Semanal</Text>
-          <Text sx={textstyle} fontSize="15px" fontWeight="light">12h30m</Text>
-          <Text sx={textstyle} fontSize="30px">Título da notícia que irá ser apresentada</Text>
-          <Text sx={textstyle} fontSize="20px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Text>
-        </Box>
+    <Box w="100%" h="100vh" margin="0 auto" display="grid" gridTemplateColumns="2fr 3fr">
+      <Box position="relative" overflow="hidden" backgroundImage="url(https://i.imgur.com/stVOVEX.jpeg)" backgroundPosition="center" backgroundSize="cover"></Box>
+      <Box bg="blue.600" p="60px" display="block" alignContent="center">
+        <Text sx={textstyle} fontSize="35px">Notícia Semanal</Text>
+        <Text sx={textstyle} fontSize="15px" fontWeight="light">12h30m</Text>
+        <Text sx={textstyle} fontSize="30px">Título da notícia que irá ser apresentada</Text>
+        <Text sx={textstyle} fontSize="20px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Text>
       </Box>
-    </BackgroundBlock>
+    </Box>
   )
 }
 
@@ -124,7 +109,7 @@ function NoticiaSemanal() {
 export default function Main() {
   
   return (
-    <Box h="100vh" overflowY="auto" scrollSnapType="y mandatory">
+    <>
       <ScrollBlock>
         <Box bg='gray.800' area='header' display="flex" alignItems="center" justifyContent="center" scrollSnapAlign="start" h="50px">
           <Header />
@@ -157,6 +142,6 @@ export default function Main() {
       <ScrollBlock>
         <Block5 />
       </ScrollBlock>
-    </Box>
+    </>
   )
 }

@@ -10,7 +10,7 @@ export default function GridCardItem({ children, row, column }) {
         gridRow={row}
         gridColumn={column}
         display={"grid"}
-        alignItems={"center"}
+        alignItems={"baseline"}
         gridTemplateColumns={"1fr 250px"}
       >
         {children}

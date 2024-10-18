@@ -1,10 +1,9 @@
-import { Box, Grid, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, Link, Text } from "@chakra-ui/react";
 import Card from "./Card";
-import ButtonMore from "../ButtomMore/ButtonMore";
 import { NewsTitle } from "../Titles/TitlesPresets";
 import { formatarSite } from "../../../utilits";
-import MenuMoreProvider from "../../../../Providers/menuMoreProvider";
-import SelectOptions from "../ButtomMore/SelectOptions";
+import OptionItem from "../ButtomMore/OptionItem";
+import OptionBox from "../ButtomMore/OptionBox";
 
 export default function RightBlock({
   news = {
@@ -24,15 +23,22 @@ export default function RightBlock({
         gridTemplateColumns={"calc(1fr - 60px)"}
       >
         <Box>
-          <Grid gridTemplateColumns={"1fr 30px"} mb={"60px"}>
+          <Flex justifyContent={"space-between"}>
             <Text>{news.site}</Text>
-            <MenuMoreProvider>
-              <Box>
-                <SelectOptions></SelectOptions>
-                <ButtonMore />
-              </Box>
-            </MenuMoreProvider>
-          </Grid>
+            <OptionBox>
+              <OptionItem>Salvar</OptionItem>
+              <OptionItem>
+                <Link
+                  href={formatarSite(news.site)}
+                  textDecor={"none"}
+                  textAlign={"left"}
+                  w={"100%"}
+                >
+                  Abrir
+                </Link>
+              </OptionItem>
+            </OptionBox>
+          </Flex>
           <Link
             href={formatarSite(news.site)}
             textDecor={"none"}

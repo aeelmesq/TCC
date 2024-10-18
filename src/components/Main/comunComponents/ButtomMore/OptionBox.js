@@ -8,7 +8,7 @@ export default function OptionBox({ children }) {
     <MenuMoreProvider>
       <Box>
         <SelectOptions>{children}</SelectOptions>
-        <Box>
+        <Box ml={"100px"}>
           <ButtonMore />
         </Box>
       </Box>

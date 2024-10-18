@@ -1,8 +1,11 @@
-import { Box, Heading, Img, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Img, Link, Text } from "@chakra-ui/react";
 import BlockBox from "../../../../comunComponents/BlockBox/BlockBox";
 import GridCard from "./GridCard";
 import { noticias } from "../../../Home/data";
 import GridCardItem from "./GridCardItem";
+import OptionBox from "../../../../comunComponents/ButtomMore/OptionBox";
+import OptionItem from "../../../../comunComponents/ButtomMore/OptionItem";
+import { formatarSite } from "../../../../../utilits";
 
 const news = noticias.slice(0, 4);
 
@@ -27,11 +30,26 @@ export default function Block3() {
                 row={index > 1 ? "1" : "3"}
                 column={index == 0 || index == 2 ? "1" : "3"}
               >
-                <Box h={"300px"}>
+                <Flex justifyContent={"space-between"} gridColumn={"span 2"}>
                   <Text>{item.site}</Text>
+                  <OptionBox>
+                    <OptionItem>Salvar</OptionItem>
+                    <OptionItem>
+                      <Link
+                        href={formatarSite(news.site)}
+                        textDecor={"none"}
+                        textAlign={"left"}
+                        w={"100%"}
+                      >
+                        Abrir
+                      </Link>
+                    </OptionItem>
+                  </OptionBox>
+                </Flex>
+                <Box h={"300px"}>
                   <Heading>{item.title}</Heading>
                 </Box>
-                <Box>
+                <Flex>
                   <Img
                     src={item.img}
                     width={"250px"}
@@ -39,7 +57,7 @@ export default function Block3() {
                     alt={`Notícia: ${item.description}`}
                     borderRadius={"10px"}
                   />
-                </Box>
+                </Flex>
               </GridCardItem>
             );
           })}

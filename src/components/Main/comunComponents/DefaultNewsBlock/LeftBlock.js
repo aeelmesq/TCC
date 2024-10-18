@@ -1,11 +1,10 @@
-import { Box, Grid, Heading, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, Heading, Link, Text } from "@chakra-ui/react";
 import Card from "./Card";
 import NewsImg from "../NewsImg/NewsImg";
-import ButtonMore from "../ButtomMore/ButtonMore";
 import { formatarSite } from "../../../utilits";
 import { NewsTitle } from "../Titles/TitlesPresets";
-import MenuMoreProvider from "../../../../Providers/menuMoreProvider";
-import SelectOptions from "../ButtomMore/SelectOptions";
+import OptionItem from "../ButtomMore/OptionItem";
+import OptionBox from "../ButtomMore/OptionBox";
 
 export default function LeftBlock({
   news = {
@@ -25,15 +24,22 @@ export default function LeftBlock({
       >
         <NewsImg src={news.img} alt={news.title} />
         <Box>
-          <Grid gridTemplateColumns={"1fr 30px"}>
+          <Flex justifyContent={"space-between"}>
             <Text>{news.site}</Text>
-            <MenuMoreProvider>
-              <Box>
-                <SelectOptions></SelectOptions>
-                <ButtonMore />
-              </Box>
-            </MenuMoreProvider>
-          </Grid>
+            <OptionBox>
+              <OptionItem>Salvar</OptionItem>
+              <OptionItem>
+                <Link
+                  href={formatarSite(news.site)}
+                  textDecor={"none"}
+                  textAlign={"left"}
+                  w={"100%"}
+                >
+                  Abrir
+                </Link>
+              </OptionItem>
+            </OptionBox>
+          </Flex>
           <Link
             href={formatarSite(news.site)}
             textDecor={"none"}

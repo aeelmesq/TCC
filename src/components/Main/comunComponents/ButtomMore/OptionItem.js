@@ -19,7 +19,7 @@ import { Button } from "@chakra-ui/react";
     </>
 */
 
-export default function OptionItem({ children }) {
+export default function OptionItem({ children, onClick = (e) => {} }) {
   return (
     <Button
       width={"100%"}
@@ -30,6 +30,7 @@ export default function OptionItem({ children }) {
       justifyContent={"left"}
       borderBottom={"1px solid gray"}
       _hover={{ bgColor: "rgb(200, 200, 200)" }}
+      onClick={(e) => onClick(e)}
     >
       {children}
     </Button>

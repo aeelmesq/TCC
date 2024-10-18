@@ -5,7 +5,7 @@ import DefaultNewsBlock from "../../../../comunComponents/DefaultNewsBlock/Defau
 /*
     Componente Block1:
 
-        Descrição: Bloco de recomendações da pagina Para Você.
+      Descrição: Bloco de recomendações da pagina Para Você.
 */
 
 export default function Block1() {
@@ -14,7 +14,7 @@ export default function Block1() {
       <BlockBox>
         <Heading>Recomentações {">"}</Heading>
         <Divider borderTop={"1px solid rgb(192, 192, 192)"} m={"20px 0"} />
-        <DefaultNewsBlock qtdNews={4} />
+        <DefaultNewsBlock qtdNews={7} />
       </BlockBox>
     </>
   );

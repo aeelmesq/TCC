@@ -1,4 +1,4 @@
-import { Heading } from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
 import ContBox from "./ContBox";
 import SliderBox from "../../../comunComponents/SliderBox/SliderBox";
 import categorias from "../../../../../consts/Cat";
@@ -26,6 +26,9 @@ export default function SliderBlock() {
           })}
         </SliderBox>
       </ContBox>
+      <Box position="absolute" width="100%" left={0} bottom={0} textAlign="center" bg="blue.600" borderTopRadius="full" p="2px">
+        <Text color="white" fontWeight="hairline" fontSize="11px">© 2024 Todos os direitos reservados pela ALT.</Text>
+      </Box>
     </>
   );
 }

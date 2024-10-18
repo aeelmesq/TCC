@@ -111,7 +111,7 @@ body {
 
 .ProgressBar {
   position: fixed;
-  background: linear-gradient(to left, rgb(108, 37, 223), rgb(153, 9, 84));
+  background: linear-gradient(to left, rgb(108, 37, 223), rgb(26, 41, 62));
   height: 6px;
   width: 100%;
   z-index: 999;

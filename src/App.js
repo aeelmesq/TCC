@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 
 const page = getUlrParam("page")
 
+//Barra de progresso ao rolar a página
 function ProgressBar() {
   const [scroll, setScroll] = useState(0)
 
@@ -35,19 +36,39 @@ function ProgressBar() {
   )
 }
 
+//Botão que volta ao topo da página
 function BtnToTop() {
+  const scrollToTop = () => {
+    window.scrollTo({
+   top: 0,
+   behavior: 'smooth'
+    })
+  }
+  useEffect(() =>{
+    const backToTop = () => {
+      if (window.scrollY > 20) {
+        document.getElementById("btnTop").style.display = "block"
+      } else {
+        document.getElementById("btnTop").style.display = "none"
+      }
+    }
+    window.addEventListener("scroll", function() {backToTop()})
+  })
   return (
     <Button
+      id='btnTop'
+      display="none"
       position="fixed"
       bottom="20px"
       right="20px"
       colorScheme='blue'
       zIndex={9999}
       boxShadow="dark-lg"
-      borderRadius="50px"
+      borderRadius="full"
       width="50px"
       height="50px"
       fontSize="25px"
+      onClick={scrollToTop}
     >
       &#8593;</Button>
   )
@@ -126,7 +147,7 @@ function FullPage() {
        default:
          return (
           <>
-            <Box bg='gray.200' area='main'>
+            <Box fontWeight="bold" bg='gray.200' area='main'>
               <BtnToTop />
               <Main />
             </Box>

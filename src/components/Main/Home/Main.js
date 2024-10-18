@@ -65,8 +65,8 @@ function SuasNoticias() {
     <Box textAlign="center" display="grid" justifyItems="center">
       <Text color="blackAlpha.800" mt="-75px" fontSize="3xl">SUAS NOTÍCIAS</Text>
       <Box w="70%" h="700px" backgroundImage="url('https://i.imgur.com/s8aePwb.jpg')" backgroundPosition="center" backgroundSize="cover" borderRadius="md" boxShadow="xl">
-        <Box w="70%" h="80px" bg="blue.600" position="relative" top="96%" left="0" textAlign="start" margin="auto">
-          <Text p="20px" color="white">Primeira notícia</Text>
+        <Box w="70%" h="80px" bg="blue.600" position="relative" top="96%" left="0" textAlign="start" margin="auto" p="10px" display="flex" alignItems="center">
+          <Text color="white">Primeira notícia</Text>
         </Box>
       </Box>
     </Box>

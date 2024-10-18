@@ -29,6 +29,8 @@ export default function SelectOptions({ children }) {
         w={"100px"}
         boxShadow={"1px 0 4px rgb(90, 90, 90)"}
         zIndex={"2"}
+        transition={"0.1s"}
+        opacity={menuState ? "1" : "0"}
         visibility={menuState ? "visible" : "hidden"}
         borderRadius={"3px"}
         position={"absolute"}

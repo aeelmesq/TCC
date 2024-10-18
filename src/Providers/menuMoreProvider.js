@@ -4,7 +4,7 @@ import menuMoreContext from "../Contexts/menuMoreContext";
 export default function MenuMoreProvider({ children }) {
   const [menuState, setMenuState] = useState(false);
 
-  const handleMenuState = useCallback((event = { sdf: 9 }) => {
+  const handleMenuState = useCallback((event) => {
     event.preventDefault();
     setMenuState((prevInfo) => !prevInfo);
   }, []);

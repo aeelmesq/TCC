@@ -1,7 +1,7 @@
 import { Box, Flex, Grid, Heading, Link, Text } from "@chakra-ui/react";
 import Card from "./Card";
 import NewsImg from "../NewsImg/NewsImg";
-import { formatarSite } from "../../../utilits";
+import { formatarSite, redirectTo } from "../../../utilits";
 import { NewsTitle } from "../Titles/TitlesPresets";
 import OptionItem from "../ButtomMore/OptionItem";
 import OptionBox from "../ButtomMore/OptionBox";
@@ -28,15 +28,13 @@ export default function LeftBlock({
             <Text>{news.site}</Text>
             <OptionBox>
               <OptionItem>Salvar</OptionItem>
-              <OptionItem>
-                <Link
-                  href={formatarSite(news.site)}
-                  textDecor={"none"}
-                  textAlign={"left"}
-                  w={"100%"}
-                >
-                  Abrir
-                </Link>
+              <OptionItem
+                onClick={(e) => {
+                  e.preventDefault();
+                  redirectTo(formatarSite(news.site));
+                }}
+              >
+                Abrir
               </OptionItem>
             </OptionBox>
           </Flex>

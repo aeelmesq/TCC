@@ -4,7 +4,7 @@ export default function ContBox({ children }) {
   return (
     <>
       <Grid
-        w={"98%"}
+        w={"calc(100% - 60px)"}
         m={"auto"}
         minH={"700px"}
         bgColor={"#1A293E"}

@@ -1,4 +1,4 @@
-import { Center, Divider, Grid } from "@chakra-ui/react";
+import { Divider, Grid } from "@chakra-ui/react";
 
 export default function GridCard({ children }) {
   return (

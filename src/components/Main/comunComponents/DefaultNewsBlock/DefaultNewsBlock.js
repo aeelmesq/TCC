@@ -8,7 +8,7 @@ import RightBlock from "./RightBlock";
     Componente DefaultNewsBlock
 
         Descrição: Retorna uma quantidade x de notícias baseado na props qtdNews e com um 
-        layout pré-definido
+        layout pré-definido.
 
         Obs: 
             - A quantidade de notícias deve ser pasada como prop;
@@ -31,6 +31,7 @@ export default function DefaultNewsBlock({ qtdNews }) {
         rowGap={"15px"}
       >
         {allNews.map((item, index) => {
+          // Teste condicional que retornara um do três tipos de blocos baseado no index do item
           if (index % 3 === 0) {
             if (index === allNews.length - 1) return <FullBlock news={item} />;
 

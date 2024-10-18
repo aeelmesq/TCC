@@ -4,7 +4,7 @@ export default function GridCardItem({ children, row, column }) {
   return (
     <>
       <GridItem
-        h={"300px"}
+        h={"299"}
         w={"calc(100% - 20px)"}
         m={"10px"}
         gridRow={row}

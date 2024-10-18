@@ -16,7 +16,7 @@ export default function SliderBlock() {
         SEUS ASSUNTOS
       </Heading>
       <ContBox>
-        <SliderBox leftButtonPositio={"7vw"} rightButtonPosition={"2vw"}>
+        <SliderBox leftButtonPositio={"7vw"} rightButtonPosition={"3vw"}>
           {categorias.map(({ title, color }, index) => {
             return (
               <>

@@ -21,10 +21,9 @@ export default function GridNewsBlock({ children, numCols }) {
   return (
     <Flex
       w={"97%"}
-      m={"auto"}
       minH={"600px"}
-      p={"10px 0"}
-      mt={"15px"}
+      p={"20px 0"}
+      m={"15px auto"}
       borderRadius={"7px"}
       alignItems={"center"}
       justifyContent={"center"}
@@ -35,7 +34,7 @@ export default function GridNewsBlock({ children, numCols }) {
         gridTemplateColumns={`repeat(${numCols}, 1fr)`}
         columnGap={"1px"}
         rowGap={"1px"}
-        w={"calc(100% - 20px)"}
+        w={"calc(100% - 40px)"}
         minH={"600px"}
         bgColor={"black"}
       >

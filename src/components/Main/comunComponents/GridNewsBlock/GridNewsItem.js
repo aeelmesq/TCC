@@ -2,7 +2,6 @@ import { Box, Flex, Grid, Heading, Text } from "@chakra-ui/react";
 import GridNewsCard from "./GridNewsCard";
 import OptionBox from "../ButtomMore/OptionBox";
 import OptionItem from "../ButtomMore/OptionItem";
-import NewsImg from "../NewsImg/NewsImg";
 import { formatarSite, redirectTo } from "../../../utilits";
 
 /*
@@ -16,20 +15,20 @@ import { formatarSite, redirectTo } from "../../../utilits";
       com o método map;
 
       - É recomentado que este componente esteja inserido
-      detro de um componente do tipo GridNewsBlock com duas
+      detro de um componente do tipo GridNewsBlock com três
       colunas.
 
     Exemplo:
     <>
-      <GridNewsBlock numCols={2}>
+      <GridNewsBlock numCols={3}>
         {data.map((item) => {
-          return <GridNewsItemWithImg news={item} />
+          return <GridNewsItem news={item} />
         })}
       </GridNewsBlock>
     </>
 */
 
-export default function GridNewsItemWithImg({
+export default function GridNewsItem({
   news = {
     title: String(),
     img: String(),
@@ -64,12 +63,11 @@ export default function GridNewsItemWithImg({
         w={"calc(100% - 20px)"}
         alignItems={"center"}
         m={"auto"}
-        gridTemplateColumns={"1fr 190px"}
+        gridTemplateColumns={"1fr"}
       >
         <Box h={"255px"}>
           <Heading>{news.title}</Heading>
         </Box>
-        <NewsImg src={news.img} w="190px" />
       </Grid>
     </GridNewsCard>
   );

@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Heading, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, Link, Text } from "@chakra-ui/react";
 import Card from "./Card";
 import NewsImg from "../NewsImg/NewsImg";
 import { formatarSite, redirectTo } from "../../../utilits";

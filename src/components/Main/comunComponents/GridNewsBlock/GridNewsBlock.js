@@ -1,11 +1,29 @@
-import { Divider, Flex, Grid } from "@chakra-ui/react";
+import { Flex, Grid } from "@chakra-ui/react";
 
-export default function GridNewsBlock({ children }) {
+/*
+  Componente GridNewsBlock:
+
+    Descrição: Retorna um bloco de Grid com pré-definições de
+    estilo.
+
+    Obs: 
+      - o número de colunas da grid deve ser pasado como prop.
+
+    Exemplo:
+    <>
+      <GridNewsBlock numCols={2}>
+        ...
+      </GridNewsBlock>
+    </>
+*/
+
+export default function GridNewsBlock({ children, numCols }) {
   return (
     <Flex
       w={"97%"}
       m={"auto"}
-      h={"600px"}
+      minH={"600px"}
+      p={"10px 0"}
       mt={"15px"}
       borderRadius={"7px"}
       alignItems={"center"}
@@ -14,11 +32,11 @@ export default function GridNewsBlock({ children }) {
       bgColor={"white"}
     >
       <Grid
-        gridTemplateColumns={"repeat(2, 1fr)"}
+        gridTemplateColumns={`repeat(${numCols}, 1fr)`}
         columnGap={"1px"}
         rowGap={"1px"}
         w={"calc(100% - 20px)"}
-        h={"calc(100% - 20px)"}
+        minH={"600px"}
         bgColor={"black"}
       >
         {children}

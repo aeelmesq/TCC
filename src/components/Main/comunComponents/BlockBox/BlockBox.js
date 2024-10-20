@@ -19,11 +19,8 @@ export default function BlockBox({ children }) {
   return (
     <>
       <Grid
-        bgColor={"#D9D9D9"}
-        w={"100%"}
-        boxShadow={"1px 1px 2px black"}
-        mt={"20px"}
-        mb={"20px"}
+        w={"calc(100% - 60px)"}
+        m={"20px auto"}
         pt={"15px"}
         pb={"15px"}
         gridAutoColumns={"calc(100% - 30px)"}

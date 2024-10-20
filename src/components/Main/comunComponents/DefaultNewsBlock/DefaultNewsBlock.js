@@ -40,7 +40,7 @@ export default function DefaultNewsBlock({ qtdNews }) {
           return (
             <>
               <RightBlock news={item} />
-              {(index + 1) % 3 === 0 && (
+              {(index + 1) % 3 === 0 && index != qtdNews - 1 && (
                 <Divider
                   gridColumn={"span 2"}
                   borderTop={"1px solid rgb(192, 192, 192)"}

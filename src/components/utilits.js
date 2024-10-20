@@ -42,3 +42,19 @@ export function clickEye(e, { state = { value: "", setValue: () => {} } }) {
 export function redirectTo(path) {
   window.location.href = path;
 }
+
+/*
+  Função getRandomInt:
+
+    Descrição: Retorna um número inteiro aleatotio baseado em um valor maximo e minimo
+*/
+
+export function getRandomInt(min, max) {
+  let res = Math.floor(Math.random() * max);
+
+  if (res < min) {
+    res = min;
+  }
+
+  return res;
+}

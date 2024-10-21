@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import "../../StyleComponents/AsideBar.css";
 import menu from "../../Contexts/menuContext";
 import { useLocation } from "react-router-dom";
-import useUser from "../../hooks/useUser";
+import useUser from "../../Hooks/useUser";
 
 export default function AsideBar() {
   const location = useLocation();

@@ -1,0 +1,152 @@
+@import url("./presets/colors.css");
+
+.AsideBar {
+    position: fixed;
+    height: 100dvh;
+    width: 59px;
+    z-index: 19;
+    overflow: hidden;
+    transition: 0.5s;
+    border-right: 2px solid var(--sec_color);
+    padding-top: 70px;
+    top: 0;
+    left: 0;
+}
+
+.AsideBar > ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 200px;
+} 
+
+.AsideBar > ul > li {
+    width: 100%;
+}
+
+.AsideBar > ul > li > a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 13pt;
+    border-left: 4px solid transparent;
+    height: 20px;
+    padding: 10px;
+    padding-left: 15px;
+    transition: 0.5s;
+    text-decoration: none;
+    color: black;
+}
+
+.AsideBar > ul > li > a > i {
+    font-size: 15pt;
+    margin-right: 23px;
+    color: var(--main_color);
+}
+
+.AsideBar > ul > li > a:hover {
+    border-left-color: var(--main_color);
+    padding-left: 20px;
+}
+
+.AsideBar > ul > li > a.on {
+    box-sizing:content-box;
+    cursor: default;
+    padding: 12px 10px 12px 18px;
+    box-shadow: 0px 0px 20px var(--main_color);
+    outline: 1px solid var(--main_color);
+    background-color: transparent;
+    border-left-color: transparent;
+}
+
+.AsideBar > ul > li > a.on > span {
+    color: var(--main_color);
+    font-weight: bold;
+}
+
+.AsideBar:hover {
+    width: 200px;
+}
+
+.AsideBar > ul > button {
+    background: none;
+    outline: none;
+    border: none;
+    padding-left: 18px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.AsideBar > ul > button > i {
+    float: left;
+    font-size: 14pt;
+    color: var(--main_color);
+}
+
+.AsideBar.light button > i {
+    transform:rotatey(180deg)
+}
+
+@media screen and (max-width: 768px) {
+    .AsideBar {
+        position: fixed;
+        top: calc(100dvh - 55px);
+        z-index: 30;
+        width: 100dvw;
+        height: 55px;
+        border-right: none;
+        padding-top: 0;
+        border-top: 1px solid var(--main_color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .AsideBar:hover {
+        width: 100dvw;
+    }
+
+    .AsideBar > ul > button {
+        display: none;
+        visibility: hidden;
+    }
+
+    .AsideBar > ul {
+        display: grid;
+        width: 90%;
+        grid-template-columns: repeat(6, calc(90% / 6));
+        justify-content: center;
+    }
+
+    .AsideBar > ul > li {
+        display: flex;
+        justify-content: center;
+    }
+
+    .AsideBar > ul > li > a {
+        border-left: none;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .AsideBar > ul > li > a:hover {
+        padding-left: 10px;
+    }
+
+    .AsideBar > ul > li > a > span {
+        display: none;
+        visibility: hidden;
+    }
+
+    .AsideBar > ul > li > a > i {
+        font-size: 17pt;
+    }
+
+    .AsideBar > ul > li > a.on {
+        outline: none;
+        box-shadow: none;
+        padding: 10px;
+    }
+}

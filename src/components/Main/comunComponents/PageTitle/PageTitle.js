@@ -17,7 +17,13 @@ export default function PageTitle({ children }) {
         objectFit={"cover"}
         position={"relative"}
       />
-      <Heading color={"white"} fontSize={"80px"} position={"absolute"}>
+      <Heading
+        color={"white"}
+        fontSize={"60px"}
+        position={"absolute"}
+        textAlign={"center"}
+        m={"0 25%"}
+      >
         {children}
       </Heading>
     </Flex>

@@ -6,6 +6,7 @@ import SingIn from "../Main/Pages/Login/SingIn/SingIn.js";
 import Register from "../Main/Pages/Login/Register/Register.js";
 import Main from "../Main/index.js";
 import ErrorPage from "../Main/Pages/ErrorPage.js/ErrorPage.js";
+import Preferencias from "../Main/Pages/Preferencias/Preferencias.js";
 import App from "../../App.js";
 
 const ComingSoon = () => <p>ComingSoon</p>;
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
           },
           {
             path: "/preferencias",
-            element: <ComingSoon />,
+            element: <Preferencias />,
           },
           {
             path: "/penapolis",

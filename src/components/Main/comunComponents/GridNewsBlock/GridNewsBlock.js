@@ -20,7 +20,7 @@ import { Flex, Grid } from "@chakra-ui/react";
 export default function GridNewsBlock({ children, numCols }) {
   return (
     <Flex
-      w={"97%"}
+      w={"100%"}
       minH={"600px"}
       p={"20px 0"}
       m={"15px auto"}

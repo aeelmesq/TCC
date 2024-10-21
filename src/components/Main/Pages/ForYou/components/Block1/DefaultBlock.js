@@ -10,7 +10,7 @@ import { getRandomInt } from "../../../../../utilits";
 */
 
 export default function Block1() {
-  const qtdNews = getRandomInt(3, 8);
+  const qtdNews = getRandomInt(4, 8);
 
   return (
     <>

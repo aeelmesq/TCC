@@ -50,9 +50,9 @@ export function redirectTo(path) {
 */
 
 export function getRandomInt(min, max) {
-  let res = Math.floor(Math.random() * max);
+  let res = Math.floor(Math.random() * max + min);
 
-  if (res < min) {
+  if (res >= max) {
     res = min;
   }
 

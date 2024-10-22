@@ -8,6 +8,7 @@ import Main from "../Main/index.js";
 import ErrorPage from "../Main/Pages/ErrorPage.js/ErrorPage.js";
 import Preferencias from "../Main/Pages/Preferencias/Preferencias.js";
 import App from "../../App.js";
+import Penapolis from "../Main/Pages/Penapolis/Penapolis.js";
 
 const ComingSoon = () => <p>ComingSoon</p>;
 
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
           },
           {
             path: "/penapolis",
-            element: <ComingSoon />,
+            element: <Penapolis />,
           },
           {
             path: "/regiao",

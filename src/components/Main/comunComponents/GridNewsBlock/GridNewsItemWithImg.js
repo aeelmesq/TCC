@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Heading, Text } from "@chakra-ui/react";
+import { Flex, Grid, Heading, Text } from "@chakra-ui/react";
 import GridNewsCard from "./GridNewsCard";
 import OptionBox from "../ButtomMore/OptionBox";
 import OptionItem from "../ButtomMore/OptionItem";
@@ -46,7 +46,7 @@ export default function GridNewsItemWithImg({
         alignItems={"center"}
         justifyContent={"space-between"}
       >
-        <Text>{news.site}</Text>
+        <Text ml={"15px"}>{news.site}</Text>
         <OptionBox>
           <OptionItem>Salvar</OptionItem>
           <OptionItem
@@ -66,9 +66,9 @@ export default function GridNewsItemWithImg({
         m={"auto"}
         gridTemplateColumns={"1fr 190px"}
       >
-        <Box h={"255px"}>
+        <Flex h={"255px"} alignItems={"center"}>
           <Heading>{news.title}</Heading>
-        </Box>
+        </Flex>
         <NewsImg src={news.img} w="190px" />
       </Grid>
     </GridNewsCard>

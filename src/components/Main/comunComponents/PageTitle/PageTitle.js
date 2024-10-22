@@ -6,6 +6,7 @@ export default function PageTitle({ children }) {
     <Flex
       w={"100%"}
       h={"500px"}
+      mt={"45px"}
       overflow={"hidden"}
       justifyContent={"center"}
       alignItems={"center"}

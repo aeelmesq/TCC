@@ -15,7 +15,7 @@ export default function Block1() {
   return (
     <>
       <BlockBox>
-        <Heading>Recomentações {">"}</Heading>
+        <Heading>RECOMENDAÇÕES {">"}</Heading>
         <Divider borderTop={"1px solid rgb(192, 192, 192)"} m={"20px 0"} />
         <DefaultNewsBlock qtdNews={qtdNews} />
       </BlockBox>

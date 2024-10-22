@@ -9,10 +9,10 @@ export default function Block2() {
     <>
       <BlockBox>
         <Heading w={"100%"} mb={"3px"}>
-          ASUNTOS
+          ASSUNTOS
         </Heading>
         <Text mb={"3px"} fontSize={"14pt"} color={"#484848"}>
-          Sugestão de Asuntos
+          Sugestão de Assuntos
         </Text>
         <hr
           style={{

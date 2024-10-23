@@ -46,13 +46,13 @@ function BtnToTop() {
   }
   useEffect(() =>{
     const backToTop = () => {
-      let btn = document.getElementById("btnTop")
+      let btnStyle = document.getElementById("btnTop").style
       if (window.scrollY > 20) {
-        btn.style.display = "block"
-        btn).style.opacity = "1"
+        btnStyle.display = "block"
+        btnStyle.opacity = "1"
       } else {
-        btn.style.display = "none"
-        btn.style.opacity = "0"
+        btnStyle.display = "none"
+        btnStyle.opacity = "0"
       }
     }
     window.addEventListener("scroll", function() {backToTop()})

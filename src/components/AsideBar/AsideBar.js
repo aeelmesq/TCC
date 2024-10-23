@@ -2,9 +2,9 @@ import Menu from "./Menu";
 import MenuItem from "./MenuItem";
 import { useCallback, useEffect, useState } from "react";
 import "../../StyleComponents/AsideBar.css";
-import menu from "../../Contexts/menuContext";
+import menu from "../Contexts/menuContext.js";
 import { useLocation } from "react-router-dom";
-import useUser from "../../Hooks/useUser";
+import useUser from "../Hooks/useUser";
 
 export default function AsideBar() {
   const location = useLocation();

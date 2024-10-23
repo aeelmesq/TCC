@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, StackDivider, VStack } from "@chakra-ui/react";
+import { Box, VStack } from "@chakra-ui/react";
 
 export default function NewsBox() {
   const StyleGridItem = {
@@ -10,7 +10,7 @@ export default function NewsBox() {
   return (
     <>
         <VStack 
-          divider={<StackDivider borderColor='gray.100' />}
+          separator={<StackSeparator borderColor='gray.100' />}
           spacing={5}
           align="stretch"
           >

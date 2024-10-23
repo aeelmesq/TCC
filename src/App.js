@@ -1,5 +1,5 @@
 // Importação Grid
-import { Box, Button, Grid, GridItem, Progress } from '@chakra-ui/react'
+import { Box, Button, Grid, GridItem } from '@chakra-ui/react'
 import { getUlrParam } from "./components/utilits.js"
 
 import "./index.css"
@@ -8,6 +8,7 @@ import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
 import Main from './components/Main/Home/Main.js';
 import Footer from './components/Footer/Footer';
+import AsideBlock from './components/AsideBar/AsideBar.js';
 import { useEffect, useState } from 'react';
 
 const page = getUlrParam("page")
@@ -151,6 +152,7 @@ function FullPage() {
        default:
          return (
           <>
+            <AsideBlock />
             <Box fontWeight="bold" bg='gray.200' area='main'>
               <BtnToTop />
               <Main />
@@ -160,7 +162,7 @@ function FullPage() {
   }
 }
 
-function App() {
+export const App = () => {
   return (
     <>
       <ProgressBar />

@@ -21,7 +21,6 @@ export default function Footer() {
         </Box>
         <Box id='bfMiddle' gridRow={2} gridColumn="span 2">
           <RedesSociaisList />
-          <Divider borderColor="gray.600" my={4} />
         </Box>
       </Grid>
     </Box>

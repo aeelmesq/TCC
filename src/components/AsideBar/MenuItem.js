@@ -1,5 +1,5 @@
 import { memo, useContext } from "react";
-import menu from "../../Contexts/menuContext";
+import menu from "../Contexts/menuContext";
 import { NavLink } from "react-router-dom";
 
 function MenuItem({ path, onActive, pos, onPending, ...components }) {

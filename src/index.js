@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ChakraProvider } from "@chakra-ui/react";
 import { RouterProvider } from "react-router-dom";
 import router from "./components/paths/router";
 
@@ -14,12 +13,7 @@ const queryCient = new QueryClient();
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryCient}>
-      <ChakraProvider
-        resetCSS={false}
-        theme={{ fontFamily: "Arial, Helvetica, sans-serif" }}
-      >
-        <RouterProvider router={router} />
-      </ChakraProvider>
+      <RouterProvider router={router} />
     </QueryClientProvider>
   </React.StrictMode>
 );

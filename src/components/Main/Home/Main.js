@@ -110,6 +110,7 @@ export default function Main() {
   
   return (
     <>
+      <Text>hello world</Text>
       <ScrollBlock>
         <Box bg='gray.800' area='header' display="flex" alignItems="center" justifyContent="center" scrollSnapAlign="start" h="50px">
           <Header />

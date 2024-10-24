@@ -1,4 +1,4 @@
-import { Box, Heading, UnorderedList, ListItem, Link } from '@chakra-ui/react';
+import { Box, Heading, ListItem, Link } from '@chakra-ui/react';
 
 const linkBlock1 = [
   { name: 'Mercado' },
@@ -59,9 +59,9 @@ function List({ title, nameBlock }) {
   return (
     <Box mb={6} mx={8}>
       <Heading size="md" mb={2} color="white">{title}</Heading>
-      <UnorderedList spacing={1}>
+      <Box spacing={1}>
         <ListItens block={nameBlock} />
-      </UnorderedList>
+      </Box>
     </Box>
   );
 }

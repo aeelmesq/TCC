@@ -1,6 +1,6 @@
 import Bloco from './bloco';
 import RedesSociaisList from './redesSociais';
-import { Box, Grid, Image, Divider } from '@chakra-ui/react';
+import { Box, Grid, Image, Separator } from '@chakra-ui/react';
 import logo from '../../logo.svg';
 
 export default function Footer() {
@@ -21,7 +21,7 @@ export default function Footer() {
         </Box>
         <Box id='bfMiddle' gridRow={2} gridColumn="span 2">
           <RedesSociaisList />
-          <Divider borderColor="gray.600" my={4} />
+          <Separator borderColor="gray.600" my={4} />
         </Box>
       </Grid>
     </Box>

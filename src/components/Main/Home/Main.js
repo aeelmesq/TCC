@@ -3,7 +3,6 @@ import video from "../../../video/bg_main_home.mp4";
 import Header from "../../Header/Header";
 import Block3 from "./components/Block3/DefaultBlock";
 import Block5 from "./components/Block5/DefaultBlock";
-import AsideBlock from 'module';
 
 import "../../../index.css"
 

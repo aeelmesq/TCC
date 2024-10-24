@@ -1,4 +1,4 @@
-import { Box, VStack } from "@chakra-ui/react";
+import { Box, VStack, StackSeparator } from "@chakra-ui/react";
 
 export default function NewsBox() {
   const StyleGridItem = {

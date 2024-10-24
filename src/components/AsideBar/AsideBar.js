@@ -24,7 +24,7 @@ export default function AsideBar() {
   useEffect(() => window.scrollTo(0, 0), [location]);
 
   return (
-    <>
+    <> 
       <menu.Provider value={{ active, setActive }}>
         <Menu style={`AsideBar ${theme}`}>
           <MenuItem path={"ALT/"} pos={1} onActive={"on"} onPending={"on"}>

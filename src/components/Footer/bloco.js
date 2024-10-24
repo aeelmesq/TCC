@@ -40,7 +40,7 @@ function ListItens({ block }) {
   return (
     <>
       {block.map((link) => (
-        <ListItem key={link.name} mb={1}>
+        <List.Item key={link.name} mb={1}>
           <Link
             href={`/${link.name}`}
             color="black.400"
@@ -49,7 +49,7 @@ function ListItens({ block }) {
           >
             {link.name}
           </Link>
-        </ListItem>
+        </List.Item>
       ))}
     </>
   );
@@ -59,9 +59,9 @@ function List({ title, nameBlock }) {
   return (
     <Box mb={6} mx={8}>
       <Heading size="md" mb={2} color="white">{title}</Heading>
-      <Box>
+      <List.Root>
         <ListItens block={nameBlock} />
-      </Box>
+      </List.Root>
     </Box>
   );
 }

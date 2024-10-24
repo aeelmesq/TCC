@@ -10,6 +10,7 @@ import Main from './components/Main/Home/Main.js';
 import Footer from './components/Footer/Footer';
 import AsideBlock from './components/AsideBar/AsideBar.js';
 import { useEffect, useState } from 'react';
+import { Router } from 'react-router-dom';
 
 const page = getUlrParam("page")
 
@@ -152,7 +153,6 @@ function FullPage() {
        default:
          return (
           <>
-            <AsideBlock />
             <Box fontWeight="bold" bg='gray.200' area='main'>
               <BtnToTop />
               <Main />

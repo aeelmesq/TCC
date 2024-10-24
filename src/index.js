@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 //Chakra UI
-import { Provider } from "@/components/ui/provider"
+import { ChakraProvider, createSystem, defineConfig } from "@chakra-ui/react"
 
 // Defina o tema personalizado
 const config = defineConfig({
@@ -23,6 +23,7 @@ const config = defineConfig({
     },
   }
 });
+const system = createSystem(config)
 
 const queryClient = new QueryClient();
 
@@ -30,11 +31,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <Provider value={system}>
+    <ChakraProvider value={system}>
       <QueryClientProvider client={queryClient}>
         <App />
       </QueryClientProvider>
-    </Provider>
+    </ChakraProvider>
   </React.StrictMode>
 );
 
